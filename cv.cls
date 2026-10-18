@@ -61,7 +61,7 @@
 % ---------------------------------------------------------------
 % Fonts
 \RequirePackage[T1]{fontenc}
-\RequirePackage{fbb}
+\RequirePackage{libertinus}  % Libertinus Serif, Sans, and Mono
 \RequirePackage{fontawesome5}
 \RequirePackage{microtype}
 
@@ -78,7 +78,7 @@
 % long URLs break at any character, so they do not run into the right
 % margin. hyperref must load last.
 \RequirePackage{xurl}
-\renewcommand\UrlFont{\fontfamily{lmtt}\selectfont\small}  % Latin Modern: always installed
+\renewcommand\UrlFont{\ttfamily\small}  % Libertinus Mono
 \RequirePackage[colorlinks, allcolors=accent, pdflang=en-US,
   pdfdisplaydoctitle]{hyperref}
 \pdfstringdefDisableCommands{\def\\{ }}  % "\\" in section titles

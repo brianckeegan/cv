@@ -34,7 +34,7 @@ jobs:
           fetch-depth: 0   # full history: the footer date comes from git log
 
       - name: Install TeX Live
-        # fonts-extra has fbb and fontawesome5; latex-extra has enumitem and xurl.
+        # fonts-extra has Libertinus and fontawesome5; latex-extra has enumitem and xurl.
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq texlive-latex-recommended texlive-latex-extra texlive-fonts-extra latexmk
