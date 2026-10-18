@@ -66,32 +66,54 @@
 \RequirePackage{microtype}
 
 % ---------------------------------------------------------------
-% Links. xurl lets long URLs break at any character, so they do not
-% run into the right margin. hyperref must load last.
-\RequirePackage{xurl}
-\renewcommand\UrlFont{\fontfamily{lmtt}\selectfont\small}  % Latin Modern: always installed
-\RequirePackage[hidelinks]{hyperref}
-\pdfstringdefDisableCommands{\def\\{ }}  % "\\" in section titles
+% Color: one accent for links and section titles. #7A6A3A is the
+% website's link color; it has a 5.3:1 contrast ratio on white, which
+% passes WCAG 2.2 AA for text.
+\RequirePackage{xcolor}
+\definecolor{accent}{HTML}{7A6A3A}
+\definecolor{rule}{gray}{0.75}
 
 % ---------------------------------------------------------------
-% Section titles: bold, ragged right, in the margin column, with the
-% first line on the same baseline as the first line of the text. The
-% title is a zero-height box, so the text (or list) that follows moves
-% up beside it. Each title is also a PDF bookmark.
+% Links, in the accent color so that readers can see them. xurl lets
+% long URLs break at any character, so they do not run into the right
+% margin. hyperref must load last.
+\RequirePackage{xurl}
+\renewcommand\UrlFont{\fontfamily{lmtt}\selectfont\small}  % Latin Modern: always installed
+\RequirePackage[colorlinks, allcolors=accent, pdflang=en-US,
+  pdfdisplaydoctitle]{hyperref}
+\pdfstringdefDisableCommands{\def\\{ }}  % "\\" in section titles
+
+% \doi{10.1145/3359135} prints "doi:10.1145/3359135" and links to
+% https://doi.org/10.1145/3359135.
+\newcommand*\doi[1]{\href{https://doi.org/#1}{\textsc{doi}:\nolinkurl{#1}}}
+
+% ---------------------------------------------------------------
+% Section titles: small capitals in the accent color, ragged right, in
+% the margin column, under a thin rule across the full width. The first
+% line of the title is on the same baseline as the first line of the
+% text. The title is a zero-height box, so the text (or list) that
+% follows moves up beside it. Each title is also a PDF bookmark.
 \setcounter{secnumdepth}{0}
 \newskip\sectionskip
 \setlength\sectionskip{3.5ex plus 1ex minus .2ex}
-\newcommand\sectionfont{\normalfont\bfseries}
+\newcommand\sectionfont{\normalfont\scshape\color{accent}}
 \newcounter{cv@section}
 \renewcommand\section[1]{%
   \par
   \addpenalty{-500}%
   \addvspace{\sectionskip}%
+  \hbox to \z@{\hskip-\sectionwidth
+    \textcolor{rule}{\rule{\dimexpr\sectionwidth+\textwidth}{0.4pt}}\hss}%
+  \nobreak
+  \vskip 0.6\baselineskip
   \stepcounter{cv@section}%
   \pdfbookmark[1]{#1}{section.\arabic{cv@section}}%
+  % \leavevmode starts the paragraph before \sectionfont: a \color
+  % at the top of the \vtop would take the place of the first line,
+  % and the title would drop one line below the text.
   \hbox to \z@{\hss\vtop to \z@{%
     \hsize\sectionwidth \parindent\z@ \parskip\z@
-    \raggedright\sectionfont #1\par\vss}}%
+    \raggedright\leavevmode\sectionfont #1\par\vss}}%
   \nobreak
   \vskip-\baselineskip
   \vskip-\parskip

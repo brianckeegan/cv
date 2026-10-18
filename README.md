@@ -12,7 +12,7 @@ This link always gives the newest build. The CV page of
 | File | What it is |
 |---|---|
 | `cv.tex` | The content of the CV. |
-| `cv.cls` | The layout: page size, fonts, margin section titles, numbered lists, header, and footer. |
+| `cv.cls` | The layout: page size, fonts, the accent color, margin section titles, numbered lists, header, and footer. |
 | `.latexmkrc` | Build settings for `latexmk`, including the footer date. |
 | `.github/workflows/build.yml` | Builds the PDF on GitHub and publishes it as a release. |
 
@@ -87,8 +87,11 @@ to put an award icon before the number.
 - **Authors:** `Lastname, F.I.`, with `\textbf{Keegan, B.C.}`. Mark
   student authors with `\textbf{*}` and post-doctoral authors with
   `\textbf{$\dagger$}`, after the comma.
-- **Links:** `\url{https://doi.org/...}` for a DOI; otherwise the
-  canonical URL. Do not escape `%` or `/` inside `\url{}`.
+- **Links:** `\doi{10.1145/3359135}` for a DOI (it prints
+  "doi:10.1145/3359135" and links to doi.org); otherwise
+  `\url{...}` with the canonical URL. Do not escape `%` or `/` inside
+  `\url{}`. Links are in the accent color (`#7A6A3A`, the website's
+  link color), so that readers can see them.
 - **Dates:** `9 July 2026` (day, month, year).
 - **Quotes and dashes:** ` ``double'' `, `` `single' ``, `--` for number
   ranges, `---` for a dash in a title. Use plain ASCII: no curly quotes
