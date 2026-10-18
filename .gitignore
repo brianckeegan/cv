@@ -1,0 +1,8 @@
+# LaTeX build output. The PDF is published as a GitHub release asset.
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+cv.pdf
