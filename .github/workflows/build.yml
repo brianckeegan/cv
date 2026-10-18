@@ -1,0 +1,66 @@
+# Build cv.pdf from cv.tex and cv.cls.
+# Pull requests only build the PDF (to catch LaTeX errors). Pushes to main
+# also publish it as the asset of the "cv-latest" release, so this link
+# always gives the newest PDF:
+#   https://github.com/brianckeegan/cv/releases/latest/download/cv.pdf
+name: Build CV
+
+on:
+  push:
+    branches: [main]
+    paths: [cv.tex, cv.cls, .latexmkrc, .github/workflows/build.yml]
+  pull_request:
+    branches: [main]
+    paths: [cv.tex, cv.cls, .latexmkrc, .github/workflows/build.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cv-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write   # to update the release
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0   # full history: the footer date comes from git log
+
+      - name: Install TeX Live
+        # fonts-extra has Libertinus and fontawesome5; latex-extra has enumitem and xurl.
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq texlive-latex-recommended texlive-latex-extra texlive-fonts-extra latexmk
+
+      - name: Build PDF
+        run: |
+          export SOURCE_DATE_EPOCH="$(git log -1 --format=%ct -- cv.tex cv.cls)"
+          latexmk -interaction=nonstopmode -halt-on-error
+          # Fail on overfull lines and undefined references, not only on errors.
+          if grep -E "Overfull|Rerun to get|undefined" cv.log; then
+            echo "::error::The LaTeX log has warnings (see above)."
+            exit 1
+          fi
+
+      - name: Publish release
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          updated="$(git log -1 --format=%cs -- cv.tex cv.cls)"
+          notes="Curriculum vitae of Brian C. Keegan, built from ${GITHUB_SHA::7} (source last changed ${updated}). Newest PDF: https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/cv.pdf"
+          git tag -f cv-latest
+          git push -f origin cv-latest
+          if gh release view cv-latest > /dev/null 2>&1; then
+            gh release upload cv-latest cv.pdf --clobber
+            gh release edit cv-latest --title "CV (${updated})" --notes "${notes}" --latest
+          else
+            gh release create cv-latest cv.pdf --title "CV (${updated})" --notes "${notes}" --latest
+          fi

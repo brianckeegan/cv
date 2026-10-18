@@ -1,740 +1,608 @@
-% LaTeX file for resume 
-% This file uses the resume document class (res.cls)
+% Curriculum vitae of Brian C. Keegan.
+% Build with latexmk; see README.md. The layout is in cv.cls.
+\documentclass{cv}
 
-\documentclass[margin]{res} 
-%\documentclass[line,margin]{res} 
-% the margin option causes section titles to appear to the left of body text 
-\textwidth=5.125in % increase textwidth to get smaller right margin
-%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-%\usepackage{newcent}   % uses new century schoolbook postscript font 
-\usepackage{fbb}
-\usepackage[hyphenbreaks]{breakurl}
-\usepackage[hyphens]{url}
-\usepackage[hidelinks]{hyperref}
-\usepackage{enumitem}
-\usepackage{tabularx}
-\usepackage{multicol}
-\usepackage{multirow}
-\usepackage{datetime}
-\usepackage{fontawesome5}
+\hypersetup{
+	pdftitle={Curriculum Vitae of Brian C. Keegan},
+	pdfauthor={Brian C. Keegan},
+}
 
-\usepackage{fancyhdr}
-\pagestyle{fancy}
+\name{Brian C. Keegan, Ph.D.}
 
-\renewcommand{\UrlFont}{\ttfamily\small}
+\address{
+	INFO 203 \\
+	1045 18th Street \\
+	University of Colorado Boulder \\
+	Boulder, CO 80309-0315
+}
 
-\pagenumbering{arabic}
+\address{
+	\faInbox~\textsc{email}: \href{mailto:brian.keegan@colorado.edu}{brian.keegan@colorado.edu} \\
+	\faGlobe~\textsc{web}:\hfill \href{https://www.brianckeegan.com}{www.brianckeegan.com} \\
+	\faMobile~\textsc{mobile}:\hfill +1 (617) 803 -- 6971 \\
+	\faMastodon~\textsc{mastodon}:\hfill \href{https://hci.social/@bkeegan}{@bkeegan@hci.social} \\
+	\faGithub~\textsc{github}:\hfill \href{https://github.com/brianckeegan/}{brianckeegan}
+}
 
+\begin{document}
 
-% Clear the header and footer
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-%\fancyhfoffset{-\sectionwidth}
-% Set the right side of the footer to be the page number
-%\cfoot{\the\day~\the\month~\the\year}
-\cfoot{\thepage}
-% \rfoot{\monthname~\the\year}
-\rfoot{27 February 2026}
+\makeheader
 
+	\section{Research areas}
+	Computational social science; network science; computer-supported cooperative work; social computing; human-centered \& public interest data science
 
-\begin{document} 
-	
-	\name{{\LARGE Brian C. Keegan, Ph.D.}\\[12pt]} % the \\[12pt] adds a blank line after name
-	%\hrulefill
-	
-	\address{
-		INFO 129 \\ 
-		1045 18th Street \\
-		University of Colorado Boulder \\
-		Boulder, CO 80309-0315
-	}
-	
-	\address{
-		\faInbox~\textsc{email}: \href{mailto:brian.keegan@colorado.edu}{brian.keegan@colorado.edu} \\
-		\faGlobe~\textsc{web}:\hfill \href{https://www.brianckeegan.com}{www.brianckeegan.com} \\
-		\faMobile~\textsc{mobile}:\hfill +1 (617) 803 -- 6971 \\
-		\faMastodon~\textsc{mastodon}:\hfill \href{https://hci.social/@bkeegan}{@bkeegan@hci.social} \\
-		\faGithub~\textsc{github}:\hfill \href{https://github.com/brianckeegan/}{brianckeegan}
-	}
-	
-	\begin{resume} 
-		
-		\section{Research areas} 
-		Computational social science; network science; computer-supported cooperative work; social computing; human-centered \& public interest data science
-		
-		\section{Appointments}
-		\textbf{University of Colorado, Boulder} \hfill Boulder, Colorado, USA \\
-		Associate Professor, Department of Information Science \hfill 2025 -- present\\
-		Assistant Professor, Department of Information Science \hfill 2016 -- 2025\\
-		By courtesy, Department of Computer Science \hfill 2016 -- present \\
-		Affiliate, Research and Education Addressing Cannabis and Health \hfill 2017 -- present \\
-		Affiliate, Population Center, Institute for Behavioral Science \hfill 2018 -- present \\
-		Affiliate, American Politics Research Lab, Political Science \hfill 2018 -- present \\
-		Affiliate, Natural Hazards Center, Institute for Behavioral Research \hfill 2019 -- present \\
-		Faculty Fellow, ATLAS Institute \hfill 2019 -- present
-		
-		\textbf{Harvard University} \hfill Cambridge, Massachusetts, USA \\
-		Visiting Scientist, Center for Population and Development Studies \hfill 2025 -- 2026
-		Research Associate, HBS Online \hfill 2014 -- 2016
-		
-		\textbf{Northeastern University} \hfill Boston, Massachusetts, USA \\
-		Post-Doctoral Research Fellow, Lazer Lab \hfill 2012 -- 2014
-		
-		\section{Education}
-		\textbf{Northwestern University} \hfill Evanston, Illinois, USA \\
-		Ph.D., Media, Technology, and Society \hfill 2012 \\
-		%\textit{High Tempo Knowledge Collaboration in Wikipedia's Coverage of Breaking News Events}
-		%Committee: Noshir Contractor, Darren Gergle, Brian Uzzi, Daniel Gruber
-		M.A., Media, Technology, and Society \hfill 2010
-		%\textit{Psycholinguistic Dynamics of Sensemaking in Collaborative Accounts of Catastrophe}
-		
-		\textbf{Massachusetts Institute of Technology} \hfill Cambridge, Massachusetts, USA\\
-		S.B., Science, Technology, and Society \hfill 2006 \\
-		S.B., Mechanical Engineering \hfill 2006
-		
-		%\textbf{Green Valley High School} \hfill Henderson, Nevada, USA \\
-		%Diploma, International Baccalaureate Program \hfill 2002
-		
-		\section{Academic\\and\\professional\\honors}
-		\begin{itemize}[leftmargin=0pt,itemsep=0pt]
-			\item[\textit{2019}] Honorable Mention, Best Paper; ACM CSCW.
-			%	\item[] Invited Participant; Microsoft Research Faculty Summit. \\
-			
-			\item[\textit{2017}] Participant, Leadership in Science Policy Institute; Computing Community Consortium.
-			
-			\item[\textit{2015}] Honorable Mention, Best Paper; ACM CSCW.
-			%	\item[] Invited Participant; Microsoft Research Social Computing Symposium. \\
-			
-			%	\item[\textit{2014}] Invited Participant; Microsoft Research Social Computing Symposium. \\
-			
-			\item[\textit{2011}] Best Paper; ACM Conference on Web Science.
-			\item[] Best Paper; The Game Behind the Video Game.
-			\item[] Best Student Paper; Communication and Technology Division, ICA. 
-			
-			\item[\textit{2010}] Honorable Mention, Best Paper; ACM CSCW.
-			
-			\item[\textit{2005}] John Burchard Scholar; MIT School of Humanities, Arts, and Social Sciences.
-			
-			%	\item[\textit{2001}] National Merit Finalist
+	\section{Appointments}
+	\textbf{University of Colorado, Boulder} \hfill Boulder, Colorado, USA \\
+	Associate Professor, Department of Information Science \hfill 2025 -- present\\
+	Assistant Professor, Department of Information Science \hfill 2016 -- 2025\\
+	By courtesy, Department of Computer Science \hfill 2016 -- present \\
+	Affiliate, Research and Education Addressing Cannabis and Health \hfill 2017 -- present \\
+	Affiliate, Population Center, Institute for Behavioral Science \hfill 2018 -- present \\
+	Affiliate, American Politics Research Lab, Political Science \hfill 2018 -- present \\
+	Affiliate, Natural Hazards Center, Institute for Behavioral Research \hfill 2019 -- present \\
+	Faculty Fellow, ATLAS Institute \hfill 2019 -- present
+
+	\textbf{Harvard University} \hfill Cambridge, Massachusetts, USA \\
+	Visiting Scientist, Center for Population and Development Studies \hfill 2025 -- 2026 \\
+	Research Associate, HBS Online \hfill 2014 -- 2016
+
+	\textbf{Northeastern University} \hfill Boston, Massachusetts, USA \\
+	Post-Doctoral Research Fellow, Lazer Lab \hfill 2012 -- 2014
+
+	\section{Education}
+	\textbf{Northwestern University} \hfill Evanston, Illinois, USA \\
+	Ph.D., Media, Technology, and Society \hfill 2012 \\
+	%\textit{High Tempo Knowledge Collaboration in Wikipedia's Coverage of Breaking News Events}
+	%Committee: Noshir Contractor, Darren Gergle, Brian Uzzi, Daniel Gruber
+	M.A., Media, Technology, and Society \hfill 2010
+	%\textit{Psycholinguistic Dynamics of Sensemaking in Collaborative Accounts of Catastrophe}
+
+	\textbf{Massachusetts Institute of Technology} \hfill Cambridge, Massachusetts, USA\\
+	S.B., Science, Technology, and Society \hfill 2006 \\
+	S.B., Mechanical Engineering \hfill 2006
+
+	%\textbf{Green Valley High School} \hfill Henderson, Nevada, USA \\
+	%Diploma, International Baccalaureate Program \hfill 2002
+
+	\section{Academic\\and\\professional\\honors}
+	\begin{itemize}
+		\item[\textit{2019}] Honorable Mention, Best Paper; ACM CSCW.
+		%	\item[] Invited Participant; Microsoft Research Faculty Summit. \\
+
+		\item[\textit{2017}] Participant, Leadership in Science Policy Institute; Computing Community Consortium.
+
+		\item[\textit{2015}] Honorable Mention, Best Paper; ACM CSCW.
+		%	\item[] Invited Participant; Microsoft Research Social Computing Symposium. \\
+
+		%	\item[\textit{2014}] Invited Participant; Microsoft Research Social Computing Symposium. \\
+
+		\item[\textit{2011}] Best Paper; ACM Conference on Web Science.
+		\item[] Best Paper; The Game Behind the Video Game.
+		\item[] Best Student Paper; Communication and Technology Division, ICA.
+
+		\item[\textit{2010}] Honorable Mention, Best Paper; ACM CSCW.
+
+		\item[\textit{2005}] John Burchard Scholar; MIT School of Humanities, Arts, and Social Sciences.
+
+		%	\item[\textit{2001}] National Merit Finalist
+	\end{itemize}
+
+	\section{Awards\\and funding}
+	\note{Total amount awarded to PI Keegan: \$999,892.}
+
+	\begin{entries}{G}
+		\item \textbf{Keegan, B.C.} (Aug. 2024--May 2025). ``Demography and Extremism.'' CU Population Center, Institute for Behavioral Science. (\$500).
+		\item \textbf{Keegan, B.C.} \& Fiesler, C. (Dec. 2022--Sep. 2023). ``RAPID: Documenting and understanding large-scale migrations between social media platforms.'' NSF CISE Cyber-Human Systems (\$95,201). \url{https://www.nsf.gov/awardsearch/showAward?AWD_ID=2309485}
+		\item Lawson, H.L. \& \textbf{Keegan, B.C.} (Jul. 2023--Jul. 2024). ``Network perspectives on collective memory processes across the Arabic and English Wikipedias.'' Wikimedia Research Fund (\$40,000). \url{https://meta.wikimedia.org/wiki/Grants:Programs/Wikimedia_Research_Fund/Network_perspectives_on_collective_memory_processes_across_the_Arabic_and_English_Wikipedias}
+		\item \textbf{Keegan, B.C.} (sub-contractor), Shenoy, N. \& Baranowski, R. (Co-PIs). (Dec. 2020--May 2021). ``TEACHR: Technical Explanation of Algorithmic Choice Hierarchy and Reasoning.'' AFWERX (\$300,000, \$70,000 to Keegan).
+		\item \textbf{Keegan, B.C.} \& Tan, C. (Co-PIs). (Oct. 2019--Sep. 2023). ``CHS: Small: A Genealogical Framework to Understand the Emergence of Online Groups.'' NSF CISE Cyber-Human Systems (\$499,724). \url{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1910225}
+		\item \textbf{Keegan, B.C.} (PI). (Apr. 2019--May 2021). ``Multiplayer Online Battle Arenas as Models of High-Tempo Virtual Teams.'' Oracle for Research Cloud Credits (\$25,000).
+		\item \textbf{Keegan, B.C.} (PI). (Apr. 2018--May 2021). ``EAGER: Social Dynamics of Organizational Behavior in Temporary Virtual Teams.'' NSF CISE Cyber-Human Systems (\$199,864). \url{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1841374}
+		\item \textbf{Keegan, B.C.} (PI), Lindquist, T., Adler, S. (Sep. 2017--May 2018). ``Prosopographical data mining for analyzing multiple network among members of U.S. Congress since 1789.'' CU Boulder RIO Innovative Seed Grant Program (\$49,603).
+		\item \textbf{Keegan, B.C.} (PI). (Sep. 2017--May 2018). ``Multiplayer Online Games as Models of Organizational Behavior.'' Microsoft Azure Research Award (\$20,000).
+	\end{entries}
+
+	\section{Publications}
+	\note{Student authors marked with~\textbf{*}, post-doc authors with~\textbf{$\dagger$}, awards with~\faAward.}
+	\section{Books}
+	\begin{entries}{B}
+		\item \textbf{Keegan, B.}, editor. (2028). \textit{A Research Agenda for Networks and Computational Social Science}. Elgar.
+	\end{entries}
+
+	\section{Journal\\articles}
+
+	\begin{entries}{J}
+		\item Orozco, L.R., Weaver, A.E., Klee, D.J., Pauli, C.S., Grassa, C.J., Vergara, D., Baptista, A., White, K., Emery, B.F., Castro, N.R.M., Garuda, S., Guerrero, R.F., \textbf{Keegan, B.C.}, \& Kane, N.C. (2026). ``Network ontology transcript annotation identifies genetic signals underlying sex determination.'' \textit{Scientific Reports}, 16(1), 17805. \doi{10.1038/s41598-026-45070-7}
+		\item Smith, C.J., Vergara, D., \textbf{Keegan, B.C.}, \& Jikomes, N. (2022). ``The phytochemical diversity of commercial Cannabis in the United States.'' \textit{PLoS ONE}, 17(5). \doi{10.1371/journal.pone.0267498}
+		\item Wirfs-Brock, J.,\textbf{*} Fam, A., Devendorf, L., \& \textbf{Keegan, B.C.} (2021). ``Examining Narrative Sonification: Using First-Person Retrospection Methods to Translate Radio Production to Interaction Design.'' \textit{ACM Transactions on Computer-Human Interaction} (ToCHI), 28(6), 1--34. \doi{10.1145/3461762}
+		\item Vergara, D., Gaudino, R., Blank, T., \& \textbf{Keegan, B.C.} (2020). ``Modeling cannabinoids from a large-scale sample of Cannabis sativa chemotypes.'' \textit{PLoS ONE}, 15(9). \doi{10.1371/journal.pone.0236878}
+		\item Porter, E.,\textbf{*} Krafft, P.M., \& \textbf{Keegan, B.C.} (2020). ``Visual Narratives and Collective Memory across Peer-Produced Accounts of Contested Sociopolitical Events.'' \textit{ACM Transactions on Social Computing}, 3(1), 1--20. \doi{10.1145/3373147}
+		\item Anderson, J.,\textbf{*} Soden, R.,\textbf{*} \textbf{Keegan, B.C.}, Palen, L., \& Anderson, K. (2018). ``The Crowd is the Territory: Assessing Quality in Peer-Produced Spatial Data During Disasters.'' \textit{International Journal of Human-Computer Interaction}, 34(4), 295--310. \doi{10.1080/10447318.2018.1427828}
+		\item Radford, J.,\textbf{*} Pilny, A.,\textbf{*} Reichelmann, A., \textbf{Keegan, B.C.}, Foucault-Welles, B., Hoye, J., Ognyanova, K., \& Lazer, D. (2016). ``Volunteer Science: An Online Laboratory for Experiments in Social Psychology.'' \textit{Social Psychology Quarterly}, 79(4), 376--396. \doi{10.1177/0190272516675866}
+		\item Margolin, D., Goodman, S., \textbf{Keegan, B.C.}, Lin, Y.R., \& Lazer, D. (2015). ``Wiki-Worthy: Judging a Candidate's Notability in the Community.'' \textit{Information, Communication and Society}, 19(8), 1029--1045. \doi{10.1080/1369118X.2015.1069871}
+		\item Kennedy, R., Forbush, E.,\textbf{*} \textbf{Keegan, B.C.}, \& Lazer, D. (2015). ``Turning Introductory Comparative Politics and Elections Courses into Social Science Research Communities Using Wikipedia: Improving Both Teaching and Research.'' \textit{PS: Political Science and Politics}, 48(2), 378--384. \doi{10.1017/S1049096514002157}
+		\item Lin, Y.R., \textbf{Keegan, B.C.}, Margolin, D., \& Lazer, D. (2014). ``Rising tides or rising stars? Dynamics of shared attention on Twitter during media events.'' \textit{PLoS ONE}, 1--12. \doi{10.1371/journal.pone.0094093}
+		\item \textbf{Keegan, B.C.},\textbf{*} Gergle, D., \& Contractor, N. (2013). ``Hot off the Wiki: Structures and Dynamics of Wikipedia's Coverage of Breaking News Events.'' \textit{American Behavioral Scientist}, 57(5), 595--622. \doi{10.1177/0002764212469367}
+		\item Contractor, N., DeChurch, L.A., Carson, J.,\textbf{*} Carter, D.R.,\textbf{*} \& \textbf{Keegan, B.C.}\textbf{*} (2012). ``The Topology of Collective Leadership.'' \textit{The Leadership Quarterly}, 23(6), 994--1011. \doi{10.1016/j.leaqua.2012.10.010}
+		\item \textbf{Keegan, B.C.}, Ahmad, M.A., Williams, D., Srivastava, J., \& Contractor, N. (2011). ``What can gold farmers teach us about criminal networks?'' \textit{XRDS: Crossroads}, 17(3). ACM. \url{https://xrds.acm.org/article.cfm?aid=1925043}
+		\item Williams, D., Castronova, E., Huang, Y., Shen, C.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Ratan, R.,\textbf{*} \& Xiong, L.\textbf{*} (2009). ``As real as real? Macroeconomic behavior in a large-scale virtual world.'' \textit{New Media \& Society}, 11, 685--707. \doi{10.1177/1461444809105346}
+	\end{entries}
+
+	\section{Archival\\conference proceedings}
+
+	\note{``N.R.'' means acceptance rate is not reported.}
+
+	\begin{entries}{C}
+		\item Lawson, H.L.\textbf{*} \& \textbf{Keegan, B.C.} (2026). ``Cross-Language Evolution of Divergent Collective Memory Around the Arab Spring.'' In \textit{Proceedings of the International AAAI Conference on Web and Social Media} (ICWSM), 20(1), 1349--1361. AAAI. \doi{10.1609/icwsm.v20i1.42699} (N.R. acceptance)
+		\item Smith, C.E.,\textbf{$\dagger$} Klassen, S.,\textbf{*} Prinster, G.H.,\textbf{*} Tan, C., \& \textbf{Keegan, B.C.} (2024). ``Governance of the Black Experience on Reddit: r/BlackPeopleTwitter as a Case Study in Supporting Sense of Virtual Community for Black Users.'' In \textit{Proceedings of the ACM Conference on Computer-Supported Cooperative Work and Social Computing} (CSCW), 8(CSCW2), 1--32. ACM. \doi{10.1145/3686920} (N.R. acceptance)
+		\item Prinster, G.H.,\textbf{*} Smith, C.E.,\textbf{$\dagger$} Tan, C., \& \textbf{Keegan, B.C.} (2024). ``Community Archetypes: An Empirical Framework for Guiding Research Methodologies to Reflect User Experiences of Sense of Virtual Community on Reddit.'' In \textit{Proceedings of the ACM Conference on Computer-Supported Cooperative Work and Social Computing} (CSCW), 8(CSCW1), 1--33. ACM. \doi{10.1145/3637310} (N.R. acceptance)
+		\item Doyle, D.T.,\textbf{*} Ghosh, J.K.,\textbf{*} Suchocki, R.,\textbf{*} \textbf{Keegan, B.C.}, Voida, S., \& Brubaker, J.R. (2024). ``Stories That Heal: Characterizing and Supporting Narrative for Suicide Bereavement.'' In \textit{Proceedings of the International AAAI Conference on Web and Social Media}, 18, 354--366. AAAI. \doi{10.1609/icwsm.v18i1.31319} (N.R. acceptance)
+		\item Smith, C.E.,\textbf{$\dagger$} Alam, I.,\textbf{*} Tan, C., \textbf{Keegan, B.C.}, \& Blanchard, A. (2022). ``The Impact of Governance Bots on Sense of Virtual Community: Development and Validation of the GOV-BOTs Scale.'' In \textit{Proceedings of the ACM Conference on Computer-Supported Cooperative Work and Social Computing} (CSCW), 6, 1--30. ACM. \doi{10.1145/3555563} (N.R. acceptance)
+		\item Zhang, J.S.,\textbf{*} \textbf{Keegan, B.C.}, Lv, Q., \& Tan, C. (2021). ``Understanding the Diverging User Trajectories in Highly-related Online Communities during the COVID-19 Pandemic.'' In \textit{Proceedings of the 2021 AAAI Conference on Web and Social Media} (ICWSM), 15(1), 888--899. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/18112} (20\% acceptance)
+		\item Baumgartner, J., Zannettou, S., \textbf{Keegan, B.C.}, Squire, M., \& Blackburn, J. (2020). ``The Pushshift Reddit Dataset.'' In \textit{Proceedings of the 2020 AAAI Conference on Web and Social Media} (ICWSM), 14(1), 830--839. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/7347} (24\% acceptance)
+		\item Fiesler, C., Beard, N.,\textbf{*} \& \textbf{Keegan, B.C.} (2020). ``No Robots, Spiders, or Scrapers: Legal and Ethical Regulation of Data Collection Methods in Social Media Terms of Service.'' In \textit{Proceedings of the 2020 AAAI Conference on Web and Social Media} (ICWSM), 14(1), 187--196. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/7290} (24\% acceptance)
+		\awarditem Frey, S., Krafft, P.M.,\textbf{*} \& \textbf{Keegan, B.C.} (2019). ```This Place Does What It Was Built For': Digital Institution Design as a Resource Management Challenge.'' In \textit{Proceedings of the 2019 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 3, 1--31. ACM. \doi{10.1145/3359134} (31\% acceptance) \textbf{\textit{Honorable Mention, Best Paper}}.
+		\item \textbf{Keegan, B.C.} (2019). ``The Dynamics of Peer-Produced Political Information During the 2016 U.S. Presidential Campaign.'' In \textit{Proceedings of the 2019 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 3, 1--20. ACM. \doi{10.1145/3359135} (31\% acceptance)
+		\item Flores-Saviaga, C.,\textbf{*} Savage, S., \& \textbf{Keegan, B.C.} (2018). ``Mobilizing the Trump Train: Understanding Collective Action in a Political Trolling Community.'' In \textit{Proceedings of the 2018 AAAI International Conference on Web and Social Media} (ICWSM), 12(1), 82--91. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/15024} (16\% acceptance)
+		\item \textbf{Keegan, B.C.} \& Fiesler, C. (2017). ``The Evolution and Consequences of Peer Producing Wikipedia's Rules.'' In \textit{Proceedings of the 2017 AAAI International Conference on Web and Social Media} (ICWSM), 11(1), 112--121. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/14899} (13\% acceptance)
+		\item Twyman, M.,\textbf{*} \textbf{Keegan, B.C.}, \& Shaw, A. (2017). ``Black Lives Matter in Wikipedia: Collaboration and Collective Memory around Online Social Movements.'' In \textit{Proceedings of the 2017 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 1400--1412. ACM. \doi{10.1145/2998181.2998232} (25\% acceptance)
+		\item Leavitt, A.,\textbf{*} \textbf{Keegan, B.C.}, \& Clark, J.\textbf{*} (2016). ``Ping to Win? Non-Verbal Communication and Team Performance in Competitive Online Multiplayer Games.'' In \textit{Proceedings of the 2016 ACM Conference on Human-Computer Interaction} (CHI), 4337--4350. ACM. \doi{10.1145/2858036.2858132} (23\% acceptance)
+		\item Kim, J.Y.,\textbf{*} \textbf{Keegan, B.C.}, Park, S.J.,\textbf{*} \& Oh, A. (2016). ``The Proficiency-Congruency Dilemma: Virtual Team Design and Performance in Multiplayer Online Games.'' In \textit{Proceedings of the 2016 ACM Conference on Human-Computer Interaction} (CHI), 4351--4365. ACM. \doi{10.1145/2858036.2858464} (25\% acceptance)
+		\item \textbf{Keegan, B.C.}, Lev, S., \& Arazy, O. (2016). ``Analyzing Organizational Routines in Online Knowledge Collaborations: A Case for Sequence Analysis in CSCW.'' In \textit{Proceedings of the 2016 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 1065--1079. ACM. \doi{10.1145/2818048.2819962} (25\% acceptance)
+		\item Kim, J.W.,\textbf{*} Kim, D.,\textbf{*} \textbf{Keegan, B.C.}, Kim, J.H.,\textbf{*} Kim, S.,\textbf{*} \& Oh, A. (2015). ``Social Media Dynamics of Global Co-presence During the 2014 FIFA World Cup.'' In \textit{Proceedings of the 2015 ACM Conference on Human-Computer Interaction} (CHI), 2623--2632. ACM. \doi{10.1145/2702123.2702317} (23\% acceptance)
+		\awarditem \textbf{Keegan, B.C.} \& Brubaker, J.\textbf{*} (2015). ```Is' to `Was': Coordination and Commemoration on Posthumous Wikipedia Biographies.'' In \textit{Proceedings of the 2015 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 533--546. ACM. \doi{10.1145/2675133.2675238} (28\% acceptance) \textbf{\textit{Honorable Mention, Best Paper}}.
+		\item Hannak, A.,\textbf{*} Margolin, D., \textbf{Keegan, B.C.}, \& Weber, I. (2014). ``Get Back! You Don't Know Me Like That: The Social Mediation of Fact Checking Interventions in Twitter Conversations.'' In \textit{Proceedings of the Eighth International AAAI Conference on Weblogs and Social Media} (ICWSM), 187--196. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/14555} (23\% acceptance)
+		\item Lin, Y.R., Margolin, D., \textbf{Keegan, B.C.}, Baronchelli, A., \& Lazer, D. (2013). ``\#Bigbirds Never Die: Understanding Social Dynamics of Emergent Hashtags.'' In \textit{Proceedings of the Seventh International AAAI Conference on Weblogs and Social Media} (ICWSM), 7(1), 370--379. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/14407} (21\% acceptance)
+		\item Lin, Y.R., Margolin, D., \textbf{Keegan, B.C.}, \& Lazer, D. (2013). ``Voices of Victory: A Computational Focus Group Framework for Tracking Opinion Shift in Real Time.'' In \textit{Proceedings of the 22nd International World Wide Web Conference} (WWW), 737--748. ACM. \doi{10.1145/2488388.2488453} (15\% acceptance)
+		\item \textbf{Keegan, B.C.},\textbf{*} Ceni, A., \& Smith, M. (2013). ``Analyzing Multi-Dimensional Networks within MediaWikis.'' In \textit{Proceedings of the Ninth International Symposium on Wikis and Open Collaboration} (WikiSym), 1--10. ACM. \doi{10.1145/2491055.2491056} (51\% acceptance)
+		\item \textbf{Keegan, B.C.}\textbf{*} (2013). ``A History of Newswork on Wikipedia.'' In \textit{Proceedings of the Ninth International Symposium on Wikis and Open Collaboration} (WikiSym), 1--10. ACM. \doi{10.1145/2491055.2491062} (51\% acceptance)
+		\item \textbf{Keegan, B.C.},\textbf{*} Gergle, D., \& Contractor, N. (2012). ``Do Editors or Articles Drive Collaboration? Multilevel Statistical Network Analysis of Wikipedia Coauthorship.'' In \textit{Proceedings of the 2012 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 427--436. ACM. \doi{10.1145/2145204.2145271} (40\% acceptance)
+		\item \textbf{Keegan, B.C.},\textbf{*} Gergle, D., \& Contractor, N. (2012). ``Staying in the Loop: Structure and Dynamics of Wikipedia's Breaking News Collaborations.'' In \textit{Proceedings of the Eighth International Symposium on Wikis and Open Collaboration} (WikiSym), 1--10. ACM. \doi{10.1145/2462932.2462934} (57\% acceptance)
+		\item Ahmad, M.A.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Srivastava, J., Williams, D., \& Contractor, N. (2011). ``Trust Amongst Rogues? A Hypergraph Approach for Comparing Clandestine Trust Networks in MMOGs.'' In \textit{Proceedings of the Fifth International AAAI Conference on Weblogs and Social Media} (ICWSM), 5(1), 10--17. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/14125} (N.R. acceptance)
+		\item Ahmad, M.A.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Sullivan, S.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2011). ``Illicit Bits: Detecting and Analyzing Contraband Networks in Massively Multiplayer Online Games.'' In \textit{Proceedings of the Third IEEE Conference on Social Computing} (SocialCom), 127--134. IEEE. \doi{10.1109/PASSAT/SocialCom.2011.183} (N.R. acceptance)
+		\item \textbf{Keegan, B.C.},\textbf{*} Gergle, D., \& Contractor, N. (2011). ``Hot off the Wiki: Dynamics, Practices, and Structures in Wikipedia's Coverage of the T\={o}hoku Catastrophes.'' In \textit{Proceedings of the Seventh International Symposium on Wikis and Open Collaboration} (WikiSym), 105--113. ACM. \doi{10.1145/2038558.2038577} (N.R. acceptance)
+		\awarditem \textbf{Keegan, B.C.},\textbf{*} Ahmad, M.A.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2011). ``Sic Transit Gloria Mundi Virtuali? Promise and Peril at the Intersection of Computational Social Science and Online Clandestine Organizations.'' In \textit{Proceedings of the Third International ACM Conference on Web Science} (WebSci), 1--8. ACM. \doi{10.1145/2527031.2527057} (17\% acceptance) \textbf{\textit{Best Paper}}.
+		\item \textbf{Keegan, B.C.},\textbf{*} Ahmad, M.A.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2010). ``Dark Gold: Statistical Properties of Clandestine Networks in Massively Multiplayer Online Games.'' In \textit{Proceedings of the Second IEEE Conference on Social Computing} (SocialCom), 201--208. IEEE. \doi{10.1109/SocialCom.2010.36} (N.R. acceptance)
+		\awarditem \textbf{Keegan, B.C.}\textbf{*} \& Gergle, D. (2010). ``Egalitarians at the Gate: One-Sided Gatekeeping Practices in Participatory Social Media.'' In \textit{Proceedings of the 2010 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 131--134. ACM. \doi{10.1145/1718918.1718943} (20\% acceptance) \textbf{\textit{Honorable Mention, Best Note}}.
+		\item Ahmad, M.A.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Srivastava, J., Williams, D., \& Contractor, N. (2009). ``Mining for Gold Farmers: Automatic Detection of Deviant Players in MMOGs.'' In \textit{Proceedings of the First IEEE Conference on Social Computing} (SocialCom), 340--345. IEEE. \doi{10.1109/CSE.2009.307} (9\% acceptance)
+		\item Huang, Y., Zhu, M.,\textbf{*} Wang, J.,\textbf{*} Pathak, N.,\textbf{*} Shen, C.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Williams, D., \& Contractor, N. (2009). ``The Formation of Task-oriented Groups: Exploring Combat Activities in Online Games.'' In \textit{Proceedings of the First IEEE Conference on Social Computing} (SocialCom), 122--127. IEEE. \doi{10.1109/CSE.2009.465} (9\% acceptance)
+	\end{entries}
+
+	\section{Book\\chapters}
+	\begin{entries}{BC}
+		\item \textbf{Keegan, B.C.} (2020). ``An Encyclopedia with Breaking News.'' In J. Reagle \& J. Koerner (Eds.), \textit{Wikipedia @ 20}, 55--70. MIT Press. \doi{10.7551/mitpress/12366.003.0007}
+		\item \textbf{Keegan, B.C.} (2015). ``Emergent Social Roles in Wikipedia's Breaking News Collaborations.'' In E. Bertino \& S.A. Matei (Eds.), \textit{Roles, Trust, and Reputation in Social Media Knowledge Markets}, 57--79. Springer. \doi{10.1007/978-3-319-05467-4_4}
+
+	\end{entries}
+
+	\section{Work in\\progress}
+
+	\begin{entries}{X}
+		\item \textbf{Keegan, B.C.} (TBD). \textit{The Greatest Shortcoming: Quantitative Chauvinism and Ecofascist Imaginaries}.
+		\item \textbf{Keegan, B.C.} (TBD). \textit{The Greatest Shortcoming: Quantitative Chauvinism in an Age of Ecofascism}.
+		\item \textbf{Keegan, B.C.} (2026). ``Public Interest Data Infrastructuring.'' Under review.
+		\item \textbf{Keegan, B.C.} (TBD). ``Understanding Stigmergic and Accumulative Processes in Online Knowledge Collaborations with Sequence Networks.''
+		\item Nicholson, M.N.,\textbf{*} \textbf{Keegan, B.C.}, Payne, B.H.,\textbf{*} \& Fiesler, C. (TBD). ``Motivations and Challenges with the Twitter Migration.''
+		\item \textbf{Keegan, B.C.} \& Carrasco, H. (TBD). ``Exploratory Data Auditing: A Typology of Behavioral Anomalies Using U.S. House of Representatives Disbursements.''
+		\item Kahn, Y., Vergara, D., \& \textbf{Keegan, B.C.} (TBD). ``Robust Anomalies in Analytical Test Results Across Legal Cannabis Markets in the United States.''
+		\item \textbf{Keegan, B.C.} (TBD). ``War Mapping on Wikipedia: High-Tempo Online Collaboration and Genealogies of Spatial Infrastructuring.''
+		\item Zhang, X.\textbf{*} \& \textbf{Keegan, B.C.} (2022). ``Characterizing disruptions in online gaming behavior following software patches.'' \url{https://arxiv.org/abs/2207.02736}
+		\item \textbf{Keegan, B.C.} \& Tan, C. (2020). ``A Quantitative Portrait of Wikipedia's High-Tempo Collaborations during the 2020 Coronavirus Pandemic.'' \url{https://arxiv.org/abs/2006.08899}
+	\end{entries}
+
+	\section{Non-reviewed\\publications}
+	\begin{entries}{Z}
+		\item Matias, J.N., Johnson, A., Boesel, W.E., \textbf{Keegan, B.C.}, Friedman, J., \& DeTar, C. (2015). ``Reporting, Reviewing, and Responding to Harassment on Twitter.'' \url{https://arxiv.org/abs/1505.03359}
+		\item \textbf{Keegan, B.C.}, Horn, D., Finholt, T.A., \& Kaye, J. (2013). ``Structure and Dynamics of Coauthorship, Citation, and Impact within CSCW.'' \url{http://arxiv.org/abs/1307.7172}
+	\end{entries}
+
+	\section{Workshops,\\ panels,\\posters,\\consortia}
+	\begin{entries}{W}
+		\item Chambers, L.M., Yousufi, M.Y.K., Washington, A.L., \textbf{Keegan, B.C.}, Cavello, B., \& Eledroos, N. (2026). ``Futures of Work in Civic and Public Interest Technology.'' In \textit{Companion Publication of the 2026 Conference on Computer Supported Cooperative Work and Social Computing} (CSCW), 553--556. ACM. \doi{10.1145/3785651.3831575}
+		\item Lawson, H.L.\textbf{*} \& \textbf{Keegan, B.C.} (2024). ``Temporal Clustering of Wikipedia Outlinks as Collective Memory Processes.'' Wiki Workshop.
+		\item Nicholson, M.N.,\textbf{*} Fiesler, C., \& \textbf{Keegan, B.C.} (2024). ``Truthiness and Activity Counts: The Challenges and Opportunities of Enumerating Behavior in Decentralized Social Media.'' 1st International Workshop on Decentralizing the Web (DeWeb), International AAAI Conference on Web and Social Media (ICWSM). Buffalo, NY, USA.
+		\item Lawson, H.L.\textbf{*} \& \textbf{Keegan, B.C.} (2024). ``Divergent Collective Memory Processes Surrounding the Arab Spring.'' 11th Annual Asian Meeting of the Society for Political Methodology, Abu Dhabi, United Arab Emirates.
+		\item Nicholson, M.N.,\textbf{*} \textbf{Keegan, B.C.}, \& Fiesler, C. (2023). ``Mastodon Rules: Characterizing Formal Rules on Popular Mastodon Instances.'' In \textit{Companion Publication of the 2023 Conference on Computer Supported Cooperative Work and Social Computing} (CSCW). Minneapolis, Minnesota, USA. \doi{10.1145/3584931.3606970}
+		\item Wirfs-Brock, J.,\textbf{*} Graze, M., Devendorf, L., Desjardins, A., Goudarzi, V., Friske, M., \& \textbf{Keegan, B.C.} (2022). ``Sketching Across the Senses: Exploring Sensory Translation as a Generative Practice for Designing Data Representations.'' In \textit{Extended Abstracts of 2022 ACM SIGCHI Conference on Human Factors in Computing Systems} (CHI). New Orleans, LA, USA. \doi{10.1145/3491101.3503712}
+		\item Hill, B.M., Siddarth, D., \textbf{Keegan, B.C.}, \& Foote, J. (2021). J. Fan \& S. Frey (Mod.), ``Investigating Self-Governing Online Commons.'' International Association for the Study of the Commons (IASC). Virtual.
+		\item Dalal, S.\textbf{*} \& \textbf{Keegan, B.C.} (2020). ``Governing the Commons of Platform Labor Data Assets.'' CSCW 2020 Workshop on Civic Technologies. Virtual.
+		\item Boyd, A.\textbf{*} \& \textbf{Keegan, B.C.} (2020). ``Intersectional human-centered data science: Raising consciousness among the data-driven.'' CSCW 2020 Workshop on Interrogating Data Science. Virtual.
+		\item \textbf{Keegan, B.C.} (2020). ``Building a data science mindset.'' CSCW 2020 Workshop on Interrogating Data Science. Virtual.
+		\item Dioun, C., Fata, E., Lewandowski, B., \& Seaborn, P. (2019). \textbf{Keegan, B.C.} (Mod.), ``Data Analytics in the Cannabis Industry.'' Institute for Cannabis Research 2019. Pueblo, CO, USA.
+		\item \textbf{Keegan, B.C.} (2018). Quantitative Research Methods seminar. Interdisciplinary Training in the Social Sciences, Colleges of Arts and Sciences, University of Colorado Boulder, Boulder, CO, USA.
+		\item \textbf{Keegan, B.C.} \& Morgan, A.\textbf{*} (2018). Summer Institute for Computational Social Science. Boulder, CO, USA.
+		\item \textbf{Keegan, B.C.} \& Vergara, D. (2018). Colloquium on Cannabis Research. Center for Research and Education Addressing Cannabis and Health. Boulder, CO, USA.
+		\item \textbf{Keegan, B.C.}, Kaye, J., Cavazos-Rehg, P., de Choudhury, M., Nguyen, A.N., Paul, M.J., \& Savage, S. (2017). ``CHI-nnabis: Implications of Marijuana Legalization for and from Human-Computer Interaction.'' In \textit{Extended Abstracts of 2017 ACM SIGCHI Conference on Human Factors in Computing Systems} (CHI), 1312--1317. Denver, CO, USA. \doi{10.1145/3027063.3051139}
+		\item \textbf{Keegan, B.C.} \& Matias, J.N.\textbf{*} (2016). ``Actually, It's About Ethics in Computational Social Science: A Multi-party Risk-Benefit Framework for Online Community Research.'' AAAI Spring Symposium on Observational Studies through Social Media and Other Human-Generated Content. Stanford, CA, USA.
+		\item Schillebeeckx, S.J.D., Grosman, A., Parmar, R., Miller, S., Haesler, J., Chow, G., \textbf{Keegan, B.C.}, Koutroumpis, P., \& Wattal, S. (2015). ``Big Data in Universities: Building New Capabilities for Education, Research, and Practice.'' Professional Development Workshop, 2015 Academy of Management Annual Meeting. Vancouver, BC, Canada.
+		\item Hughes, A., \textbf{Keegan, B.C.}, Leavitt, A., Semaan, B., \& Starbird, K. (2015). ``Cross-Platform Research Agenda for Crisis Informatics.'' 2015 Consortium for the Science of Sociotechnical Systems (CSST) Summer Research Institute. Colorado Springs, CO, USA.
+		\item \textbf{Keegan, B.C.} (2015). ``Research in the Time of Technopanics.'' Workshop on Ethics for Studying Sociotechnical Systems in a Big Data World. In \textit{Proceedings of the 2015 ACM Conference on Computer-Supported Cooperative Work} (CSCW). Vancouver, BC, Canada.
+		\item Counts, S., de Choudhury, M., Diesner, J., Gilbert, E., \textbf{Keegan, B.C.}, Naaman, M., \& Wallach, H. (2014). ``Computational Social Science: CSCW in the Social Media Era.'' In \textit{Proceedings of the 2014 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 105--108. \doi{10.1145/2556420.2556849}
+		\item \textbf{Keegan, B.C.} (2013). Digital Societies and Social Technologies Summer Institute, University of Maryland. College Park, MD, USA.
+		\item Halfaker, A., Geiger, R.S., Terveen, L., Lampe, C., Bruckman, A., \textbf{Keegan, B.C.}, Fitzpatrick, G., \& Kittur, A. (2013). ``Community, Impact, and Credit: Where Should I Submit My Papers?'' In \textit{Proceedings of 2013 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 89--94. \doi{10.1145/2441955.2441980}
+		\item Lin, Y.R., Margolin, D., \textbf{Keegan, B.C.}, Martino, M., Goodman, S., \& Lazer, D. (2013). ``Catching Fish in the Stream: Real Time Analysis of Audience Behavior in Social Media.'' In \textit{Proceedings of 2013 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 187--190. ACM. \doi{10.1145/2441955.2442002}
+		\item Halfaker, A.,\textbf{*} \textbf{Keegan, B.C.}, Forte, A., Geiger, R.S.,\textbf{*} Taraborelli, D., Pinchuk, M., \& Masli, M. (2012). ``What Aren't We Measuring? Methods for Quantifying Wiki-Work.'' In \textit{Proceedings of Eighth International Symposium on Wikis and Open Collaboration} (WikiSym), 1--6. ACM. \doi{10.1145/2462932.2462983}
+		\item Bernstein, M.,\textbf{*} Conover, M.,\textbf{*} Geiger, R.S.,\textbf{*} Hill, B.M.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Monroy-Hernandez, A.,\textbf{*} Shaw, A.,\textbf{*} Yardi, S.,\textbf{*} \& Bruckman, A. (2012). ``Fail Whaling: Designing from Deviance and Failures in Social Computing.'' In \textit{Proceedings of 2012 ACM SIGCHI Conference on Human Factors in Computing Systems} (CHI), 1127--1130. ACM. \doi{10.1145/2212776.2212403}
+		\item \textbf{Keegan, B.C.}\textbf{*} (2012). ``Breaking News on Wikipedia: Dynamics, Structures, and Roles in High-Tempo Collaboration.'' Doctoral Consortium, In \textit{Proceedings of 2012 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 315--318. ACM. \doi{10.1145/2141512.2141609}
+		\item \textbf{Keegan, B.C.}\textbf{*} (2012). ``Breaking News on Wikipedia: Dynamics, Structures, and Roles in High-Tempo Collaboration.'' Doctoral Consortium, In \textit{Proceedings of the 2012 iConference}. Toronto, Canada.
+		\item \textbf{Keegan, B.C.},\textbf{*} Ahmad, M.A.,\textbf{*} Sullivan, S.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2011). ``Untangling Dark Webs: Theories, Methods, and Models for a Computational Social Science of Clandestine Networks.'' In \textit{Proceedings of Third IEEE International Conference on Social Computing}. Boston, MA, USA.
+		\item \textbf{Keegan, B.C.}\textbf{*} (2011). ``Breaking News on Wikipedia: Dynamics, Structures, and Practices of High-Tempo Collaboration.'' Doctoral Symposium, In \textit{Proceedings of the Seventh International Symposium on Wikis and Open Collaboration}. Mountain View, CA, USA.
+		\item \textbf{Keegan, B.C.}\textbf{*} (2011). ``Breaking News on Wikipedia: Dynamics, Structures, and Practices of High-Tempo Self-Organized Collaboration.'' 2011 Social Computational Systems Workshop. Minneapolis, MN, USA.
+		\item Ettema, J., Fullerton, L.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Menchen-Trevino, E.,\textbf{*} \& Sandvig, C. (2009). ``Listening for the Wisdom of Crowds: New Media and New Forms of Knowledge.'' 2009 International Communication Association. Chicago, IL, USA.
+	\end{entries}
+
+	\section{Conference presentations}
+
+	\note{The presentations listed below are not associated with any archival publication above.}
+
+	\begin{entries}{P}
+		\item \textbf{Keegan, B.C.} (2018). ``The Dynamics of Peer-Produced Information During the 2016 U.S. Presidential Campaign.'' In \textit{Proceedings of the 2018 AAAI International Conference on Web and Social Media} (ICWSM). Stanford, CA, USA.
+		\item Fiesler, C., Beard, N.,\textbf{*} \& \textbf{Keegan, B.C.} (2018). ``No Robots, Spiders, or Scrapers: Regulation of Data Collection Methods in Social Media Terms of Service.'' In \textit{Proceedings of the 2018 AAAI International Conference on Web and Social Media} (ICWSM). Stanford, CA, USA.
+		\item Porter, E.\textbf{*} \& \textbf{Keegan, B.C.} (2018). ``Visual Rhetoric and Collective Memory across Peer-Produced Accounts of Political Crises.'' 2018 International Conference on Computational Social Science (IC2S2). Evanston, IL, USA.
+		\item \textbf{Keegan, B.C.} (2018). ``The Dynamics of Peer-Produced Political Information During the 2016 U.S. Presidential Campaign.'' 2018 International Conference on Computational Social Science (IC2S2). Evanston, IL, USA.
+		\item \textbf{Keegan, B.C.} (2018). ``A Research Agenda for Cannabis Informatics.'' 2018 Institute for Cannabis Research (ICR) Conference. Pueblo, CO, USA.
+		\item \textbf{Keegan, B.C.} (2017). ``The Evolution and Consequences of	Peer Producing Wikipedia's Rules.'' 2017 International Conference on Computational Social Science (IC2S2). K\"{o}ln, Germany.
+		\item Twyman, M.,\textbf{*} \textbf{Keegan, B.C.}, \& Shaw, A. (2017). ``Black Lives Matter in Wikipedia: Collaboration and Collective Memory around Online Social Movements.'' 2017 International Conference on Computational Social Science (IC2S2). K\"{o}ln, Germany.
+		\item \textbf{Keegan, B.C.} (2017). ``The Structure of Sequences: Mining and Interpreting Networks from Event Log Data.'' Sunbelt XXXVII. International Network for Social Network Analysis. Beijing, China.
+		\item Zhang, A.\textbf{*} \& \textbf{Keegan, B.C.} (2017). ``Exploration and Exploitation of Team Assembly Strategies in a MOBA.'' Sunbelt XXXVII. International Network for Social Network Analysis. Beijing, China.
+		\item \textbf{Keegan, B.C.} (2016). ``The Structure of Sequences: Mining and Interpreting Networks from Event Log Data.'' 2016 International Conference on Computational Social Science (IC2S2). Evanston, IL, USA.
+		\item Radford, J.,\textbf{*} \textbf{Keegan, B.C.}, Hoye, J., Karbeyaz, C.,\textbf{*} Ognyanova, K., Foucault-Welles, B., Meleis, W., \& Lazer, D. (2015). ``Conducting Massively Open Online Social Experiments with Volunteer Science.'' 2015 International Conference on Web and Social Media (ICWSM), Social Science non-archival track. Oxford, UK.
+		\item Lin, Y.R., \textbf{Keegan, B.C.}, Margolin, D., \& Lazer, D. (2014). ``Did You See That? Shared Attention to Media Events on Twitter.'' 2014 International Communication Association Annual Conference (ICA). Seattle, WA, USA.
+		\item \textbf{Keegan, B.C.} (2014). ``Sociotechnical Trajectories: A Structural Framework for Analyzing Event Log Data.'' 2014 International Communication Association Annual Conference (ICA). Seattle, WA, USA.
+		\item \textbf{Keegan, B.C.}, Tsur, O., Kennedy, R., \& Lazer, D. (2013). ``Mining Complex Networks from Official Congressional Biographies.'' Fifth Workshop on Information in Networks (WIN). New York City, NY, USA.
+		\item \textbf{Keegan, B.C.}, Riedl, C., Lazer, D., \& Contractor, N. (2013). ``Multidimensional Networks in Crowdsourced Creative Collaboration.'' Fifth Workshop on Information in Networks (WIN). New York City, NY, USA.
+		\item \textbf{Keegan, B.C.}, Goodman, S., Kennedy, R., \& Lazer, D. (2013). ``Building the Iron Cage: The Evolution of Multidimensional Networks in the U.S. Congress (1776-2013) and Catholic Hierarchy (1774-2013).'' 2013 International Workshop and Conference on Network Science (NetSci). Copenhagen, Denmark.
+		\item Goodman, S., Margolin, D., \textbf{Keegan, B.C.}, Lin, Y.R., \& Lazer, D. (2013). ``Open Source Predictors of Electoral Success.'' 2013 American Political Science Association Annual Meeting (APSA). Chicago, IL, USA.
+		\item Goodman, S., Margolin, D., \textbf{Keegan, B.C.}, Lin, Y.R., \& Lazer, D. (2013). ``Big Data as Big Canaries: Comparison of Open Source Indicators of Electoral Success.'' 71st Annual Conference of the Midwest Political Science Association (MPSA). Chicago, IL, USA.
+		\item \textbf{Keegan, B.C.}, Lin, Y.R., \& Lazer, D. (2013). ``Ripples on the Web: Diffusion of Activity Bursts Across Hyperlink Networks in Wikipedia.'' Sunbelt XXXIII, International Network for Social Network Analysis. Hamburg, Germany.
+		\item Lin, Y.R., Margolin, D., \textbf{Keegan, B.C.}, \& Lazer, D. (2013). ``\#Bigbirds Never Die: The Formation of Consensus in Response to Novel Information.'' Sunbelt XXXIII, International Network for Social Network Analysis. Hamburg, Germany.
+		\item Margolin, D., \textbf{Keegan, B.C.}, \& Lazer, D. (2013). ``Wisdom of the Network: Reducing Correlated Errors through Inferred Diffusion.'' Sunbelt XXXIII, International Network for Social Network Analysis. Hamburg, Germany.
+		\item \textbf{Keegan, B.C.}, Karbeyaz, C.,\textbf{*} Meleis, W., \& Lazer, D. (2013). ``Volunteer Science: Online Behavioral Experiments Using Facebook as a Subject Pool.'' Sunbelt XXXIII, International Network for Social Network Analysis. Hamburg, Germany.
+		\item \textbf{Keegan, B.C.} (2012). ``Comparative Analysis of Coauthorship Networks on Wikipedia Breaking News Articles.'' Sunbelt XXXII, International Network for Social Network Analysis. Redondo Beach, CA, USA.
+		\item Chang, C.,\textbf{*} \textbf{Keegan, B.C.}, Bennett, N., Lungeanu, A., Gilborne, J., \& Contractor, N. (2012). ``Multidimensional Networks in Crowdsourced Collaboration.'' Sunbelt XXXII, International Network for Social Network Analysis. Redondo Beach, CA, USA.
+		\awarditem \textbf{Keegan, B.C.}\textbf{*} (2011). ``Breaking News, Breaking Planes, and Breaking Hearts: Psycholinguistic Dynamics and Sensemaking in Collaborative Accounts of Catastrophe.'' 2011 International Communication Association Annual Conference (ICA). Boston, MA, USA. \textbf{\textit{Best Student Paper, Communication and Technology division}}.
+		\awarditem \textbf{Keegan, B.C.},\textbf{*} Ahmad, M.A.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2011). ``Mapping Gold Farming Back to Offline Clandestine Organizations: Methodological, Theoretical, and Ethical Challenges.'' The Game Behind the Video Game: Business, Regulation, and Society in the Gaming Industry. Rutgers University, New Brunswick, NJ, USA. \textbf{\textit{Best Paper}}.
+		\item \textbf{Keegan, B.C.},\textbf{*} Gergle, D., \& Contractor, N. (2011). ``A Multi-theoretical, Multi-level Model of High Tempo Collaboration in an Online Community.'' Sunbelt XXXI, International Network for Social Network Analysis. St. Petersburg, FL, USA.
+		\item \textbf{Keegan, B.C.},\textbf{*} Ahmad, M.A.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2011). ``Using ERGMs to Map Online Clandestine Behavior to Offline Criminal Activity.'' Sunbelt XXXI, International Network for Social Network Analysis. St. Petersburg, FL, USA.
+		\item Williams, D., Castronova, E., Huang, Y., Shen, C.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Ratan, R.,\textbf{*} Xiong, L.,\textbf{*} \& Contractor, N. (2009). ``As real as real? Macroeconomic behavior in a large-scale virtual world.'' 2009 International Communication Association Annual Conference (ICA). Chicago, IL, USA.
+		\item \textbf{Keegan, B.C.}\textbf{*} (2009). ``Are Wikipedians Really Gamers? A ludological perspective on the motivational literature and implications for designing participatory environments.'' Internet Research 10.0, Association of Internet Researchers (AoIR). Milwaukee, WI, USA.
+		\item Fullerton, L.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} \& Menchen-Trevino, E.\textbf{*} (2009). ``Institutionalizing notability on Wikipedia: process, policy and change.'' Internet Research 10.0, Association of Internet Researchers (AoIR). Milwaukee, WI, USA.
+	\end{entries}
+
+	\section{Invited talks\\and lectures}
+	\begin{entries}{T}
+		\item ``Credibility Laundering as a Vector: The Sociotechnical Afterlives of Reactionary Knowledge in Population Studies.'' Network Science Institute Seminar, Northeastern University. Boston, Massachusetts. 25 March 2026.
+		\item ``Credibility Laundering as a Vector: The Sociotechnical Afterlives of Reactionary Knowledge in Population Studies.'' Social Demography Seminar, Harvard Center for Population and Development Studies. Cambridge, Massachusetts. 26 February 2026.
+		\item ``Networks and Computational Social Science.'' Interdisciplinary Quantitative Biology, Bio\-Fron\-tiers Institute. Boulder, Colorado. 7 March 2024.
+		\item ``Sports, Analytics, \& Surveillance.'' CMCI 4021: Prime Time: Public Performance and Leadership, University of Colorado. Boulder, Colorado. 15 February 2024.
+		\item ``High-Tempo Collaborations Following Software Patches in Gaming Communities.'' Games Research Group, University of Southern California. Los Angeles, California. 11 May 2022.
+		\item ``Governing the COVID-19 Knowledge Commons on Wikipedia.'' Interdisciplinary Training in the Social Sciences, University of Colorado. Boulder, Colorado. 1 June 2021.
+		\item ``This Place Does What It Was Built For: Designing Digital Institutions of Participatory Change.'' Center for Democracy and Technology, University of Colorado. Virtual. 1 December 2020.
+		\item ``The Dynamics of Peer-Produced Political Information During the 2016 U.S. Presidential Campaign.'' Wikimedia Research Showcase, Wikimedia Foundation. Virtual. 18 December 2019.
+		\item ``The Limitations of Fact-Checking.'' CSCI 7000: Technology and Democracy. University of Colorado. Boulder, Colorado. 29 January 2019.
+		\item ``The Evolution and Consequences of Peer Producing Wikipedia's Rules.'' Citizen and Elite Activity on Wikipedia, Hertie School of Governance. Berlin, Germany. 14--15 December 2017.
+		\item ``A Sequence Analysis Agenda for Computational Social Science.'' Institute for Behavioral Science. Boulder, Colorado. 26 October 2017.
+		\item ``Peer Production Engagement Patterns.'' Tandon School of Engineering, New York University. Brooklyn, New York. 8--9 September 2017.
+		\item ``Implicit bias in virtual team formation processes.'' Gendered Creative Teams Workshop, Central European University. Budapest, Hungary. 25--26 May 2017.
+		\item ``Socio-Technical Systems Under Stress.'' Department of Computer Science, KAIST. Daejon, South Korea. 29--30 April 2017.
+		\item ``A Sequence Analysis Agenda for Computational Social Science.'' Neukom Institute, Dartmouth College, Hanover, New Hampshire. 13--14 May 2017.
+		\item ``Survey of Exponential Random Graph Models \& Stochastic Actor-Oriented Models.'' ISAT\slash DARPA Symbiotic Architecture for Social Simulation, University of Southern California. Los Angeles, California. 28--29 October 2016.
+		\item ``Bringing Sequence Analysis into Computational Social Science.'' Symposium on Tech\-nol\-ogy-based Cooperation, Leibniz-Institut f\"{u}r Wissensmedien, T\"{u}bingen, Germany. 2--3 June 2016.
+		\item ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Department of Communication, University of California, Davis. 12 May 2016.
+		\item ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Neukom Institute, Dartmouth College. Hanover, New Hampshire. 7--8 April 2016.
+		\item ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' AI Seminar, Information Sciences Institute, University of Southern California. Marina del Rey, California. 25 March 2016.
+		\item Department of Data Science and Operations, USC Marshall School of Business. Los Angeles, California. 4 December 2015.
+		\item ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Department of Human-Centered Design and Engineering, University of Washington. Seattle, Washington. 18 November 2015.
+		\item ``First Among Equals: The Emergence and Evolution of Wikipedia's Networked Policy Regime.'' Workshop on Wikipedia Research, AAAI International Conference on Web and Social Media. Oxford, United Kingdom. 26 May 2015.
+		\item ``First Among Equals: The Emergence and Evolution of Wikipedia's Networked Policy Regime.'' Computational Social Science Summit, Northwestern University. Evanston, Illinois. 16--17 May 2015.
+		\item ``Socio-Technical Systems Under Stress.'' Microsoft Research. Redmond, Washington. 2--3 April 2015.
+		\item ``Socio-Technical Systems Under Stress.'' Human-Computer Interaction Institute Colloquium, Carnegie Mellon University. Pittsburgh, Pennsylvania. 3 December 2014.
+		\item ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Informatics Institute, University of Missouri. Columbia, Missouri. 7 October 2014.
+		\item ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Interdisciplinary Committee on Organizational Studies, University of Michigan. Ann Arbor, Michigan. 12 September 2014.
+		\item ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Computational Approaches to Social Modeling, ACM Web Science Conference. Bloomington, Indiana. 24--26 April 2014.
+		\item ``The Social Mediation of Fact Checking Interventions in Twitter Conversations.'' Northeast Political Methodology Workshop, New York University. New York, New York. 2 May 2014.
+		\item ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Center for Research on Computation and Society, Harvard University. Cambridge, Massachusetts. 10 February 2014.
+		\item ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Symposium on User Behavior and Content Generation, Zentrum f\"{u}r Europ\"{a}ische Wirtschaftsforschung. Mannheim, Germany. 8--9 November 2013.
+	\end{entries}
+
+	\section{Teaching}
+	% Add enrollments
+	\begin{itemize}
+		\item[\textit{2026}] INFO 4617/5617: Web Data Science (Fall, Redesign)
+		\item[] INFO 3401: Information Exploration (Spring, Redesign)
+
+		\item[\textit{2024}] INFO 4871/5871: Web Data Science (Fall) \hfill N=22
+		\item[] INFO 3402: Information Exposition (Spring) \hfill N=36
+
+		\item[\textit{2023}] INFO 3402: Information Exposition (Fall) \hfill N=20
+		\item[] INFO 4871/5871: Web Data Science (Fall) \hfill N=28
+		\item[] INFO 3402: Information Exposition (Spring) \hfill N=50
+
+		\item[\textit{2022}] INFO 3402: Information Exposition (Fall) \hfill N=20
+		\item[] INFO 4613/5613: Network Science (Fall) \hfill N=10
+		\item[] INFO 3402: Information Exposition (Spring) \hfill N=60
+
+		\item[\textit{2021}] INFO 4613/5613: Network Science (Fall, New Course) \hfill N=22
+		\item[] INFO 3402: Information Exposition (Spring, Redesign) \hfill N=59
+		\item[] ARSC 5040: Web Data Scraping (Spring, Mini-course) \hfill N=12
+
+		\item[\textit{2020}] INFO 3401: Information Exploration (Fall, Redesign) \hfill N=46
+
+		\item[\textit{2019}] INFO 3402: Information Exposition (Fall) \hfill N=25
+		\item[] INFO 3402: Information Exposition (Spring) \hfill N=14
+		\item[] ARSC 5040: Web Data Scraping (Spring, New Course, Mini-course) \hfill N=10
+
+		\item[\textit{2018}] INFO 3501/5501: Peer Production and Crowdsourcing (Fall) \hfill N=15
+		\item[] INFO 3402: Information Exposition (Spring, New Course) \hfill N=10
+		\item[] INFO 2201: Computational Reasoning 2 (Spring)  \hfill N=23
+
+		\item[\textit{2017}] INFO 2201: Computational Reasoning 2 (Spring, New Course)  \hfill N=15
+
+		\item[\textit{2016}] INFO 3501/5501: Peer Production and Crowdsourcing (Fall, New Course) \hfill N=12
+	\end{itemize}
+
+	\section{Research\\supervision}
+	\subhead{Post-doctoral researchers}
+	\begin{itemize}
+		\item C. Estelle Smith. (2021 -- 2022).
+		\begin{itemize}
+			\item Placed: Tenure-track Assistant Professor, Department of Computer Science, Colorado School of Mines.
 		\end{itemize}
-		
-		\section{Awards\\and funding}
-		\hspace{-1em}\textbf{NOTE:} Total amount awarded to PI Keegan: \$999,892.\\
-		
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[G9] \textbf{Keegan, B.C.} (Aug. 2024--May 2025). ``Demography and Extremism.'' CU Population Center, Institute for Behavioral Science. (\$500). 
-			\item[G8] \textbf{Keegan, B.C.} \& Fiesler, C. (Dec. 2022--Sep. 2023). ``RAPID: Documenting and understanding large-scale migrations between social media platforms.'' NSF CISE Cyber-Human Systems (\$95,201). \url{https://www.nsf.gov/awardsearch/showAward?AWD_ID=2309485}
-			\item[G7] Jones, H.L. \& \textbf{Keegan, B.C.} (July. 2023--Jul. 2024). ``Network perspectives on collective memory processes across the Arabic and English Wikipedias.'' Wikimedia Research Fun (\$40,000). \url{https://meta.wikimedia.org/wiki/Grants:Programs/Wikimedia_Research_Fund/Network_perspectives_on_collective_memory_processes_across_the_Arabic_and_English_Wikipedias}
-			\item[G6] \textbf{Keegan, B.C.} (sub-contractor), Shenoy, N. \& Baranowski, R. (Co-PIs). (Dec. 2020--May 2021). ``TEACHR: Technical Explanation of Algorithmic Choice Hierarchy and Reasoning.'' AFWERX (\$300,000, \$70,000 to Keegan).	
-			\item[G5] \textbf{Keegan, B.C.} \& Tan, C. (Co-PIs). (Oct. 2019--Sep. 2023). ``CHS: Small: A Genealogical Framework to Understand the Emergence of Online Groups.'' NSF CISE Cyber-Human Systems (\$499,724). \url{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1910225}	
-			\item[G4] \textbf{Keegan, B.C.} (PI). (Apr. 2019--May 2021). ``Multiplayer Online Battle Arenas as Models of High-Tempo Virtual Teams.'' Oracle for Research Cloud Credits (\$25,000). 	
-			\item[G3] \textbf{Keegan, B.C.} (PI). (Apr. 2018--May 2021). ``EAGER: Social Dynamics of Organizational Behavior in Temporary Virtual Teams.'' NSF CISE Cyber-Human Systems (\$199,864). \url{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1841374}	
-			\item[G2] \textbf{Keegan, B.C.} (PI), Lindquist, T., Adler, S. (Sep. 2017--May 2018). ``Prosopographical data mining for analyzing multiple network among members of U.S. Congress since 1789.'' CU Boulder RIO Innovative Seed Grant Program (\$49,603).	
-			\item[G1] \textbf{Keegan, B.C.} (PI). (Sep. 2017--May 2018). ``Multiplayer Online Games as Models of Organizational Behavior.'' Microsoft Azure Research Award (\$20,000).
+	\end{itemize}
+
+	\subhead{Ph.D. students, primary or co-advisor}
+	\begin{itemize}
+		\item Benjamin Emery, Information Science. \hfill 2023 -- present
+		\item Alex Newhouse, Political Science (with C. Boulding). \hfill 2023 -- present
+		\item Matthew Nicholson, Information Science (with B. Semaan). \hfill 2023 -- present
+		\item Leonardo Orozco, Ecology and Evolutionary Biology (with N. Kane). \hfill 2021 -- present
+		\item H. Laurie Lawson, Information Science (with A. Siegel). \hfill 2021 -- present
+		\item Samantha Dalal, Information Science. \hfill 2020 -- 2025
+		\begin{itemize}
+			\item Dissertation: ``Going Beyond the Gig: An Ecological Approach to Studying and Intervening in the Gig Economy.''
+			\item Placed: Post-doctoral research associate, Professor Andr\'{e}s Monroy Hern\'{a}ndez, Princeton University.
 		\end{itemize}
-		
-		\section{Publications}
-		\hspace{-1em}\textbf{NOTE:} Student authors marked with~\textbf{*}, post-doc authors with~\textbf{$\dagger$}, awards with~\faAward.
-		
-		\section{Books}
-		\begin{itemize}[leftmargin=0pt,noitemsep] 
-			\item[B2] \textbf{Keegan, B.}, editor. (2028). \textit{A Research Agenda for Networks and Computational Social Science}. Elgar.
-			\item[B1] \textbf{Keegan, B.} (TBD). \textit{The Greatest Shortcoming: Quantitative Chauvinism and Ecofascist Imaginaries}.
+		\item Jordan Wirfs-Brock, Information Science (with L. Devendorf). \hfill 2017 -- 2022
+		\begin{itemize}
+			\item Dissertation: ``Beyond the Bleeps \& Bloops: Narrative, Multi-Sensory, and Social Approaches to Communicating Data with Sound.''
+			\item Placed: Tenure-track Assistant Professor, Department of Computer Science, Whitman College, Walla Walla, Washington.
 		\end{itemize}
-		
-		\section{Journal\\articles}
-		
-		\begin{itemize}[leftmargin=0pt,noitemsep] 
-			\item[J13] Smith, C.J., Vergara, D., \textbf{Keegan, B.C.}, Jikomes, N. (2022). ``The phytochemical diversity of commercial Cannabis in the United States.'' \textit{PLoS ONE}, 17(5). \url{https://doi.org/10.1371/journal.pone.0267498}
-			\item[J12] Wirfs-Brock, J.,\textbf{*} Fam, A., Devendorf, L., \& \textbf{Keegan, B.C.} (2021). ``Examining Narrative Sonification: Using First-Person Retrospection Methods to Translate Radio Production to Interaction Design.'' \textit{ACM Transactions on Computer-Human Interaction} (ToCHI), 28(6), 1--34. \url{https://doi.org/10.1145/3461762}
-			\item[J11] Vergara, D., Gaudino, R., Blank, T., \& \textbf{Keegan, B.C.} (2020). ``Modeling cannabinoids from a large-scale sample of Cannabis sativa chemotypes.'' \textit{PLoS ONE}, 1--17. \url{https://doi.org/10.1371/journal.pone.0236878}
-			\item[J10] Porter, E.,\textbf{*} Krafft, P.M., \& \textbf{Keegan, B.C.} (2020). ``Visual Narratives and Collective Memory across Peer-Produced Accounts of Contested Sociopolitical Events.'' \textit{ACM Transactions on Social Computing}, 3(1), 1--20. \url{https://doi.org/10.1145/3373147}
-			\item[J9] Anderson, J.,\textbf{*} Soden, R.,\textbf{*} \textbf{Keegan, B.C.}, Palen, L., \& Anderson, K. (2018). ``The Crowd is the Territory: Assessing Quality in Peer-Produced Spatial Data During Disasters.'' \textit{International Journal of Human-Computer Interaction}, 34(4), 295--310. \url{https://doi.org/10.1080/10447318.2018.1427828}
-			\item[J8] Radford, J.,\textbf{*} Pilny, A.,\textbf{*} Reichelmann, A., \textbf{Keegan, B.C.}, Foucault-Welles, B., Hoye, J., Ognyanova, K., \& Lazer, D. (2016). ``Volunteer Science: An Online Laboratory for Experiments in Social Psychology.'' \textit{Social Psychology Quarterly}, 79(4), 376--396. \url{https://doi.org/10.1177\%2F0190272516675866}
-			\item[J7] Margolin, D., Goodman, S., \textbf{Keegan, B.C.}, Lin, Y.R., \& Lazer, D. (2015). ``Wiki-Worthy: Judging a Candidate's Notability in the Community.'' \textit{Information, Communication and Society}, 19(8), 1029--1045. \url{https://doi.org/10.1080/1369118X.2015.1069871}
-			\item[J6] Kennedy, R., Forbush, E.,\textbf{*} \textbf{Keegan, B.C.}, \& Lazer, D. (2015). ``Turning Introductory Comparative Politics and Elections Courses into Social Science Research Communities Using Wikipedia: Improving Both Teaching and Research.'' \textit{PS: Political Science and Politics}, 48(2), 378--384. \url{doi:10.1017/S1049096514002157}
-			\item[J5] Lin, Y.R., \textbf{Keegan, B.C.}, Margolin, D., \& Lazer, D. (2014). ``Rising tides or rising stars? Dynamics of shared attention on Twitter during media events.'' \textit{PLoS ONE}, 1--12. \url{ https://doi.org/10.1371/journal.pone.0094093}
-			\item[J4] \textbf{Keegan, B.C.},\textbf{*} Gergle, D., \& Contractor, N. (2013). ``Hot off the Wiki: Structures and Dynamics of Wikipedia's Coverage of Breaking News Events.'' \textit{American Behavioral Scientist}, 57(5), 595--622. \url{https://doi.org/10.1177\%2F0002764212469367}
-			\item[J3] Contractor, N., DeChurch, L.A., Carson, J.,\textbf{*} Carter, D.R.,\textbf{*} \& \textbf{Keegan, B.C.}\textbf{*} (2012). ``The Topology of Collective Leadership.'' \textit{The Leadership Quarterly}, 23(6), 994--1011. \url{https://doi.org/10.1016/j.leaqua.2012.10.010}
-			\item[J2] \textbf{Keegan, B.C.}, Ahmad, M.A., Williams, D., Srivastava, J., \& Contractor, N. (2011). ``What can gold farmers teach us about criminal networks?'' \textit{XRDS: Crossroads}, 17(3). ACM. \url{https://xrds.acm.org/article.cfm?aid=1925043}
-			\item[J1] Williams, D., Castronova, E., Huang, Y., Shen, C.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Ratan, R.,\textbf{*} \& Xiong, L.\textbf{*} (2009). ``As real as real? Macroeconomic behavior in a large-scale virtual world.'' \textit{New Media \& Society}, 11, 685--707. \url{https://doi.org/10.1177\%2F1461444809105346}
+		\item Alicia Boyd, Computer Science, DePaul University (with J. Furst). \hfill 2017 -- 2021
+		\begin{itemize}
+			\item Dissertation: ``Quantitative Intersectional Data (QUINTA): A \#metoo case study.''
+			\item Placed: Post-doctoral research associate, Professor Anne L. Washington, NYU Steinhardt School, New York.
 		\end{itemize}
-		
-		\section{Archival\\conference proceedings}
-		
-		\hspace{-1em}\textbf{NOTE:} ``N.R.'' means acceptance rate is not reported.\\
-		
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[C32] Smith, C.E.,\textbf{$\dagger$} Klassen, S.,\textbf{*} Prinster, G.H.,\textbf{*} Tan, C., \& \textbf{Keegan, B.C.} (2024). ``Governance of the Black Experience on Reddit: r/BlackPeopleTwitter as a Case Study in Supporting Sense of Virtual Community for Black Users.'' In  \textit{Proceedings of the ACM Conference on Computer-Supported Cooperative Work and Social Computing} (CSCW), 8. ACM. (N.R. acceptance)
-			\item[C31] Prinster, G.H.,\textbf{*} Smith, C. E.,\textbf{$\dagger$} Tan, C., \& \textbf{Keegan, B.C.} (2024). ``Community Archetypes: An Empirical Framework for Guiding Research Methodologies to Reflect User Experiences of Sense of Virtual Community.'' In \textit{Proceedings of the ACM Conference on Computer-Supported Cooperative Work and Social Computing} (CSCW), 8. ACM. (N.R. acceptance)
-			\item[C30] Doyle, D.T.,\textbf{*} Ghosh, J.K.,\textbf{*} Suchocki, R.,\textbf{*} \textbf{Keegan, B.C.}, Voida, S., \& Brubaker, J.R. (2024). ``Stories That Heal: Characterizing and Supporting Narrative for Suicide Bereavement.'' In \textit{Proceedings of the International AAAI Conference on Web and Social Media}, 18, 354--366. AAAI. \url{https://doi.org/10.1609/icwsm.v18i1.31319} (N.R. acceptance)
-			\item[C29] Smith, C.E.,\textbf{$\dagger$} Alam, I.,\textbf{*} Tan, C., \textbf{Keegan, B.C.}, \& Blanchard, A. (2022). ``The Impact of Governance Bots on Sense of Virtual Community: Development and Validation of the GOV-BOTs Scale.'' In \textit{Proceedings of the ACM Conference on Computer-Supported Cooperative Work and Social Computing} (CSCW), 6, 1--30. ACM. \url{https://doi.org/10.1145/3555563} (N.R. acceptance)
-			\item[C28] Zhang, J.S.,\textbf{*} \textbf{Keegan, B.C.}, Lv, Q., \& Tan, C. (2021). ``Understanding the Diverging User Trajectories in Highly-related Online Communities during the COVID-19 Pandemic.'' In \textit{Proceedings of the 2021 AAAI Conference on Web and Social Media} (ICWSM), 15(1), 888--899. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/18112} (20\% acceptance)
-			\item[C27] Baumgartner, J., Zannettou, S., \textbf{Keegan, B.C.}, Squire, M., \& Blackburn, J. (2020). ``The Pushshift Reddit Dataset.'' In \textit{Proceedings of the 2020 AAAI Conference on Web and Social Media} (ICWSM), 14(1), 830-839. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/7347} (24\% acceptance)
-			\item[C26] Fiesler, C., Beard, N.,\textbf{*} \& \textbf{Keegan, B.C.} (2020). ``No Robots, Spiders, or Scrapers: Legal and Ethical Regulation of Data Collection Methods in Social Media Terms of Service.'' In \textit{Proceedings of the 2020 AAAI Conference on Web and Social Media} (ICWSM), 14(1), 187-196. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/7290} (24\% acceptance)
-			\item[\faAward~C25] Frey, S., Krafft, P.M.,\textbf{*} \& \textbf{Keegan, B.C.} (2019). ```This Place Does What It Was Built For': Digital Institution Design as a Resource Management Challenge.'' In \textit{Proceedings of the 2019 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 3, 1--31. ACM. \url{https://dl.acm.org/doi/10.1145/3359134} (31\% acceptance) \textbf{\textit{Honorable Mention, Best Paper}}.
-			\item[C24] \textbf{Keegan, B.C.} (2019). ``The Dynamics of Peer-Produced Political Information During the 2016 U.S. Presidential Campaign.'' In \textit{Proceedings of the 2019 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 3, 1--20. ACM. \url{https://doi.org/10.1145/3359135} (31\% acceptance)
-			\item[C23] Flores-Saviaga, C.,\textbf{*} Savage, S., \& \textbf{Keegan, B.C.} (2018). ``Mobilizing the Trump Train: Understanding Collective Action in a Political Trolling Community.'' In \textit{Proceedings of the 2018 AAAI International Conference on Web and Social Media} (ICWSM), 12(1), 82--91. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/15024} (16\% acceptance)
-			\item[C22] \textbf{Keegan, B.C.} \& Fiesler, C. (2017). ``The Evolution and Consequences of Peer Producing Wikipedia's Rules.'' In \textit{Proceedings of the 2017 AAAI International Conference on Web and Social Media} (ICWSM), 11(1), 112--121. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/14899} (13\% acceptance)
-			\item[C21] Twyman, M.,\textbf{*} \textbf{Keegan, B.C.}, \& Shaw, A. (2017). ``Black Lives Matter in Wikipedia: Collaboration and Collective Memory around Online Social Movements.'' In \textit{Proceedings of the 2017 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 1400--1412. ACM. \url{https://doi.org/10.1145/2998181.2998232} (25\% acceptance)
-			\item[C20] Leavitt, A.,\textbf{*} \textbf{Keegan, B.C.}, \& Clark, J.\textbf{*} (2016). ``Ping to Win? Non-Verbal Communication and Team Performance in Competitive Online Multiplayer Games.'' In \textit{Proceedings of the 2016 ACM Conference on Human-Computer Interaction} (CHI), 4337--4350. ACM. \url{https://doi.org/10.1145/2858036.2858132} (23\% acceptance)
-			\item[C19] Kim, J.Y.,\textbf{*} \textbf{Keegan, B.C.}, Park, S.J.,\textbf{*} \& Oh, A. (2016). ``The Proficiency-Congruency Dilemma: Virtual Team Design and Performance in Multiplayer Online Games.'' In \textit{Proceedings of the 2016 ACM Conference on Human-Computer Interaction} (CHI), 4351--4365. ACM. \url{https://doi.org/10.1145/2858036.2858464} (25\% acceptance)
-			\item[C18] \textbf{Keegan, B.C.}, Lev, S., \& Arazy, O. (2016). ``Analyzing Organizational Routines in Online Knowledge Collaborations: A Case for Sequence Analysis in CSCW.'' In \textit{Proceedings of the 2016 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 1065--1079. ACM. \url{https://doi.org/10.1145/2818048.2819962} (25\% acceptance)
-			\item[C17] Kim, J.W.,\textbf{*} Kim, D.,\textbf{*} \textbf{Keegan, B.C.}, Kim, J.H.,\textbf{*} Kim, S.,\textbf{*} \& Oh, A. (2015). ``Social Media Dynamics of Global Co-presence During the 2014 FIFA World Cup.'' In \textit{Proceedings of the 2015 ACM Conference on Human-Computer Interaction} (CHI), 2623--2632. ACM. \url{https://doi.org/10.1145/2702123.2702317} (23\% acceptance)
-			\item[\faAward~C16] \textbf{Keegan, B.C.} \& Brubaker, J.\textbf{*} (2015). ```Is' to `Was': Coordination and Commemoration on
-			Posthumous Wikipedia Biographies.'' In \textit{Proceedings of the 2015 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 533--546. ACM. \url{https://doi.org/10.1145/2675133.2675238} (28\% acceptance) \textbf{\textit{Honorable Mention, Best Paper}}.
-			\item[C15] Hannak, A.,\textbf{*} Margolin, D., \textbf{Keegan, B.C.}, \& Weber, I. (2014). ``Get Back! You Don't Know Me Like That: The Social Mediation of Fact Checking Interventions in Twitter Conversations.'' In \textit{Proceedings of the Eighth International AAAI Conference on Weblogs and Social Media} (ICWSM), 187--196. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/14555} (23\% acceptance)
-			\item[C14] Lin, Y.R., Margolin, D., \textbf{Keegan, B.C.}, Baronchelli, A., \& Lazer, D. (2013). ``\#Bigbirds Never Die: Understanding Social Dynamics of Emergent Hashtags.'' In \textit{Proceedings of the Seventh International AAAI Conference on Weblogs and Social Media} (ICWSM), 7(1), 370--379. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/14407} (21\% acceptance)
-			\item[C13] Lin, Y.R., Margolin, D., \textbf{Keegan, B.C.}, \& Lazer, D. (2013). ``Voices of Victory: A Computational Focus Group Framework for Tracking Opinion Shift in Real Time.'' In \textit{Proceedings of the 22nd International World Wide Web Conference} (WWW), 737--748. ACM. \url{https://doi.org/10.1145/2488388.2488453} (15\% acceptance)
-			\item[C12] \textbf{Keegan, B.C.},\textbf{*} Ceni, A., \& Smith, M. (2013). ``Analyzing Multi-Dimensional Networks within MediaWikis.'' In \textit{Proceedings of the Ninth International Symposium on Wikis and Open Collaboration} (WikiSym), 1--10. ACM. \url{https://doi.org/10.1145/2491055.2491056} (51\% acceptance)
-			\item[C11] \textbf{Keegan, B.C.}\textbf{*} (2013). ``A History of Newswork on Wikipedia.'' In \textit{Proceedings of the Ninth International Symposium on Wikis and Open Collaboration} (WikiSym), 1--10. ACM. \url{https://doi.org/10.1145/2491055.2491062} (51\% acceptance)
-			\item[C10] \textbf{Keegan, B.C.},\textbf{*} Gergle, D., \& Contractor, N. (2012). ``Do Editors or Articles Drive Collaboration? Multilevel Statistical Network Analysis of Wikipedia Coauthorship.'' In \textit{Proceedings of the 2012 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 427--436. ACM. \url{https://doi.org/10.1145/2145204.2145271} (40\% acceptance)
-			\item[C9] \textbf{Keegan, B.C.},\textbf{*} Gergle, D., \& Contractor, N. (2012). ``Staying in the Loop: Structure and Dynamics of Wikipedia's Breaking News Collaborations.'' In \textit{Proceedings of the Eighth International Symposium on Wikis and Open Collaboration} (WikiSym), 1--10. ACM. \url{https://doi.org/10.1145/2462932.2462934} (57\% acceptance)
-			\item[C8] Ahmad, M.A.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Srivastava, J., Williams, D., \& Contractor, N. (2011). ``Trust Amongst Rogues? A Hypergraph Approach for Comparing Clandestine Trust Networks in MMOGs.'' In \textit{Proceedings of the Fifth International AAAI Conference on Weblogs and Social Media} (ICWSM), 5(1), 10--17. AAAI. \url{https://ojs.aaai.org/index.php/ICWSM/article/view/14125} (N.R. acceptance)
-			\item[C7] Ahmad, M.A.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Sullivan, S.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2011). ``Illicit Bits: Detecting and Analyzing Contraband Networks in Massively Multiplayer Online Games.'' In \textit{Proceedings of the Third IEEE Conference on Social Computing} (SocialCom), 127--134. IEEE. \url{https://doi.org/10.1109/PASSAT/SocialCom.2011.183} (N.R. acceptance)
-			\item[C6] \textbf{Keegan, B.C.},\textbf{*} Gergle, D., \& Contractor, N. (2011). ``Hot off the Wiki: Dynamics, Practices, and Structures in Wikipedia's Coverage of the T\={o}hoku Catastrophes.'' In \textit{Proceedings of the Seventh International Symposium on Wikis and Open Collaboration} (WikiSym), 105--113. ACM. (N.R. acceptance) \url{https://doi.org/10.1145/2038558.2038577}
-			\item[\faAward~C5] \textbf{Keegan, B.C.},\textbf{*} Ahmad, M.A.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2011). ``Sic Transit Gloria Mundi Virtuali? Promise and Peril at the Intersection of Computational Social Science and Online Clandestine Organizations.'' In \textit{Proceedings of the Third International ACM Conference on Web Science} (WebSci), 1--8. ACM. \url{https://doi.org/10.1145/2527031.2527057} (17\% acceptance) \textbf{\textit{Best Paper}}.
-			\item[C4] \textbf{Keegan, B.C.},\textbf{*} Ahmad, M.A.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2010). ``Dark Gold: Statistical Properties of Clandestine Networks in Massively Multiplayer Online Games.'' In \textit{Proceedings of the Second IEEE Conference on Social Computing} (SocialCom), 201--208. IEEE. \url{https://doi.org/10.1109/SocialCom.2010.36} (N.R. acceptance)
-			\item[\faAward~C3] \textbf{Keegan, B.C.}\textbf{*} \& Gergle, D. (2010). ``Egalitarians at the Gate: One-Sided Gatekeeping Practices in Participatory Social Media.'' In \textit{Proceedings of the 2010 ACM Conference on Computer-Supported Collaborative Work} (CSCW), 131--134. ACM. \url{https://doi.org/10.1145/1718918.1718943} (20\% acceptance) \textbf{\textit{Honorable Mention, Best Note}}.
-			\item[C2] Ahmad, M.A.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Srivastava, J., Williams, D., \& Contractor, N. (2009). ``Mining for Gold Farmers: Automatic Detection of Deviant Players in MMOGs.'' In \textit{Proceedings of the First IEEE Conference on Social Computing} (SocialCom), 340--345. IEEE. \url{https://doi.org/10.1109/CSE.2009.307} (9\% acceptance)
-			\item[C1] Huang, Y., Zhu, M.,\textbf{*} Wang, J.,\textbf{*} Pathak, N.,\textbf{*} Shen, C.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Williams, D., Contractor, N. (2009). ``The Formation of Task-oriented Groups: Exploring Combat Activities in Online Games.'' \textit{In Proceedings of the First IEEE Conference on Social Computing} (SocialCom), 122--127. IEEE. \url{https://doi.org/10.1109/CSE.2009.465} (9\% acceptance)
+		\item Xiaozhe `Arcadia' Zhang, Computer Science. \hfill 2016 -- 2021
+		\begin{itemize}
+			\item Dissertation: ``Software Patches and Their Impacts on Online Gaming Communities.''
+			\item Placed: Senior Data Scientist, EA Games, Redwood City, California.
 		\end{itemize}
-		
-		\section{Book\\chapters}
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[B2] \textbf{Keegan, B.C.} (2021). ``An Encyclopedia with Breaking News.'' In J. Reagle \& J. Koerner (Eds.), \textit{Wikipedia @ 20}, 55--70. MIT Press. \url{https://doi.org/10.7551/mitpress/12366.003.0007}
-			\item[B1] \textbf{Keegan, B.C.} (2015). ``Emergent Social Roles in Wikipedia's Breaking News Collaborations.'' In E. Bertino \& S.A. Matei (Eds.), \textit{Roles, Trust, and Reputation in Social Media Knowledge Markets}, 57-79. Springer. \url{https://doi.org/10.1007/978-3-319-05467-4_4}
-			
-		\end{itemize}
-		
-		\section{Work in\\progress}
-		
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[X9] \textbf{Keegan, B.C.} (TBD). \textit{The Greatest Shortcoming: Quantitative Chauvinism in an Age of Ecofascism}.
-			\item[X8] \textbf{Keegan, B.C.} (TBD). ``Understanding Stigmergic and Accumulative Processes in Online Knowledge Collaborations with Sequence Networks.''
-			\item[X7] Nicholson, M.N.,\textbf{*} \textbf{Keegan, B.C.}, Payne, B.H.,\textbf{*} \& Fiesler, C. (TBD). ``Motivations and Challenges with the Twitter Migration.''
-			\item[X6] \textbf{Keegan, B.C.} \& Carrasco, H. (TBD). ``Exploratory Data Auditing: A Typology of Behavioral Anomalies Using U.S. House of Representatives Disbursements.''
-			\item[X5] Kahn, Y., Vergara, D., \& \textbf{Keegan, B.C.} (TBD). ``Robust Anomalies in Analytical Test Results Across Legal Cannabis Markets in the United States.''
-			\item[X4] \textbf{Keegan, B.C.} (TBD). ``War Mapping on Wikipedia: High-Tempo Online Collaboration and Genealogies of Spatial Infrastructuring.''
-			\item[X3] Jones, H.L.\textbf{*} \& \textbf{Keegan, B.C.} (2024). ``Cross-Language Evolution of Divergent Collective Memory Around the Arab Spring.'' \url{https://arxiv.org/abs/2404.10706}
-			\item[X2] Zhang, X.\textbf{*} \& \textbf{Keegan, B.C.} (2022). ``Characterizing disruptions in online gaming behavior following software patches.'' \url{https://arxiv.org/abs/2207.02736}
-			\item[X1] \textbf{Keegan, B.C.} \& Tan, C. (2020). ``A Quantitative Portrait of Wikipedia's High-Tempo Collaborations during the 2020 Coronavirus Pandemic.'' \url{https://arxiv.org/abs/2006.08899}
-		\end{itemize}
-		
-		\section{Non-reviewed\\publications}
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[Z2] Matias, J.N., Johnson, A., Boesel, W.E., \textbf{Keegan, B.C.}, Friednman, J., \& DeTar, C. (2015). ``Reporting, Reviewing, and Responding to Harassment on Twitter.'' \url{https://arxiv.org/abs/1505.03359}
-			\item[Z1] \textbf{Keegan, B.C.}, Horn, D., Finholt, T.A., \& Kaye, J. (2013). ``Structure and Dynamics of Coauthorship, Citation, and Impact within CSCW.'' \url{http://arxiv.org/abs/1307.7172}
-		\end{itemize}
-		%\textbf{Keegan, B}. (in preparation) ``Predicting Collective Judgments of Cultural Achievement from Wikipedia Behavior.''
-		%\textbf{Keegan, B}. (in preparation) ``Sociotechnical Trajectories: A Structural Framework for Analyzing Event Log Data.''
-		%\textbf{Keegan, B}. (in preparation) ``Technopanics, Ethics Creep, and Alternative Models for Research Ethics in the Aftermath of the Facebook Experiment.''
-		%\textbf{Keegan, B}, Riedl, C, Jian, L. (in preparation) ``The Wisdom of Novices: The Role of Consensus and Expertise in Determining Success of Crowdsourced Products.''
-		%\textbf{Keegan, B}, Lazer, D. (in preparation) ``Mining Mobility Patterns and Social Networks from Elite Biographies.''
-		%\textbf{Keegan, B}, Kennedy, RP, Lazer, D. (in preparation) ``More Edits, More Votes? Wikipedia Article Behavior as a Quantitative Predictor of U.S. Congressional Elections.''
-		%\textbf{Keegan, B}. (in preparation) ``Accumulated Genius: Toward a Theory of Stigmergy in Socio-Technical Systems.''
-		%\textbf{Keegan, B}, Radford, J, Hoye, J, Karbeyaz, C, Foucault-Welles, B, Riedl, C, Meleis, W, Lazer D. (in preparation) ``Volunteer Science: A Web Laboratory for Massively Open Online Social Experiments''
-		%\textbf{Keegan, B}. (in preparation) ``Structure and Evolution of Co-rostership Networks in Major League Baseball.''
-		%\textbf{Keegan, B}. (in preparation) ``Breaking News, Breaking Planes, and Breaking Hearts: Psycholinguistic Dynamics and Sensemaking in Collaborative Accounts of Catastrophe.''
-		
-		\section{Workshops,\\ panels,\\posters,\\consortia}
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[W30] Jones, H.L.\textbf{*} \& \textbf{Keegan, B.C.} (2024). ``Temporal Clustering of Wikipedia Outlinks as Collective Memory Processes.'' Wiki Workshop.
-			\item[W29] Nicholson, M.N.,\textbf{*} Fiesler, C., \& \textbf{Keegan, B.C.} (2024). ``Truthiness and Activity Counts: The Challenges and Opportunities of Enumerating Behavior in Decentralized Social Media.'' 1st International Workshop on Decentralizing the Web (DeWeb), International AAAI Conference on Web and Social Media (ICWSM). Buffalo, NY, USA.
-			\item[W28] Jones, H.L.\textbf{*} \& \textbf{Keegan, B.C.} (2024). ``Divergent Collective Memory Processes Surrounding the Arab Spring.'' 11th Annual Asian Meeting of the Society for Political Methodology, Abu Dhabi, United Arab Emirates.
-			\item[W27] Nicholson, M.N.,\textbf{*} \textbf{Keegan, B.C.}, \& Fiesler, C. (2023). ``Mastodon Rules: Characterizing Formal Rules on Popular Mastodon Instances.'' In \textit{Companion Publication of the 2023 Conference on Computer Supported Cooperative Work and Social Computing} (CSCW). Minneapolis, Minnesota, USA. \url{https://doi.org/10.1145/3584931.3606970}
-			\item[W26] Wirfs-Brock, J.,\textbf{*} Graze, M., Devendorf, L., Desjardins, A., Goudarzi, V., Friske, M., \& \textbf{Keegan, B.C.} (2022). ``Sketching Across the Senses: Exploring Sensory Translation as a Generative Practice for Designing Data Representations.'' In \textit{Extended Abstracts of 2022 ACM SIGCHI Conference on Human Factors in Computing Systems} (CHI). New Orleans, LA, USA. \url{https://doi.org/10.1145/3491101.3503712}
-			\item[W25] Hill, B.M., Siddarth, D., \textbf{Keegan, B.C.}, \& Foote, J. (2021). J. Fan \& S. Frey (Mod.), ``Investigating Self-Governing Online Commons.'' International Association for the Study of the Commons (IASC). Virtual.
-			\item[W24] Dalal, S.\textbf{*} \& \textbf{Keegan, B.C.} (2020). ``Governing the Commons of Platform Labor Data Assets.'' CSCW 2020 Workshop on Civic Technologies. Virtual.
-			\item[W23] Boyd, A.\textbf{*} \& \textbf{Keegan, B.C.} (2020). ``Intersectional human-centered data science: Raising consciousness among the data-driven.'' CSCW 2020 Workshop on Interrogating Data Science. Virtual.
-			\item[W22] \textbf{Keegan, B.C.} (2020). ``Building a data science mindset.'' CSCW 2020 Workshop on Interrogating Data Science. Virtual.
-			\item[W21] Dioun, C., Fata, E., Lewandowski, B., Seaborn, P. (2019). \textbf{B. Keegan} (Mod.), ``Data Analytics in the Cannabis Industry.'' Institute for Cannabis Research 2019. Pueblo, CO, USA.
-			\item[W20] \textbf{Keegan, B.C.} (2018). Quantitative Research Methods seminar. Interdisciplinary Training in the Social Sciences, Colleges of Arts and Sciences, University of Colorado Boulder, Boulder, CO, USA.
-			\item[W19] \textbf{Keegan, B.C.}\& Morgan, A.\textbf{*} (2018). Summer Institute for Computational Social Science. Boulder, CO, USA.
-			\item[W18] \textbf{Keegan, B.C.} \& Vergara, D. (2018). Colloquium on Cannabis Research. Center for Research and Education Addressing Cannabis and Health. Boulder, CO, USA.
-			\item[W17] \textbf{Keegan, B.C.}, Kaye, J., Cavazos-Rehg, P., de Choudhury, M., Nguyen, A.N., Paul, M.J., Savage, S. (2017). ``CHI-nnabis: Implications of Marijuana Legalization for and from Human-Computer Interaction.'' In \textit{Extended Abstracts of 2017 ACM SIGCHI Conference on Human Factors in Computing Systems} (CHI), 1312--1317. Denver, CO, USA. \url{https://doi.org/10.1145/3027063.3051139}
-			\item[W16] \textbf{Keegan, B.C.} \& Matias, J.N.\textbf{*} (2016). ``Actually, It's About Ethics in Computational Social Science: A Multi-party Risk-Benefit Framework for Online Community Research.'' AAAI Spring Symposium on Observational Studies through Social Media and Other Human-Generated Content. Stanford, CA, USA.
-			\item[W15] Schillebeeckx, S.J.D., Grosman, A., Parmar, R., Miller, S., Haesler, J., Chow, G., \& \textbf{Keegan, B.C.}, Koutroumpis, P., \& Wattal, S. (2015). ``Big Data in Universities: Building New Capabilities for Education, Research, and Practice.'' Professional Development Workshop, 2015 Academy of Management Annual Meeting. Vancouver, BC, Canada.
-			\item[W14] Hughes, A., \textbf{Keegan, B.C.} Leavitt, A., Semaan, B., Starbird, K. (2015). ``Cross-Platform Research Agenda for Crisis Informatics.'' 2015 Consortium for the Science of Sociotechnical Systems (CSST) Summer Research Institute. Colorado Springs, CO, USA.
-			\item[W13] \textbf{Keegan, B.C.} (2015). ``Research in the Time of Technopanics.'' Workshop on Ethics for Studying Sociotechnical Systems in a Big Data World. In \textit{Proceedings of the 2015 ACM Conference on Computer-Supported Cooperative Work} (CSCW). Vancouver, BC, Canada.
-			\item[W12] Counts, S., de Choudhury, M., Diesner, J., Gilbert, E., \textbf{Keegan, B.C.}, Naaman, M., \& Wallach, H. (2014). ``Computational Social Science: CSCW in the Social Media Era.'' In \textit{Proceedings of the 2014 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 105--108. \url{https://doi.org/10.1145/2556420.2556849}
-			\item[W11] \textbf{Keegan, B.C.} (2013). Digital Societies and Social Technologies Summer Institute, University of Maryland. College Park, MD, USA.
-			\item[W10] Halfaker, A., Geiger, R.S., Terveen, L., Lampe, C., Bruckman, A., \textbf{Keegan, B.C.}, Fitzpatrick, G., \& Kittur, A.,  (2013). ``Community, Impact, and Credit: Where Should I Submit My Papers?'' In \textit{Proceedings of 2013 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 89--94. \url{https://doi.org/10.1145/2441955.2441980}
-			\item[W9] Lin, Y.R., Margolin, D., \textbf{Keegan, B.C.}, Martino, M., Goodman, S., \& Lazer, D. (2013). ``Catching Fish in the Stream: Real Time Analysis of Audience Behavior in Social Media.'' In \textit{Proceedings of 2013 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 187--190. ACM. \url{https://doi.org/10.1145/2441955.2442002}
-			\item[W8] Halfaker, A.,\textbf{*} \textbf{Keegan, B.C.}, Forte, A., Geiger, R.S.,\textbf{*} Taraborelli, D., Pinchuk, M., Masli, M. (2012). ``What Aren't We Measuring?: Methoding for Quantifiying Wiki-Work.'' In \textit{Proceedings of Eighth International Symposium on Wikis and Open Collaboration} (WikiSym), 1--6. ACM. \url{https://doi.org/10.1145/2462932.2462983}
-			\item[W7] Bernstein, M.,\textbf{*} Conover, M.,\textbf{*} Geiger, R.S.,\textbf{*} Hill, B.M.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Monroy-Hernandez, A.,\textbf{*} Shaw, A.,\textbf{*} Yardi, S.,\textbf{*} \& Bruckman, A. (2012). ``Fail Whaling: Designing from Deviance and Failures in Social Computing.'' In \textit{Proceedings of 2012 ACM SIGCHI Conference on Human Factors in Computing Systems} (CHI), 1127--1130. ACM. \url{https://doi.org/10.1145/2212776.2212403} 
-			\item[W6] \textbf{Keegan, B.C.}\textbf{*} (2012). ``Breaking News on Wikipedia: Dynamics, Structures, and Roles in High-Tempo Collaboration.'' Doctoral Consortium, In \textit{Proceedings of 2012 ACM Conference on Computer-Supported Cooperative Work} (CSCW), 315--318. ACM. \url{https://doi.org/10.1145/2141512.2141609}
-			\item[W5] \textbf{Keegan, B.C.}\textbf{*} (2012). ``Breaking News on Wikipedia: Dynamics, Structures, and Roles in High-Tempo Collaboration.'' Doctoral Consortium, In \textit{Proceedings of the 2012 iConference}. Toronto, Canada.
-			\item[W4] \textbf{Keegan, B.C.},\textbf{*} Ahmad, M.A.,\textbf{*} Sullivan, S.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2011). ``Untangling Dark Webs: Theories, Methods, and Models for a Computational Social Science of Clandestine Networks.'' In \textit{Proceedings of Third IEEE International Conference on Social Computing}. Boston, MA, USA.
-			\item[W3] \textbf{Keegan, B.C.}\textbf{*} (2011). ``Breaking News on Wikipedia: Dynamics, Structures, and Practices of High-Tempo Collaboration.'' Doctoral Symposium, In \textit{Proceedings of the Seventh International Symposium on Wikis and Open Collaboration}. Mountain View, CA, USA.
-			\item[W2] \textbf{Keegan, B.C.}\textbf{*} (2011). ``Breaking News on Wikipedia: Dynamics, Structures, and Practices of High-Tempo Self-Organized Collaboration.'' 2011 Social Computational Systems Workshop. Minneapolis, MN, USA.
-			\item[W1] Ettema, J., Fullerton, L.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Menchen-Trevino, E.,\textbf{*} \& Sandvig, C. (2009). ``Listening for the Wisdom of Crowds: New Media and New Forms of Knowledge.'' 2009 International Communication Association. Chicago, IL, USA.
-		\end{itemize}
-		
-		\section{Conference presentations}
-		
-		\hspace{-1em}\textbf{NOTE:} The presentations listed below are not associated with any archival publication above.\\
-		
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[P31] \textbf{Keegan, B.C.} (2018). ``The Dynamics of Peer-Produced Information During the 2016 U.S. Presidential Campaign.'' In \textit{Proceedings of the 2018 AAAI International Conference on Web and Social Media} (ICWSM). Stanford, CA, USA.
-			\item[P30] Fiesler, C., Beard, N.,\textbf{*} \& \textbf{Keegan, B.C.} (2018). ``No Robots, Spiders, or Scrapers: Regulation of Data Collection Methods in Social Media Terms of Service.'' In \textit{Proceedings of the 2018 AAAI International Conference on Web and Social Media} (ICWSM). Stanford, CA, USA.
-			\item[P29] Porter, E.\textbf{*} \& \textbf{Keegan, B.C.} (2018). ``Visual Rhetoric and Collective Memory across Peer-Produced Accounts of Political Crises.'' 2018 International Conference on Computational Social Science (IC2S2). Evanston, IL, USA.
-			\item[P28] \textbf{Keegan, B.C.} (2018). ``The Dynamics of Peer-Produced Political Information During the 2016 U.S. Presidential Campaign.'' 2018 International Conference on Computational Social Science (IC2S2). Evanston, IL, USA.
-			\item[P27] \textbf{Keegan, B.C.} (2018). ``A Research Agenda for Cannabis Informatics.'' 2018 Institute for Cannabis Research (ICR) Conference. Pueblo, CO, USA.
-			\item[P26] \textbf{Keegan, B.C.} (2017). ``The Evolution and Consequences of	Peer Producing Wikipedia's Rules.'' 2017 International Conference on Computational Social Science (IC2S2). K\"{o}ln, Germany.
-			\item[P25] Twyman, M.,\textbf{*} \textbf{Keegan, B.C.}, Shaw, A. (2017). ``Black Lives Matter in Wikipedia: Collaboration and Collective Memory around Online Social Movements.'' 2017 International Conference on Computational Social Science (IC2S2). K\"{o}ln, Germany.
-			\item[P24] \textbf{Keegan, B.C.} (2017). ``The Structure of Sequences: Mining and Interpreting Networks from Event Log Data.'' Sunbelt XXXVII. International Network for Social Network Analysis. Beijing, China.
-			\item[P23] Zhang, A.\textbf{*} \& \textbf{Keegan, B.C.} (2017). ``Exploration and Exploitation of Team Assembly Strategies in a MOBA.'' Sunbelt XXXVII. International Network for Social Network Analysis. Beijing, China.
-			\item[P22] \textbf{Keegan, B.C.} (2016). ``The Structure of Sequences: Mining and Interpreting Networks from Event Log Data.'' 2016 International Conference on Computational Social Science (IC2S2). Evanston, IL, USA.
-			\item[P21] Radford, J.,\textbf{*} \textbf{Keegan, B.C.}, Hoye, J., Karbeyaz, C.,\textbf{*} Ognyanova, K., Foucault-Welles, B., Meleis, W., \& Lazer, D. (2015). ``Conducting Massively Open Online Social Experiments with Volunteer Science.'' 2015 International Conference on Web and Social Media (ICWSM), Social Science non-archival track. Oxford, UK.
-			\item[P20] Lin, Y.R., \textbf{Keegan, B.C.}, Margolin, D., \& Lazer, D. (2014). ``Did You See That? Shared Attention to Media Events on Twitter.'' 2014 International Communication Association Annual Conference (ICA). Seattle, WA, USA.
-			\item[P19] \textbf{Keegan, B.C.} (2014). ``Sociotechnical Trajectories: A Structural Framework for Analyzing Event Log Data.'' 2014 International Communication Association Annual Conference (ICA). Seattle, WA, USA.
-			\item[P18] \textbf{Keegan, B.C.}, Tsur, O., Kennedy, R., \& Lazer, D. (2013). ``Mining Complex Networks from Official Congressional Biographies.'' Fifth Workshop on Information in Networks (WIN). New York City, NY, USA.
-			\item[P17] \textbf{Keegan, B.C.}, Riedl, C., Lazer, D., \& Contractor, N. (2013). ``Multidimensional Networks in Crowdsourced Creative Collaboration.'' Fifth Workshop on Information in Networks (WIN). New York City, NY, USA.
-			\item[P16] \textbf{Keegan, B.C.}, Goodman, S., Kennedy, R., \& Lazer, D. (2013). ``Building the Iron Cage: The Evolution of Multidimensional Networks in the U.S. Congress (1776-2013) and Catholic Hierarchy (1774-2013).'' 2013 International Workshop and Conference on Network Science (NetSci). Copenhagen, Denmark.
-			\item[P15] Goodman, S., Margolin, D., \textbf{Keegan, B.C.}, Lin, Y.R., \& Lazer, D. (2013). ``Open Source Predictors of Electoral Success.'' 2013 American Political Science Association Annual Meeting (APSA). Chicago, IL, USA.
-			\item[P14] Goodman, S., Margolin, D., \textbf{Keegan, B.C.}, Lin, Y.R., \& Lazer, D. (2013). ``Big Data as Big Canaries: Comparison of Open Source Indicators of Electoral Success.'' 71st Annual Conference of the Midwest Political Science Association (MPSA). Chicago, IL, USA.
-			\item[P13] \textbf{Keegan, B.C.}, Lin, Y.R., \& Lazer, D. (2013). ``Ripples on the Web: Diffusion of Activity Bursts Across Hyperlink Networks in Wikipedia.'' Sunbelt XXXIII, International Network for Social Network Analysis. Hamburg, Germany.
-			\item[P12] Lin, Y.R., Margolin, D., \textbf{Keegan, B.C.}, \& Lazer, D. (2013). ``\#Bigbirds Never Die: The Formation of Consensus in Response to Novel Information.'' Sunbelt XXXIII, International Network for Social Network Analysis. Hamburg, Germany.
-			\item[P11] Margolin, D., \textbf{Keegan, B.C.}, \& Lazer, D. (2013). ``Wisdom of the Network: Reducing Correlated Errors through Inferred Diffusion.'' Sunbelt XXXIII, International Network for Social Network Analysis. Hamburg, Germany.
-			\item[P10] \textbf{Keegan, B.C.}, Karbeyaz, C.,\textbf{*} Meleis, W., \& Lazer, D. (2013). ``Volunteer Science: Online Behavioral Experiments Using Facebook as a Subject Pool.'' Sunbelt XXXIII, International Network for Social Network Analysis. Hamburg, Germany.
-			\item[P9] \textbf{Keegan, B.C.} (2012). ``Comparative Analysis of Coauthorship Networks on Wikipedia Breaking News Articles.'' Sunbelt XXXII, International Network for Social Network Analysis. Redondo Beach, CA, USA.
-			\item[P8] Chang, C.,\textbf{*} \textbf{Keegan, B.C.}, Bennett, N., Lungeanu, A., Gilborne, J., \& Contractor, N. (2012). ``Multidimensional Networks in Crowdsourced Collaboration.'' Sunbelt XXXII, International Network for Social Network Analysis. Redondo Beach, CA, USA.
-			\item[\faAward~P7] \textbf{Keegan, B.C.}\textbf{*} (2011). ``Breaking News, Breaking Planes, and Breaking Hearts: Psycholinguistic Dynamics and Sensemaking in Collaborative Accounts of Catastrophe.'' 2011 International Communication Association Annual Conference (ICA). Boston, MA, USA. \textbf{\textit{Best Student Paper, Communication and Technology division}}.
-			\item[\faAward~P6] \textbf{Keegan, B.C.},\textbf{*} Ahmad, M.A.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2011). ``Mapping Gold Farming Back to Offline Clandestine Organizations: Methodological, Theoretical, and Ethical Challenges.'' The Game Behind the Video Game: Business, Regulation, and Society in the Gaming Industry. Rutgers University, New Brunswick, NJ, USA. \textbf{Best Paper}.
-			\item[P5] \textbf{Keegan, B.C.},\textbf{*} Gergle, D., \& Contractor, N. (2011). ``A Multi-theoretical, Multi-level Model of High Tempo Collaboration in an Online Community.'' Sunbelt XXXI, International Network for Social Network Analysis. St. Petersberg, FL, USA
-			\item[P4] \textbf{Keegan, B.C.},\textbf{*} Ahmad, M.A.,\textbf{*} Williams, D., Srivastava, J., \& Contractor, N. (2011). ``Using ERGMs to Map Online Clandestine Behavior to Offline Criminal Activity.'' Sunbelt XXXI, International Network for Social Network Analysis. St. Petersberg, FL, USA.
-			\item[P3] Williams, D., Castronova, E., Huang, Y., Shen, C.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} Ratan, R.,\textbf{*} Xiong, L.,\textbf{*} \& Contractor, N. (2009). ``As real as real? Macroeconomic behavior in a large-scale virtual world.'' 2009 International Communication Association Annual Conference (ICA). Chicago, IL, USA.
-			\item[P2] \textbf{Keegan, B.C.}\textbf{*} (2009). ``Are Wikipedians Really Gamers? A ludological perspective on the motivational literature and implications for designing participatory environments.'' Internet Research 10.0, Association of Internet Researchers (AoIR). Milwaukee, WI, USA.
-			\item[P1] Fullerton, L.,\textbf{*} \textbf{Keegan, B.C.},\textbf{*} \& Menchen-Trevino, E.\textbf{*} (2009). ``Institutionalizing notability on Wikipedia: process, policy and change.'' Internet Research 10.0, Association of Internet Researchers (AoIR). Milwaukee, WI, USA.
-		\end{itemize}
-		
-		\section{Invited talks\\and lectures}
-		\begin{itemize}[leftmargin=0pt,noitemsep]%[labelindent=-2.5em,leftmargin=0pt]
-			\item[T32] ``Credibility Laundering as a Vector: The Sociotechnical Afterlives of Reactionary Knowledge in Population Studies.'' Network Science Institute Seminar, Northeastern University. Boston, Massachusetts. 25 March 2026.
-			\item[T31] ``Credibility Laundering as a Vector: The Sociotechnical Afterlives of Reactionary Knowledge in Population Studies.'' Social Demography Seminar, Harvard Center for Population and Development Studies. Cambridge, Massachusetts. 26 February 2026.  
-			\item[T30] ``Sports, Analytics, \& Surveillance.'' CMCI 4021: Prime Time: Public Performance and Leadership, University of Colorado. Boulder, Colorado. 15 February 2024.
-			\item[T29] ``Networks and Computational Social Science.'' Interdisciplinary Quantitative Biology, BioFrontiers Institute. Boulder, Colorado. 7 March 2024.
-			\item[T28] ``High-Tempo Collaborations Following Software Patches in Gaming Communities.'' Games Research Group, University of Southern California. Los Angeles, California. 11 May 2022.
-			\item[T27] ``Governing the COVID-19 Knowledge Commons on Wikipedia.'' Interdisciplinary Training in the Social Sciences, University of Colorado. Boulder, Colorado. 1 June 2021.
-			\item[T26] ``This Place Does What It Was Built For: Designing Digital Institutions of Participatory Change.'' Center for Democracy and Technology, University of Colorado. Virtual. 1 December 2020. 
-			\item[T25] ``The Dynamics of Peer-Produced Political Information During the 2016 U.S. Presidential Campaign.'' Wikimedia Research Showcase, Wikimedia Foundation. Virtual. 18 December 2019.
-			\item[T24] ``The Limitations of Fact-Checking.'' CSCI 7000: Technology and Democracy. University of Colorado. Boulder, Colorado. 29 January 2019.
-			\item[T23] ``The Evolution and Consequences of Peer Producing Wikipedia's Rules.'' Citizen and Elite Activity on Wikipedia, Hertie School of Governance. Berlin, Germany. 14--15 December 2017.
-			\item[T22] ``A Sequence Analysis Agenda for Computational Social Science.'' Institute for Behavioral Science. Boulder, Colorado. 26 October 2017.
-			\item[T21] ``Peer Production Engagement Patterns.'' Tandon School of Engineering, New York University. Brooklyn, New York. 8--9 September 2017.
-			\item[T20] ``Implicit bias in virtual team formation processes.'' Gendered Creative Teams Workshop, Central European University. Budapest, Hungary. 25--26 May 2017.
-			\item[T19] ``Socio-Technical Systems Under Stress.'' Department of Computer Science, KAIST. Daejon, South Korea. 29--30 April 2017.
-			\item[T18] ``A Sequence Analysis Agenda for Computational Social Science.'' Neukom Institute, Dartmouth College, Hanover, New Hampshire. 13--14 May 2017. 
-			\item[T17] ``Survey of  Exponential Random Graph Models \& Stochastic Actor-Oriented Models.'' ISAT/DARPA Symbiotic Architecture for Social Simulation, University of Southern California. Los Angeles, California. 28--29 October 2016.
-			\item[T16] ``Bringing Sequence Analysis into Computational Social Science.'' Symposium on Technology-based Cooperation, Leibniz-Institute f\"{u}r Wissensmedien, T\"{u}bingen, Germany. 2--3 June 2016.
-			\item[T15] ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Department of Communication, University of California, Davis. 12 May 2016.
-			\item[T14] ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Neukom Institute, Dartmouth College. Hanover, New Hampshire. 7--8 April 2016.
-			\item[T13] ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' AI Seminar, Information Sciences Institute, University of Southern California. Marina del Rey, California. 25 March 2016.
-			\item[T12] Department of Data Science and Operations, USC Marshall School of Business. Los Angeles, California. 4 December 2015.
-			\item[T11] ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Department of Human-Centered Design and Engineering, University of Washington. Seattle, Washington. 18 November 2015.
-			\item[T10] ``First Among Equals: The Emergence and Evolution of Wikipedia's Networked Policy Regime.'' Workshop on Wikipedia Research, AAAI International Conference on Web and Social Media. Oxford, United Kingdom. 26 May 2015.
-			\item[T9] ``First Among Equals: The Emergence and Evolution of Wikipedia's Networked Policy Regime.'' Computational Social Science Summit, Northwestern University. Evanston, Illinois. 16--17 May 2015.
-			\item[T8] ``Socio-Technical Systems Under Stress.'' Microsoft Research. Redmond, Washington. 2--3 April 2015.
-			\item[T7] ``Socio-Technical Systems Under Stress.'' Human-Computer Interaction Institute Colloquium, Carnegie Mellon University. Pittsburgh, Pennsylvania. 3 December 2014.
-			\item[T6] ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Informatics Institute, University of Missouri. Columbia, Missouri. 7 October 2014.
-			\item[T5] ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Interdisciplinary Committee on Organizational Studies, University of Michigan. Ann Arbor, Michigan. 12 September 2014.
-			\item[T4] ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Computational Approaches to Social Modeling, ACM Web Science Conference. Bloomington, Indiana. 24--26 April 2014.
-			\item[T3] ``The Social Mediation of Fact Checking Interventions in Twitter Conversations.'' Northeast Political Methodology Workshop, New York University. New York, New York. 2 May 2014.
-			\item[T2] ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Center for Research on Computation and Society, Harvard University. Cambridge, Massachusetts. 10 February 2014.
-			\item[T1] ``Narrating with Networks: Making Sense of Event Log Data with Networks and Sequences.'' Symposium on User Behavior and Content Generation, Zentrum f\"{u}r Europ\"{a}ische Wirtschaftsforschung. Mannheim, Germany. 8--9 November 2013.
-		\end{itemize}
-		
-		
-		\section{Teaching}
-		% Add enrollments
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[\textit{2024}] INFO 4871/5871: Web Data Science (Fall) \hfill N=22
-			\item[] INFO 3402: Information Exposition (Spring) \hfill N=36
-			
-			\item[\textit{2023}] INFO 3402: Information Exposition (Fall) \hfill N=20
-			\item[] INFO 4871/5871: Web Data Science (Fall) \hfill N=28
-			\item[] INFO 3402: Information Exposition (Spring) \hfill N=50
-			
-			\item[\textit{2022}] INFO 3402: Information Exposition (Fall) \hfill N=20
-			\item[] INFO 4613/5613: Network Science (Fall) \hfill N=10
-			\item[] INFO 3402: Information Exposition (Spring) \hfill N=60
-			
-			\item[\textit{2021}] INFO 4613/5613: Network Science (Fall, New Course) \hfill N=22
-			\item[] INFO 3402: Information Exposition (Spring, Redesign) \hfill N=59
-			\item[] ARSC 5040: Web Data Scraping (Spring, Mini-course) \hfill N=12
-			
-			\item[\textit{2020}] INFO 3401: Information Exploration (Fall, Redesign) \hfill N=46
-			
-			\item[\textit{2019}] INFO 3402: Information Exposition (Fall) \hfill N=25
-			\item[] INFO 3402: Information Exposition (Spring) \hfill N=14
-			\item[] ARSC 5040: Web Data Scraping (Spring, New Course, Mini-course) \hfill N=10
-			
-			\item[\textit{2018}] INFO 3501/5501: Peer Production and Crowdsourcing (Fall) \hfill N=15
-			\item[] INFO 3402: Information Exposition (Spring, New Course) \hfill N=10
-			\item[] INFO 2201: Computational Reasoning 2 (Spring)  \hfill N=23
-			
-			\item[\textit{2017}] INFO 2201: Computational Reasoning 2 (Spring, New Course)  \hfill N=15
-			
-			\item[\textit{2016}] INFO 3501/5501: Peer Production and Crowdsourcing (Fall, New Course) \hfill N=12
-		\end{itemize}
-		
-		\section{Research\\supervision}
-		\hspace{-1em}\textbf{Post-doctoral researchers}
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item C. Estelle Smith. (2021 -- 2022). 
-			\begin{itemize}[noitemsep,topsep=0pt]
-				\item Placed: Tenure-track Assistant Professor, Department of Computer Science, Colorado School of Mines.
-			\end{itemize}
-		\end{itemize}
-		
-		\hspace{-1em}\textbf{Ph.D students, primary or co-advisor}
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item Benjamin Emery, Information Science. \hfill 2023 -- present
-			\item Alex Newhouse, Political Science (with C. Boulding). \hfill 2023 -- present
-			\item Matthew Nicholson, Information Science (with B. Semaan). \hfill 2023 -- present
-			\item Leonardo Orozco, Ecology and Evolutionary Biology (with N. Kane). \hfill 2021 -- present
-			\item H. Laurie Jones, Information Science (with A. Siegel). \hfill 2021 -- present
-			\item Samantha Dalal, Information Science. \hfill 2020 -- 2025
-			\begin{itemize}[noitemsep,topsep=0pt]
-				\item Dissertation: ``Going Beyond the Gig: An Ecological Approach to Studying and Intervening in the Gig Economy.'' 
-				\item Placed: Post-doctoral research associate, Professor Andr\'{e}s Monroy Hern\'{a}ndez, Princeton University.
-			\end{itemize}
-			\item Jordan Wirfs-Brock, Information Science (with L. Devendorf). \hfill 2017 -- 2022
-			\begin{itemize}[noitemsep,topsep=0pt]
-				\item Dissertation: ``Beyond the Bleeps \& Bloops: Narrative, Multi-Sensory, and Social Approaches to Communicating Data with Sound.'' 
-				\item Placed: Tenure-track Assistant Professor, Department of Computer Science, Whitman College, Walla-Walla, Washington.
-			\end{itemize}
-			\item Alicia Boyd, Computer Science, DePaul University (with J. Furst). \hfill 2017 -- 2021
-			\begin{itemize}[noitemsep,topsep=0pt]
-				\item Dissertation: ``Quantitative Intersectional Data (QUINTA): A \#metoo case study.''
-				\item Placed: Post-doctoral research associate, Professor Anne L. Washington, NYU Steinhardt School, New York.
-			\end{itemize}  
-			\item Xiaozhe `Arcadia' Zhang, Computer Science. \hfill 2016 -- 2021 
-			\begin{itemize}[noitemsep,topsep=0pt]
-				\item Dissertation: ``Software Patches and Their Impacts on Online Gaming Communities.''
-				\item Placed: Senior Data Scientist, EA Games, Redwood City, California.
-			\end{itemize} 
-		\end{itemize}
-		
-		\hspace{-1em}\textbf{Ph.D students, dissertation committee member}
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item Anas Buhayh, Information Science \hfill 2025
-			\item Youngeun Choi, Economics \hfill 2023
-			\item Maram Kurdi, Computer Science \hfill 2023
-			\item Mikhaila Friske, Information Science \hfill 2023
-			\item Yichen Wang, Computer Science \hfill 2022
-			\item Evan Rowe, Media Studies \hfill 2022
-			\item Anthony Pinter, Information Science \hfill 2022
-			\item Ang Li, University of Pittsburgh \hfill 2021
-			\item Patrick Gildersleve, Oxford Internet Institute \hfill 2021
-			\item Aaron Jiang, Information Science \hfill 2020
-			\item Wendy Norris, Information Science \hfill 2020
-			\item Martina Balestra, NYU Tandon \hfill 2019
-			\item Angelica Kalika, Journalism \hfill 2019
-			\item Joseph Zamadics, Political Science \hfill 2019
-			\item Melissa Bica, Computer Science \hfill 2019
-			\item T. Jennings Anderson, Computer Science \hfill 2019
-			\item Nora Connor, Computer Science \hfill 2017
-			\item Abigail Jacobs, Computer Science \hfill 2017
-			\item Sam F. Way, Computer Science \hfill 2017
-		\end{itemize}
-		
-		\hspace{-1em}\textbf{Masters students, supervisor}
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item Jordan Kesner, INFO B.A.M. \hfill 2023 -- 2025
-			\item Jack Stein, INFO B.A.M. \hfill 2023 -- 2025
-			\item Elijah Boykoff, INFO B.A.M. \hfill 2023 -- 2025
-			\item Natalie Castro, INFO M.S. \hfill 2023 -- 2024
-			\item Cade Wilson, INFO B.A.M. \hfill 2022 -- 2024
-			\item Emily Porter, ATLAS M.S. \hfill 2017 -- 2018
-			\item Jacob Mink, Applied Math M.S. \hfill 2016 -- 2017
-		\end{itemize}
-		
-		\hspace{-1em}\textbf{Undergraduate students}
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item Andrew Schwartz, Information Science \hfill 2023 -- 2024
-			\item Gale Prinster, Sociology \hfill 2021 -- 2023
-			\item Vikki Wong, Marketing \hfill 2021
-			\item William Egesdal, Computer Science \hfill 2021
-			\item Tamer Shahwan, Computer Science \hfill 2021
-			\item Zachary Girard, Evolutionary Biology \hfill 2021
-			\item Andrew Gelfman, Computer Science \hfill 2018 -- 2019
-			\item Zack Salama, Computer Science \hfill 2018 -- 2019
-			\item Jack Sandberg, Information Science \hfill 2019
-			\item Alejandro Camarago, Political Science \hfill 2018
-			\item Joshua Edelmann, Political Science \hfill 2018
-			\item Simon Furney, Political Science \hfill 2018
-			\item Emma Lynch, Political Science \hfill 2018
-			\item Sophia Tupper, Political Science \hfill 2018
-			\item Suzannah Ranzo, Political Science \hfill 2017 -- 2018
-			\item Chelsea Campana, Political Science \hfill 2017 -- 2018
-			\item Henry Bowditch, Political Science \hfill 2017 -- 2018
-			\item Robert Reedy, Political Science \hfill 2017 -- 2018
-		\end{itemize}
-		
-		\hspace{-1em}\textbf{Student co-authors}
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item Shamika Klassen, Information Science, University of Colorado Boulder
-			\item Jay K, Ghosh, Information Science, University of Colorado Boulder
-			\item Dylan T. Doyle, Information Science, University of Colorado Boulder
-			\item Irfanul Alam, Ecology and Evolutionary Biology, University of Colorado Boulder
-			\item Jason Shuo Zhang, Computer Science, University of Colorado Boulder
-			\item Robert Soden, ATLAS Institute, University of Colorado Boulder
-			\item Peaks M. Krafft, Computer Science, Massachusetts Institute of Technology
-			\item Claudia Flores-Saviaga, Computer Science, Northeastern University
-			\item Marlon Twyman, Communication, Northwestern University
-			\item Joshua Clark, Communication, University of Southern California
-			\item Alex Leavitt, Communication, University of Southern California
-			\item Eric Forbush, Computer Science, Northeastern University
-			\item Jason Radford, Sociology, University of Chicago
-			\item Andrew Pliny, Communication, University of Illinois Urbana
-		\end{itemize}
-		
-		\section{Service to\\university}
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[SU15] \textit{Ad hoc} advisory committee on decentralized social media, University. \hfill 2023 -- present
-			\item[SU14] Dean's Technology Advisory Council, CMCI. \hfill 2023 -- present
-			\item[SU13] Faculty affairs committee, INFO. \hfill 2021 -- present
-			\item[SU12] Faculty search committee, INFO. \hfill 2020 -- 2021
-			\item[SU11] Undergraduate curriculum committee, INFO. \hfill 2019 -- 2021
-			\item[SU10] \textit{Ad hoc} committees on data analytics curricula, University. \hfill 2016 -- 2018
-			\item[SU9] Graduate student liaison, INFO. \hfill 2018 -- 2019
-			\item[SU8] Faculty search committee, INFO. \hfill 2017 -- 2018
-			\item[SU7] Reviewer, Research \& Innovation Office Seed Grants, University. \hfill 2018
-			\item[SU6] Exploratory committee for game studies, CMCI. \hfill 2017 -- 2018
-			\item[SU5] ``One College'' committee, CMCI. \hfill 2017 -- 2018
-			\item[SU4] Computational \& quantitative curriculum design, INFO. \hfill 2017 -- 2021
-			\item[SU3] \textit{Ad hoc} budget modeling \& office design, INFO. \hfill 2016 -- 2017
-			\item[SU2] Faculty search committee, JOUR. \hfill 2016 -- 2017
-			\item[SU1] CHI 2017 reception co-organizer, CMCI. \hfill 2016 -- 2017
-		\end{itemize}
-		
-		\section{Service to\\profession}
-		
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[SP20] Associate Chair, Program Committee, ACM CSCW. \hfill 2016 -- present
-			\item[SP19] Program Committee, Int'l. Conf. on Comp. Social Science (IC2S2). \hfill 2016 -- present
-			\item[SP18] Senior Program Committee, AAAI ICWSM. \hfill 2014 -- present
-			\item[SP17] Panelist, NSF CISE. \hfill 2021
-			\item[SP16] Reviewer, Swiss NSF. \hfill 2020
-			\item[SP15] Associate Chair, Program Committee, ACM CHI. \hfill 2016 -- 2018
-			\item[SP14] Program Committee, Int'l Conf. on the World Wide Web (WWW). \hfill 2015 -- 2018
-			\item[SP13] Panelist, NSF CISE. \hfill 2018
-			\item[SP12] Workshops Co-Chair, ACM CSCW. \hfill 2018
-			\item[SP11] Program Co-Chair, Int'l. Conf. on Comp. Social Science (IC2S2). \hfill 2017
-			\item[SP10] Workshops Co-Chair, AAAI ICWSM. \hfill 2017
-			\item[SP9] Program Committee, Int'l. Conf. on Network Science (NetSci). \hfill 2017
-			\item[SP8] Panelist, NSF CISE. \hfill 2017
-			\item[SP7] Publicity Co-Chair, Int'l. Conf. on Social Informatics (SocInfo). \hfill 2016
-			\item[SP6] Program Committee, Int'l. Conf. on Social Informatics (SocInfo). \hfill 2014 -- 2016
-			\item[SP5] Program Committee, Int'l. Symp. on Open Collaboration (OpenSym). \hfill 2013 -- 2016
-			\item[SP4] Publicity Co-Chair, ACM CSCW. \hfill 2015
-			\item[SP3] Publicity Co-Chair, AAAI ICWSM. \hfill 2014
-			\item[SP2] Steering Committee, ACM CSCW. \hfill 2012 -- 2013
-			\item[SP1] Student Volunteer Co-Chair, ACM CSCW. \hfill 2013
-		\end{itemize}
-		
-		%\section{Reviewing experience}
-		%	\begin{itemize}[leftmargin=0pt]
-			%		\item[\textit{Journals}] \textit{Social Science Computing Review}; \textit{EPJ Data Science}; \textit{PLoS ONE}; \textit{New Media and Society}; \textit{Social Media and Society}; \textit{Journal of Computer-Mediated Communication}; \textit{Journalism}; \textit{Sociological Methods and Research}; \textit{Journal of Quantitative Description}\\
-			
-			%		\item[\textit{Conferences}] \textit{ACM Computer-Supported Cooperative Work} (CSCW); \textit{ACM Human Factors in Computing Systems} (CHI); \textit{AAAI Weblogs and Social Media} (ICWSM); \textit{ACM Conference on Supporting Groupwork} (GROUP); \textit{International Conference on Social Informatics} (SocInfo); \textit{International Conference on Computational Social Science} (IC2S2); \\
-			
-			%		\item[\textit{Grants}] U.S. National Science Foundation; Swiss National Science Foundation
-			%	\end{itemize}
-		
-		\section{Service to\\public}
-		
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[SC7] Columnist, Boulder Reporting Lab. \hfill 2025 -- present
-			\item[SC6] Editor, Boulder Housing Network. \hfill 2024 -- present
-			\item[SC5] Board member, Boulder Progressives. \hfill 2023 -- present
-			\item[SC4] Board member, Cannabis Licensing \& Advisory Board, City of Boulder. \hfill 2020 -- present
-			\item[SC3] Board member, Industrial Hemp Research Foundation. \hfill 2019 -- 2024
-			\item[SC2] Panelist, Cannabis Science and Policy Workgroup, CDPHE \& MED. \hfill 2018 -- 2019
-			\item[SC1] Mentor, CanopyBoulder. \hfill 2017 -- 2019
-		\end{itemize}
-		
-		\section{Press\\coverage}
-		% Separate press coverage and op-eds
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[N32] Drugan, T. ``A call to ban the sale of high-potency THC products in Boulder amid rising teen mental health concerns.'' \textit{Boulder Reporting Lab}. \url{https://boulderreportinglab.org/2024/06/09/a-call-to-ban-the-sale-of-high-potency-thc-products-in-boulder-amid-rising-teen-mental-health-concerns/} 9 June 2024.
-			\item[N31] Cleveland, C. ``10 years of recreational cannabis research: What we've learned and what's still unknown.'' \textit{Colorado Matters}. 30 November 2022. \url{https://www.cpr.org/2022/11/30/colorado-recreational-cannabis-research/}
-			\item[N30] Swearingen, D. ``Cannabis hospitality future still uncertain in Boulder.'' \textit{Daily Camera}. 2 October 2022. \url{https://www.dailycamera.com/2022/10/02/cannabis-hospitality-future-still-uncertain-in-boulder/}
-			\item[N29] Schaneman, B. ``Inaccurate strain names, poor labeling hinder marijuana industry, study shows.'' \textit{Marijuana Business Daily}. 16 June 2022. \url{https://mjbizdaily.com/inaccurate-strain-names-poor-labeling-hinder-marijuana-industry/}
-			\item[N28] Finley, B. ``Marijuana labeling system `not an effective or safe way' to detail what's inside product, CU study finds.'' \textit{Daily Camera}. 20 May 2022. \url{https://www.dailycamera.com/2022/05/20/marijuana-labels-indica-sativa-cu-study/}
-			\item[N27] Pasternack, A. ``How 9/11  turned a new site called Wikipedia into history's crowdsourced front page.'' \textit{Fast Company}. 11 September 2021. \url{https://www.fastcompany.com/90674998/how-9-11-turned-a-new-site-called-wikipedia-into-historys-crowdsourced-front-page}
-			\item[N26] Harrison, S. ``How Wikipedia Grew Up With the War on Terror.'' \textit{Slate}. 8 September 2021. \url{https://slate.com/technology/2021/09/wikipedia-september-11-20th-anniversary.html}
-			\item[N25] Sachdev, S. ``Wikipedia's Sprawling, Awe-Inspiring Coverage of the Pandemic.'' \textit{The New Republic}. 26 February 2021. \url{https://newrepublic.com/article/161486/wikipedia-coverage-pandemic-covid}
-			\item[N24] Gedye, G. ``When the Capitol Was Attacked, Wikipedia Went to Work.'' \textit{Washington Monthly}. 4 February 2021. \url{https://washingtonmonthly.com/2021/02/04/when-the-capitol-was-attacked-wikipedia-went-to-work/}
-			\item[N23] Lopez, M. ``Social media helps bring people together, but in this political climate it's tearing us apart.'' \textit{Denver 7}. 1 February 2021. \url{https://www.thedenverchannel.com/news/360/social-media-helps-bring-people-together-but-in-this-political-climate-its-tearing-us-apart}
-			\item[N22] Pasternack, A. ``As a mob attacked the Capitol, a crowd built Wikipedia.'' \textit{Fast Company}. 14 January 2021. \url{https://www.fastcompany.com/90593176/wikipedia-capitol-attack-name}
-			\item[N21] Geoghegan, C. ``As Colorado Jumps Into New Marijuana Businesses, Boulder Stays Still.'' \textit{Westword}. 28 December 2020. \url{https://www.westword.com/marijuana/boulder-stays-still-colorado-jumps-into-new-marijuana-businesses-11855744}
-			\item[N20] Gossett, S. ``The Internet Should Be More Like Wikipedia.'' \textit{Built In}. 13 October 2020. \url{https://builtin.com/founders-entrepreneurship/wikipedia}
-			\item[N19] ``Machine Learning provides insight into cannabis strains.'' \textit{Laboratory News}. 30 September 2020. \url{https://www.labnews.co.uk/article/2030874/machine-learning-provides-insight-into-cannabis-strains}	
-			\item[N18] Bunch, J. ``Hate speech is a difficult constitutional conversation.'' \textit{Colorado Politics}. 13 July 2020. \url{https://www.coloradopolitics.com/news/insights-hate-speech-is-a-difficult-constitutional-conversation/article_40939b58-be51-11ea-a4b3-bb156d6ccaba.html}
-			\item[N17] Colom\'{e}, J.P. ``La era del `todo vale' en redes sociales se acaba.'' \textit{El Pa\'{i}s}. 5 July 2020. \url{https://elpais.com/tecnologia/2020-07-05/la-era-del-todo-vale-en-redes-sociales-se-acaba.html}
-			\item[N16] Pasternack, A. ``How Wikipedia's volunteers became the web's best weapon against misinformation.'' \textit{Fast Company}. 7 March 2020. \url{https://www.fastcompany.com/90471667/how-wikipedia-volunteers-became-the-webs-best-weapon-against-misinformation}
-			\item[N15] Frank, J. ``Should it be a felony to threaten elected officials? A Colorado bill is asking.'' \textit{The Journal}. 31 January 2020. \url{https://www.the-journal.com/articles/should-it-be-a-felony-to-threaten-elected-officials-a-colorado-bill-is-asking/}
-			\item[N14] Matyus, A. ``The real reason fake social media accounts will haunt us for years to come.'' \textit{Digital Trends}. 22 August 2019. \url{https://www.digitaltrends.com/social-media/why-fake-social-media-accounts-will-haunt-us/}
-			\item[N13] Gonzalez, R. ``The New LinkedIn Looks Just Like Facebook. Smart Move.'' \textit{WIRED}. 20 January 2017. \url{https://www.wired.com/2017/01/new-linkedin-looks-just-like-facebook-smart-move/}
-			\item[N12] Rogers, A. ``Google's Search Algorithm Could Steal the Presidency.'' \textit{WIRED}. 6 August 2015. \url{http://www.wired.com/2015/08/googles-search-algorithm-steal-presidency/}
-			\item[N11] Paquette, D. ``Not even a third of speaking roles in popular movies go to women.'' \textit{The Washington Post}. 6 August 2015. \url{http://www.washingtonpost.com/news/wonkblog/wp/2015/08/06/not-even-a-third-of-speaking-roles-in-popular-movies-go-to-women/}
-			\item[N10]  Kerr, J. ``The Network of L.L. Bean Fall Home Catalogue Colors.'' \textit{Gawker} The New Englandah. 7 August 2014. \url{http://newenglandah.kinja.com/the-network-of-l-l-bean-fall-home-catalogue-colors-1617506910}
-			\item[N9] Hickey, W. ``The Bechdel Test: Checking Our Work.'' \textit{FiveThirtyEight} DataLab. 8 April 2014. \url{http://fivethirtyeight.com/datalab/the-bechdel-test-checking-our-work/}
-			\item[N8] Weissman, D. ``The NSA's virtual spies in `World of Warcraft' -- on a fool's mission?'' \textit{National Public Radio Marketplace}. 10 December 2013. \url{http://www.marketplace.org/topics/tech/nsa%E2%80%99s-virtual-spies-world-warcraft-fool%E2%80%99s-mission} 
-			\item[N7] Cherry, S. ``Is Wikipedia a Real-Time News Source?'' \textit{IEEE Spectrum}. 5 February 2013. \url{http://spectrum.ieee.org/podcast/telecom/internet/is-wikipedia-a-realtime-news-source}
-			\item[N6] Zuckerman, E. ``How Wikipedia Edits Tragedies.'' \textit{The Atlantic}. 19 December 2012. \url{http://www.theatlanticwire.com/national/2012/12/how-wikipedia-edits-tragedies/60174/}
-			\item[N5] Sampson, T. ``How Wikipedia responds to mass shootings.'' The Daily Dot. 19 December 2012. \url{http://www.dailydot.com/news/wikipedia-edit-history-mass-shootings/}
-			\item[N4] Ingram, M. ``What Wikipedia can tell us about the future of news.'' Gigaom.com. 19 December 2012. \url{http://gigaom.com/2012/12/19/what-wikipedia-can-tell-us-about-the-future-of-news/}
-			\item[N3] Ford, H. ``Wikipedia Isn't Journalism, But Are Wikipedians Reluctant Journalists?'' PBS Idea Lab. 20 October 2011. \url{http://www.pbs.org/idealab/2011/10/wikipedia-isnt-journalism-but-are-wikipedians-reluctant-journalists290/} 
-			\item[N2] Caro, M. ``Tweeting Osama: Twitter, Facebook have different roles when news develops.'' \textit{Chicago Tribune}. 2 May 2011. \url{http://www.chicagotribune.com/entertainment/sc-ent-0502-social-networking-bin-lad20110502,0,3825162.story}
-			\item[N1] Ewalt, D. ``Playing Well With Others.''  \textit{Forbes}. 28 April 2011. \url{http://blogs.forbes.com/davidewalt/2011/04/28/playing-well-with-others/}
-		\end{itemize}
-		
-		\section{Op-eds and\\invited\\articles}
-		
-		\begin{itemize}[leftmargin=0pt,noitemsep]
-			\item[O27] \textbf{Keegan, B.C.}.``What 822,505 words reveal about how Boulder’s comprehensive plan has changed since 1977.'' \textit{Boulder Reporting Lab}. 1 April 2026. \url{https://boulderreportinglab.org/2026/03/31/brian-keegan-what-822505-words-reveal-about-how-boulders-comprehensive-plan-has-changed-since-1977/}
-			\item[O26] \textbf{Keegan, B.C.}. ``University workers shouldn’t have to wait for rights the Colorado regents can grant now.'' \textit{Colorado Sun}. 26 March 2026. \url{https://coloradosun.com/2026/03/26/opinion-colorado-regents-collective-bargining-decision/}
-			\item[O25] \textbf{Keegan, B.C.} \& Merchant, E.R.K. ``The long shadow of Paul Ehrlich’s ‘Population Bomb’ is evident in anti‑immigration efforts today.'' \textit{The Conversation}. 26 March 2026. \url{https://theconversation.com/the-long-shadow-of-paul-ehrlichs-population-bomb-is-evident-in-anti-immigration-efforts-today-279151}
-			\item[O24] \textbf{Keegan, B.C.} \& Yates, B. ``Across the Aisle: Boulder's new survey shows shifting attitudes on housing. Now what?'' \textit{Boulder Reporting Lab}. 14 December 2025. \url{https://boulderreportinglab.org/2025/12/14/across-the-aisle-boulders-survey-shows-shifting-attitudes-on-housing-now-what/}
-			\item[O23] \textbf{Keegan, B.C.} ``What Boulder's 2025 election results reveal about how we vote --- and why progressives keep coming from behind.'' \textit{Boulder Reporting Lab}. 9 November 2025. \url{https://boulderreportinglab.org/2025/11/09/brian-keegan-what-boulders-2025-election-results-reveal-about-how-we-vote-and-why-progressives-keep-coming-from-behind/}
-			\item[O22] \textbf{Keegan, B.C.} \& Yates, B. ``Across the Aisle: Two Boulder Reporting Lab columnists unpack what the 2025 local election results really mean.'' \textit{Boulder Reporting Lab}. 6 November 2025. \url{https://boulderreportinglab.org/2025/11/06/across-the-aisle-two-boulder-reporting-lab-columnists-unpack-what-the-2025-local-election-results-really-mean/}
-			\item[O21] \textbf{Keegan, B.C.} ``Boulder's next political divide is generational --- and already visible in school enrollment trends.'' \textit{Boulder Reporting Lab}. 14 October 2025. \url{https://boulderreportinglab.org/2025/10/14/brian-keegan-boulders-next-political-divide-is-generational-and-already-visible-in-school-enrollment-trends/}
-			\item[O20] \textbf{Keegan, B.C.} ``How Boulder's `silver wave' could transform the city's future --- for the better, if we plan now.'' \textit{Boulder Reporting Lab}. 26 August 2025. \url{https://boulderreportinglab.org/2025/08/26/brian-keegan-how-boulders-silver-wave-could-transform-the-citys-future-for-the-better-if-we-plan-now/}
-			\item[O19] \textbf{Keegan, B.C.} ``Rethinking Boulder's growth debate --- with data, not nostalgia.'' \textit{Boulder Reporting Lab}. 22 July 2025. \url{https://boulderreportinglab.org/2025/07/22/brian-keegan-rethinking-boulders-growth-debate-with-data-not-nostalgia/}
-			\item[O18] \textbf{Keegan, B.C.} ``The myth of a `full' Boulder --- and how our policies are driving people away.'' \textit{Boulder Reporting Lab}. 29 June 2025. \url{https://boulderreportinglab.org/2025/06/29/brian-keegan-the-myth-of-a-full-boulder-and-how-our-policies-are-driving-people-away/}
-			\item[O17] \textbf{Keegan, B.C.} ``Pedestrianization actually helped West Pearl.'' \textit{Daily Camera}. 17 April 2025. \url{https://www.dailycamera.com/2025/04/17/guest-opinion-brian-c-keegan-pedestrianization-actually-helped-west-pearl/}
-			\item[O16] \textbf{Keegan, B.C.} ``Progressive politics are mainstream in Boulder.'' \textit{Daily Camera}. 6 December 2024. \url{https://www.dailycamera.com/2024/12/06/guest-opinion-brian-keegan-adrian-fine-and-jane-hummer-progressive-politics-are-mainstream-in-boulder/}
-			\item[O15] \textbf{Keegan, B.C.} ``Millionaires for vacant concrete pads'' \textit{Boulder Weekly}. 20 May 2024. \url{https://boulderweekly.com/opinion/millionaires-for-vacant-concrete-pads/}
-			\item[O14] \textbf{Keegan, B.C.} ``Despite questionable poll, most Coloradans aren't anti-growth.''  \textit{Denver Post} \& \textit{Daily Camera}. 17 April 2024. \url{https://www.dailycamera.com/2024/04/17/steve-pomerance-anti-growth-data-numbersusa-poll/}
-			\item[O13] \textbf{Keegan, B.C.} ``We must end patterns of moral disengagement in our policy debates.'' \textit{Daily Camera}. 21 March 2024. \url{https://www.dailycamera.com/2024/03/21/guest-opinion-brian-c-keegan-we-must-end-patterns-of-moral-disengagement-in-our-policy-debates/}
-			\item[O12] Castle, S., \textbf{Keegan, B.C.}, \& Wallach, M. ``Fake News: An AI interview with Mark Wallach and Robot Mark Wallach.'' 11 January 2024. \textit{Boulder Weekly}.  \url{https://boulderweekly.com/opinion/ai-wallach-gpt-boulder-weekly/} 
-			\item[O11] \textbf{Keegan, B.C.} ``Three themes from Boulder's 2023 election.'' \textit{Daily Camera}. 25 November 2023. \url{https://www.dailycamera.com/2023/11/25/guest-opinion-brian-keegan-three-themes-from-boulders-2023-election/}
-			\item[O10] \textbf{Keegan, B.C.} ``Safe Zones is not a serious solution.'' \textit{Boulder Weekly}. 2 November 2023. \url{https://boulderweekly.com/opinion/safe-zones-is-not-a-serious-solution/}
-			\item[O9] \textbf{Keegan, B.C.} ``Subordinating Council authority to previous ballot measures is a slippery slope.'' \textit{Daily Camera}. 6 September 2023. \url{https://www.dailycamera.com/2023/09/06/guest-opinion-brian-keegan-subordinating-council-authority-to-previous-ballot-measures-is-a-slippery-slope/}
-			\item[O8] \textbf{Keegan, B.C.} ``Irresponsible rhetoric around occupancy ordinance process has no place in Boulder.'' \textit{Daily Camera}. 23 August 2023. \url{https://www.dailycamera.com/2023/08/23/guest-opinion-brian-keegan-irresponsible-rhetoric-around-occupancy-ordinance-process-has-no-place-in-boulder/}
-			\item[O7] \textbf{Keegan, B.C.} ``Property tax relief should be linked to local land-use reform.'' \textit{Colorado Sun}. 5 May 2023. \url{https://coloradosun.com/2023/05/05/colorado-housing-land-use-zoning-property-taxes-legislation-213-opinion/}
-			\item[O6] \textbf{Keegan, B.C.} ``What is Mastodon? A computational social scientist explains how the `federated' network works and why it won't be a new Twitter.'' \textit{The Conversation}. 11 November 2022. \url{https://theconversation.com/what-is-mastodon-a-computational-social-scientist-explains-how-the-federated-network-works-and-why-it-wont-be-a-new-twitter-194329}
-			\item[O5] \textbf{Keegan, B.C.} ``Opposition to even-year elections is grounded in vibes, not evidence.'' \textit{Daily Camera}. 14 October 2022. \url{https://www.dailycamera.com/2022/10/14/guest-opinion-brian-keegan-opposition-to-even-year-elections-is-grounded-in-vibes-not-evidence/}
-			\item[O4] \textbf{Keegan, B.C.} ``Odd election years are temporal gerrymandering.'' \textit{Daily Camera}. 9 August 2022. \url{https://www.dailycamera.com/2022/08/09/guest-opinion-brian-keegan-odd-election-years-are-temporal-gerrymandering/}
-			\item[O3] \textbf{Keegan, B.C.} ``Opinion: Colorado's cannabis businesses may regret opting for delivery.'' \textit{The Colorado Sun}. 18 December 2020. \url{https://coloradosun.com/2020/12/18/cannabis-delivery-opinion/}
-			\item[O2] \textbf{Keegan, B.C.} ``How Sept. 11 made Wikipedia what it is today.'' \textit{Slate}. 17 November 2020. \url{https://slate.com/technology/2020/11/wikipedia-september-11-breaking-news.html}
-			\item[O1] \textbf{Keegan, B.C.} ``How does Wikipedia deal with a mass shooting? A frenzied start gives way to a few core editors.'' Nieman Journalism Lab, Harvard University. December 18, 2012. \url{http://www.niemanlab.org/2012/12/how-does-wikipedia-deal-with-a-mass-shooting-a-frenzied-start-gives-way-to-a-few-core-editors/}
-		\end{itemize}
-		
-		\section{Consulting}
-		% \textbf{Colorado Community Research} \hfill Boulder, Colorado \\
-		% \textit{Co-Founder} \hfill 2024 -- present
-		
-		\textbf{Colvin Run Networks} \hfill Arlington, Virginia \\
-		\textit{Consultant} \hfill 2019 -- 2024
-		% Technical advise on building cloud-based data analytics capabilities for federal contracts.
-		
-		\textbf{Center for Media, Data and Society} \hfill Budapest, Hungary \\
-		\textit{Consultant} \hfill 2015 -- 2016
-		% Network analysis and visualization of media ownership structure in Hungary.
-		
-		\textbf{Ninja Metrics} \hfill Los Angeles, California \\
-		\textit{Researcher} \hfill 2011 -- 2014
-		% Statistical modeling of clandestine behavior and peer effects in online games.
-		
-		\textbf{Science and Technology Policy Institute} \hfill Washington, D.C. \\
-		\textit{Consultant} \hfill 2011
-		% Statistical analysis of grant coauthorship network for major research funding agency.
-		
-		% Tabulate Computer Skills; p{3in} defines paragraph 3 inches wide
-		%\section{Skills}
-		%\textbf{Programming}\hfill Python, R
-		
-		%\textbf{Data analysis}\hfill statsmodels, pandas, scikit-learn, Stata
-		
-		%\textbf{Databases}\hfill MySQL, PostgreSQL, sqlite, Neo4j, MongoDB
-		
-		%\textbf{Network analysis}\hfill networkx, Gephi, statnet, PNET, NodeXL
-		
-		%\textbf{Data visualization}\hfill matplotlib, seaborn, ggplot2, Gephi, vega-lite, altair
-		
-		%\textbf{Web development}\hfill HTML, CSS, Bootstrap, WordPress, Jekyll, Flask, Django
-		
-		%\section{References}
-		
-		
-		%\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccc}
-		%\begin{tabular*}{\textwidth}{lcc}
-		%	\multirow{2}{*}{\textbf{David Lazer}} & Professor & d.lazer@neu.edu \\
-		%	& Northeastern University &  617-329-1010 \\
-		%	& & \\	
-		%	\multirow{2}{*}{\textbf{Noshir Contractor}} & Professor & nosh@northwestern.edu \\
-		%	& Northwestern University & 847-491-3669 \\
-		%	& & \\	
-		%	\multirow{2}{*}{\textbf{Darren Gergle}} & Professor & dgergle@northwestern.edu \\
-		%	& Northwestern University & 847-467-1221 \\
-		
-		
-		%\textbf{David Lazer} & \textbf{Noshir Contractor} & \textbf{Darren Gergle} \\ 
-		%Professor & Professor & Associate Professor \\
-		%Northeastern University  & Northwestern University  & Northwestern University  \\ 
-		%& & \\
-		%132 Nightingale Hall & 2-133 Frances Searle Hall & 1-142 Frances Searle Hall\\
-		%360 Huntington Ave. & 2240 Campus Dr. & 2240 Campus Dr. \\
-		%Boston, MA 02115 & Evanston, IL 60208 & Evanston, IL 60208 \\
-		%& & \\
-		%d.lazer@neu.edu & nosh@northwestern.edu & dgergle@northwestern.edu \\
-		%617-329-1010 & 847-491-3669 & 847-467-1221\\
-		%%\url{www.davidlazer.com} & \url{nosh.northwestern.edu} & \url{soc.northwestern.edu/dgergle/}
-		%\textbf{V.G. Narayanan} & \textbf{David Lazer} \\ 
-		%Professor & Professor \\
-		%Harvard Business School  & Northeastern University \\ 
-		%vnarayanan@hbs.edu & d.lazer@neu.edu \\
-		%617-495-6359 & 617-329-1010\\
-		%& \\
-		%Morgan Hall 393 & 132 Nightingale Hall\\
-		%Soldier Field Road & 360 Huntington Ave. \\
-		%Boston, MA 02163 & Boston, MA 02115 \\
-		%
-		%& \\
-		%& \\
-		%\textbf{Noshir Contractor} & \textbf{Darren Gergle} \\ 
-		%Professor & Professor \\
-		%Northwestern University  & Northwestern University  \\ 
-		%nosh@northwestern.edu & dgergle@northwestern.edu \\
-		%847-491-3669 & 847-467-1221\\
-		%& \\
-		%2-133 Frances Searle Hall & 1-142 Frances Searle Hall\\
-		%2240 Campus Dr. & 2240 Campus Dr. \\
-		%Evanston, IL 60208 & Evanston, IL 60208 \\
-		
-		%\url{www.davidlazer.com} & \url{nosh.northwestern.edu} & \url{soc.northwestern.edu/dgergle/}
-		
-		%\end{tabular*} 
-		
-		%\section{Extracurriculars}
-		%\textbf{Wikipedia} \hfill 2005--\\
-		%\textit{``Veteran'' editor}. \textgreater13,000 edits as ``User:Madcoverboy''\\
-		%Featured and Good Articles:
-		%\begin{itemize}
-		%\item  ``Francis Amasa Walker''
-		%\item ``Massachusetts Institute of Technology''
-		%\item ``List of Institute Professors at the Massachusetts Institute of Technology''
-		%\end{itemize}
-		%
-		%\textbf{MIT Educational Council}\hfill 2008--\\
-		%\textit{Educational Councilor}.\\Interviewed undergraduate applicants from Chicago, Latin America, Africa, and San Luis Obispo.
-		
-		%\textbf{Massively multiplayer online games}
-		%\begin{itemize}
-		%\item Level 30 and Silver 3 PvP tier in \textit{League of Legends} \hfill 2012--
-		%\item \textgreater50 million skillpoints in \textit{EVE Online} \hfill 2006--2013
-		%\item Three level 80s in \textit{World of Warcraft} \hfill 2005--2010
-		%\end{itemize}
-		
-		%\textbf{SCUBA diving}\\
-		%PADI-certified for open water, enriched air, and dry-suit  \hfill 2009--
-		
-	\end{resume} 
-	
+	\end{itemize}
+
+	\subhead{Ph.D. students, dissertation committee member}
+	\begin{itemize}
+		\item Anas Buhayh, Information Science \hfill 2025
+		\item Youngeun Choi, Economics \hfill 2023
+		\item Maram Kurdi, Computer Science \hfill 2023
+		\item Mikhaila Friske, Information Science \hfill 2023
+		\item Yichen Wang, Computer Science \hfill 2022
+		\item Evan Rowe, Media Studies \hfill 2022
+		\item Anthony Pinter, Information Science \hfill 2022
+		\item Ang Li, University of Pittsburgh \hfill 2021
+		\item Patrick Gildersleve, Oxford Internet Institute \hfill 2021
+		\item Aaron Jiang, Information Science \hfill 2020
+		\item Wendy Norris, Information Science \hfill 2020
+		\item Martina Balestra, NYU Tandon \hfill 2019
+		\item Angelica Kalika, Journalism \hfill 2019
+		\item Joseph Zamadics, Political Science \hfill 2019
+		\item Melissa Bica, Computer Science \hfill 2019
+		\item T. Jennings Anderson, Computer Science \hfill 2019
+		\item Nora Connor, Computer Science \hfill 2017
+		\item Abigail Jacobs, Computer Science \hfill 2017
+		\item Sam F. Way, Computer Science \hfill 2017
+	\end{itemize}
+
+	\subhead{Master's students, supervisor}
+	\begin{itemize}
+		\item Jordan Kesner, INFO B.A.M. \hfill 2023 -- 2025
+		\item Jack Stein, INFO B.A.M. \hfill 2023 -- 2025
+		\item Elijah Boykoff, INFO B.A.M. \hfill 2023 -- 2025
+		\item Natalie Castro, INFO M.S. \hfill 2023 -- 2024
+		\item Cade Wilson, INFO B.A.M. \hfill 2022 -- 2024
+		\item Emily Porter, ATLAS M.S. \hfill 2017 -- 2018
+		\item Jacob Mink, Applied Math M.S. \hfill 2016 -- 2017
+	\end{itemize}
+
+	\subhead{Undergraduate students}
+	\begin{itemize}
+		\item Andrew Schwartz, Information Science \hfill 2023 -- 2024
+		\item Gale Prinster, Sociology \hfill 2021 -- 2023
+		\item Vikki Wong, Marketing \hfill 2021
+		\item William Egesdal, Computer Science \hfill 2021
+		\item Tamer Shahwan, Computer Science \hfill 2021
+		\item Zachary Girard, Evolutionary Biology \hfill 2021
+		\item Andrew Gelfman, Computer Science \hfill 2018 -- 2019
+		\item Zack Salama, Computer Science \hfill 2018 -- 2019
+		\item Jack Sandberg, Information Science \hfill 2019
+		\item Alejandro Camarago, Political Science \hfill 2018
+		\item Joshua Edelmann, Political Science \hfill 2018
+		\item Simon Furney, Political Science \hfill 2018
+		\item Emma Lynch, Political Science \hfill 2018
+		\item Sophia Tupper, Political Science \hfill 2018
+		\item Suzannah Ranzo, Political Science \hfill 2017 -- 2018
+		\item Chelsea Campana, Political Science \hfill 2017 -- 2018
+		\item Henry Bowditch, Political Science \hfill 2017 -- 2018
+		\item Robert Reedy, Political Science \hfill 2017 -- 2018
+	\end{itemize}
+
+	\subhead{Student co-authors}
+	\begin{itemize}
+		\item Shamika Klassen, Information Science, University of Colorado Boulder
+		\item Jay K. Ghosh, Information Science, University of Colorado Boulder
+		\item Dylan T. Doyle, Information Science, University of Colorado Boulder
+		\item Irfanul Alam, Ecology and Evolutionary Biology, University of Colorado Boulder
+		\item Jason Shuo Zhang, Computer Science, University of Colorado Boulder
+		\item Robert Soden, ATLAS Institute, University of Colorado Boulder
+		\item Peaks M. Krafft, Computer Science, Massachusetts Institute of Technology
+		\item Claudia Flores-Saviaga, Computer Science, Northeastern University
+		\item Marlon Twyman, Communication, Northwestern University
+		\item Joshua Clark, Communication, University of Southern California
+		\item Alex Leavitt, Communication, University of Southern California
+		\item Eric Forbush, Computer Science, Northeastern University
+		\item Jason Radford, Sociology, University of Chicago
+		\item Andrew Pilny, Communication, University of Illinois Urbana
+	\end{itemize}
+
+	\section{Service to\\university}
+	\begin{entries}{SU}
+		\item \textit{Ad hoc} advisory committee on decentralized social media, University. \hfill 2023 -- present
+		\item Dean's Technology Advisory Council, CMCI. \hfill 2023 -- present
+		\item Faculty affairs committee, INFO. \hfill 2021 -- present
+		\item Faculty search committee, INFO. \hfill 2020 -- 2021
+		\item Undergraduate curriculum committee, INFO. \hfill 2019 -- 2021
+		\item \textit{Ad hoc} committees on data analytics curricula, University. \hfill 2016 -- 2018
+		\item Graduate student liaison, INFO. \hfill 2018 -- 2019
+		\item Faculty search committee, INFO. \hfill 2017 -- 2018
+		\item Reviewer, Research \& Innovation Office Seed Grants, University. \hfill 2018
+		\item Exploratory committee for game studies, CMCI. \hfill 2017 -- 2018
+		\item ``One College'' committee, CMCI. \hfill 2017 -- 2018
+		\item Computational \& quantitative curriculum design, INFO. \hfill 2017 -- 2021
+		\item \textit{Ad hoc} budget modeling \& office design, INFO. \hfill 2016 -- 2017
+		\item Faculty search committee, JOUR. \hfill 2016 -- 2017
+		\item CHI 2017 reception co-organizer, CMCI. \hfill 2016 -- 2017
+	\end{entries}
+
+	\section{Service to\\profession}
+
+	\begin{entries}{SP}
+		\item Associate Chair, Program Committee, ACM CSCW. \hfill 2016 -- present
+		\item Program Committee, Int'l. Conf. on Comp. Social Science (IC2S2). \hfill 2016 -- present
+		\item Senior Program Committee, AAAI ICWSM. \hfill 2014 -- present
+		\item Panelist, NSF CISE. \hfill 2021
+		\item Reviewer, Swiss NSF. \hfill 2020
+		\item Associate Chair, Program Committee, ACM CHI. \hfill 2016 -- 2018
+		\item Program Committee, Int'l Conf. on the World Wide Web (WWW). \hfill 2015 -- 2018
+		\item Panelist, NSF CISE. \hfill 2018
+		\item Workshops Co-Chair, ACM CSCW. \hfill 2018
+		\item Program Co-Chair, Int'l. Conf. on Comp. Social Science (IC2S2). \hfill 2017
+		\item Workshops Co-Chair, AAAI ICWSM. \hfill 2017
+		\item Program Committee, Int'l. Conf. on Network Science (NetSci). \hfill 2017
+		\item Panelist, NSF CISE. \hfill 2017
+		\item Publicity Co-Chair, Int'l. Conf. on Social Informatics (SocInfo). \hfill 2016
+		\item Program Committee, Int'l. Conf. on Social Informatics (SocInfo). \hfill 2014 -- 2016
+		\item Program Committee, Int'l. Symp. on Open Collaboration (OpenSym). \hfill 2013 -- 2016
+		\item Publicity Co-Chair, ACM CSCW. \hfill 2015
+		\item Publicity Co-Chair, AAAI ICWSM. \hfill 2014
+		\item Steering Committee, ACM CSCW. \hfill 2012 -- 2013
+		\item Student Volunteer Co-Chair, ACM CSCW. \hfill 2013
+	\end{entries}
+
+	\section{Service to\\public}
+
+	\begin{entries}{SC}
+		\item Columnist, Boulder Reporting Lab. \hfill 2025 -- present
+		\item Editor, Boulder Housing Network. \hfill 2024 -- present
+		\item Board member, Boulder Progressives. \hfill 2023 -- present
+		\item Board member, Cannabis Licensing \& Advisory Board, City of Boulder. \hfill 2020 -- present
+		\item Board member, Industrial Hemp Research Foundation. \hfill 2019 -- 2024
+		\item Panelist, Cannabis Science and Policy Workgroup, CDPHE \& MED. \hfill 2018 -- 2019
+		\item Mentor, CanopyBoulder. \hfill 2017 -- 2019
+	\end{entries}
+
+	\section{Press\\coverage}
+	% Separate press coverage and op-eds
+	\begin{entries}{N}
+		\item Drugan, T. ``A call to ban the sale of high-potency THC products in Boulder amid rising teen mental health concerns.'' \textit{Boulder Reporting Lab}. 9 June 2024. \url{https://boulderreportinglab.org/2024/06/09/a-call-to-ban-the-sale-of-high-potency-thc-products-in-boulder-amid-rising-teen-mental-health-concerns/}
+		\item Cleveland, C. ``10 years of recreational cannabis research: What we've learned and what's still unknown.'' \textit{Colorado Matters}. 30 November 2022. \url{https://www.cpr.org/2022/11/30/colorado-recreational-cannabis-research/}
+		\item Swearingen, D. ``Cannabis hospitality future still uncertain in Boulder.'' \textit{Daily Camera}. 2 October 2022. \url{https://www.dailycamera.com/2022/10/02/cannabis-hospitality-future-still-uncertain-in-boulder/}
+		\item Schaneman, B. ``Inaccurate strain names, poor labeling hinder marijuana industry, study shows.'' \textit{Marijuana Business Daily}. 16 June 2022. \url{https://mjbizdaily.com/inaccurate-strain-names-poor-labeling-hinder-marijuana-industry/}
+		\item Finley, B. ``Marijuana labeling system `not an effective or safe way' to detail what's inside product, CU study finds.'' \textit{Daily Camera}. 20 May 2022. \url{https://www.dailycamera.com/2022/05/20/marijuana-labels-indica-sativa-cu-study/}
+		\item Pasternack, A. ``How 9/11  turned a new site called Wikipedia into history's crowdsourced front page.'' \textit{Fast Company}. 11 September 2021. \url{https://www.fastcompany.com/90674998/how-9-11-turned-a-new-site-called-wikipedia-into-historys-crowdsourced-front-page}
+		\item Harrison, S. ``How Wikipedia Grew Up With the War on Terror.'' \textit{Slate}. 8 September 2021. \url{https://slate.com/technology/2021/09/wikipedia-september-11-20th-anniversary.html}
+		\item Sachdev, S. ``Wikipedia's Sprawling, Awe-Inspiring Coverage of the Pandemic.'' \textit{The New Republic}. 26 February 2021. \url{https://newrepublic.com/article/161486/wikipedia-coverage-pandemic-covid}
+		\item Gedye, G. ``When the Capitol Was Attacked, Wikipedia Went to Work.'' \textit{Washington Monthly}. 4 February 2021. \url{https://washingtonmonthly.com/2021/02/04/when-the-capitol-was-attacked-wikipedia-went-to-work/}
+		\item Lopez, M. ``Social media helps bring people together, but in this political climate it's tearing us apart.'' \textit{Denver 7}. 1 February 2021. \url{https://www.thedenverchannel.com/news/360/social-media-helps-bring-people-together-but-in-this-political-climate-its-tearing-us-apart}
+		\item Pasternack, A. ``As a mob attacked the Capitol, a crowd built Wikipedia.'' \textit{Fast Company}. 14 January 2021. \url{https://www.fastcompany.com/90593176/wikipedia-capitol-attack-name}
+		\item Geoghegan, C. ``As Colorado Jumps Into New Marijuana Businesses, Boulder Stays Still.'' \textit{Westword}. 28 December 2020. \url{https://www.westword.com/marijuana/boulder-stays-still-colorado-jumps-into-new-marijuana-businesses-11855744}
+		\item Gossett, S. ``The Internet Should Be More Like Wikipedia.'' \textit{Built In}. 13 October 2020. \url{https://builtin.com/founders-entrepreneurship/wikipedia}
+		\item ``Machine Learning provides insight into cannabis strains.'' \textit{Laboratory News}. 30 September 2020. \url{https://www.labnews.co.uk/article/2030874/machine-learning-provides-insight-into-cannabis-strains}
+		\item Bunch, J. ``Hate speech is a difficult constitutional conversation.'' \textit{Colorado Politics}. 13 July 2020. \url{https://www.coloradopolitics.com/news/insights-hate-speech-is-a-difficult-constitutional-conversation/article_40939b58-be51-11ea-a4b3-bb156d6ccaba.html}
+		\item Colom\'{e}, J.P. ``La era del `todo vale' en redes sociales se acaba.'' \textit{El Pa\'{i}s}. 5 July 2020. \url{https://elpais.com/tecnologia/2020-07-05/la-era-del-todo-vale-en-redes-sociales-se-acaba.html}
+		\item Pasternack, A. ``How Wikipedia's volunteers became the web's best weapon against misinformation.'' \textit{Fast Company}. 7 March 2020. \url{https://www.fastcompany.com/90471667/how-wikipedia-volunteers-became-the-webs-best-weapon-against-misinformation}
+		\item Frank, J. ``Should it be a felony to threaten elected officials? A Colorado bill is asking.'' \textit{The Journal}. 31 January 2020. \url{https://www.the-journal.com/articles/should-it-be-a-felony-to-threaten-elected-officials-a-colorado-bill-is-asking/}
+		\item Matyus, A. ``The real reason fake social media accounts will haunt us for years to come.'' \textit{Digital Trends}. 22 August 2019. \url{https://www.digitaltrends.com/social-media/why-fake-social-media-accounts-will-haunt-us/}
+		\item Gonzalez, R. ``The New LinkedIn Looks Just Like Facebook. Smart Move.'' \textit{WIRED}. 20 January 2017. \url{https://www.wired.com/2017/01/new-linkedin-looks-just-like-facebook-smart-move/}
+		\item Rogers, A. ``Google's Search Algorithm Could Steal the Presidency.'' \textit{WIRED}. 6 August 2015. \url{http://www.wired.com/2015/08/googles-search-algorithm-steal-presidency/}
+		\item Paquette, D. ``Not even a third of speaking roles in popular movies go to women.'' \textit{The Washington Post}. 6 August 2015. \url{http://www.washingtonpost.com/news/wonkblog/wp/2015/08/06/not-even-a-third-of-speaking-roles-in-popular-movies-go-to-women/}
+		\item Kerr, J. ``The Network of L.L. Bean Fall Home Catalogue Colors.'' \textit{Gawker} The New Englandah. 7 August 2014. \url{http://newenglandah.kinja.com/the-network-of-l-l-bean-fall-home-catalogue-colors-1617506910}
+		\item Hickey, W. ``The Bechdel Test: Checking Our Work.'' \textit{FiveThirtyEight} DataLab. 8 April 2014. \url{http://fivethirtyeight.com/datalab/the-bechdel-test-checking-our-work/}
+		\item Weissman, D. ``The NSA's virtual spies in `World of Warcraft' -- on a fool's mission?'' \textit{National Public Radio Marketplace}. 10 December 2013. \url{http://www.marketplace.org/topics/tech/nsa%E2%80%99s-virtual-spies-world-warcraft-fool%E2%80%99s-mission}
+		\item Cherry, S. ``Is Wikipedia a Real-Time News Source?'' \textit{IEEE Spectrum}. 5 February 2013. \url{http://spectrum.ieee.org/podcast/telecom/internet/is-wikipedia-a-realtime-news-source}
+		\item Zuckerman, E. ``How Wikipedia Edits Tragedies.'' \textit{The Atlantic}. 19 December 2012. \url{http://www.theatlanticwire.com/national/2012/12/how-wikipedia-edits-tragedies/60174/}
+		\item Sampson, T. ``How Wikipedia responds to mass shootings.'' The Daily Dot. 19 December 2012. \url{http://www.dailydot.com/news/wikipedia-edit-history-mass-shootings/}
+		\item Ingram, M. ``What Wikipedia can tell us about the future of news.'' Gigaom.com. 19 December 2012. \url{http://gigaom.com/2012/12/19/what-wikipedia-can-tell-us-about-the-future-of-news/}
+		\item Ford, H. ``Wikipedia Isn't Journalism, But Are Wikipedians Reluctant Journalists?'' PBS Idea Lab. 20 October 2011. \url{http://www.pbs.org/idealab/2011/10/wikipedia-isnt-journalism-but-are-wikipedians-reluctant-journalists290/}
+		\item Caro, M. ``Tweeting Osama: Twitter, Facebook have different roles when news develops.'' \textit{Chicago Tribune}. 2 May 2011. \url{http://www.chicagotribune.com/entertainment/sc-ent-0502-social-networking-bin-lad20110502,0,3825162.story}
+		\item Ewalt, D. ``Playing Well With Others.'' \textit{Forbes}. 28 April 2011. \url{http://blogs.forbes.com/davidewalt/2011/04/28/playing-well-with-others/}
+	\end{entries}
+
+	\section{Op-eds and\\invited\\articles}
+
+	\begin{entries}{O}
+		\item \textbf{Keegan, B.C.} ``Think you can balance Boulder's budget? Try closing the city's \$6.3 million gap.'' \textit{Boulder Reporting Lab}. 4 October 2026. \url{https://boulderreportinglab.org/2026/10/04/think-you-can-balance-boulders-budget-try-closing-the-citys-6-3-million-gap/}
+		\item \textbf{Keegan, B.C.} \& Yates, B. ``Across the Aisle: Boulder County could expand to five commissioners. How should they be elected?'' \textit{Boulder Reporting Lab}. 27 September 2026. \url{https://boulderreportinglab.org/2026/09/27/across-the-aisle-boulder-county-could-expand-to-five-commissioners-how-should-they-be-elected/}
+		\item \textbf{Keegan, B.C.} ``Boulder's school closures were decades in the making.'' \textit{Boulder Reporting Lab}. 16 September 2026. \url{https://boulderreportinglab.org/2026/09/16/brian-keegan-boulders-school-closures-were-decades-in-the-making/}
+		\item \textbf{Keegan, B.C.}, Brown, J., \& Brandt, A. ``Boulder should halt use of Flock --- and all other automatic license plate readers.'' \textit{Daily Camera}. 9 July 2026. \url{https://www.dailycamera.com/2026/07/09/boulder-police-flock-automatic-license-plate-readers-privacy-rights-ice-immigration/}
+		\item \textbf{Keegan, B.C.} ``Boulder's tipped wage debate rests on a myth about what restaurant workers earn.'' \textit{Boulder Reporting Lab}. 10 May 2026. \url{https://boulderreportinglab.org/2026/05/10/brian-keegan-boulders-tipped-wage-debate-rests-on-a-myth-about-what-restaurant-workers-earn/}
+		\item \textbf{Keegan, B.C.} ``What 822,505 words reveal about how Boulder's comprehensive plan has changed since 1977.'' \textit{Boulder Reporting Lab}. 31 March 2026. \url{https://boulderreportinglab.org/2026/03/31/brian-keegan-what-822505-words-reveal-about-how-boulders-comprehensive-plan-has-changed-since-1977/}
+		\item \textbf{Keegan, B.C.} ``University workers shouldn't have to wait for rights the Colorado regents can grant now.'' \textit{The Colorado Sun}. 26 March 2026. \url{https://coloradosun.com/2026/03/26/opinion-colorado-regents-collective-bargining-decision/}
+		\item \textbf{Keegan, B.C.} \& Merchant, E.K. ``The long shadow of Paul Ehrlich's `Population Bomb' is evident in anti-immigration efforts today.'' \textit{The Conversation}. 26 March 2026. \url{https://theconversation.com/the-long-shadow-of-paul-ehrlichs-population-bomb-is-evident-in-anti-immigration-efforts-today-279151}
+		\item \textbf{Keegan, B.C.} \& Yates, B. ``Across the Aisle: Boulder's new survey shows shifting attitudes on housing. Now what?'' \textit{Boulder Reporting Lab}. 14 December 2025. \url{https://boulderreportinglab.org/2025/12/14/across-the-aisle-boulders-survey-shows-shifting-attitudes-on-housing-now-what/}
+		\item \textbf{Keegan, B.C.} ``What Boulder's 2025 election results reveal about how we vote --- and why progressives keep coming from behind.'' \textit{Boulder Reporting Lab}. 9 November 2025. \url{https://boulderreportinglab.org/2025/11/09/brian-keegan-what-boulders-2025-election-results-reveal-about-how-we-vote-and-why-progressives-keep-coming-from-behind/}
+		\item \textbf{Keegan, B.C.} \& Yates, B. ``Across the Aisle: Two Boulder Reporting Lab columnists unpack what the 2025 local election results really mean.'' \textit{Boulder Reporting Lab}. 6 November 2025. \url{https://boulderreportinglab.org/2025/11/06/across-the-aisle-two-boulder-reporting-lab-columnists-unpack-what-the-2025-local-election-results-really-mean/}
+		\item \textbf{Keegan, B.C.} ``Boulder's next political divide is generational --- and already visible in school enrollment trends.'' \textit{Boulder Reporting Lab}. 14 October 2025. \url{https://boulderreportinglab.org/2025/10/14/brian-keegan-boulders-next-political-divide-is-generational-and-already-visible-in-school-enrollment-trends/}
+		\item \textbf{Keegan, B.C.} ``How Boulder's `silver wave' could transform the city's future --- for the better, if we plan now.'' \textit{Boulder Reporting Lab}. 26 August 2025. \url{https://boulderreportinglab.org/2025/08/26/brian-keegan-how-boulders-silver-wave-could-transform-the-citys-future-for-the-better-if-we-plan-now/}
+		\item \textbf{Keegan, B.C.} ``Rethinking Boulder's growth debate --- with data, not nostalgia.'' \textit{Boulder Reporting Lab}. 22 July 2025. \url{https://boulderreportinglab.org/2025/07/22/brian-keegan-rethinking-boulders-growth-debate-with-data-not-nostalgia/}
+		\item \textbf{Keegan, B.C.} ``The myth of a `full' Boulder --- and how our policies are driving people away.'' \textit{Boulder Reporting Lab}. 29 June 2025. \url{https://boulderreportinglab.org/2025/06/29/brian-keegan-the-myth-of-a-full-boulder-and-how-our-policies-are-driving-people-away/}
+		\item \textbf{Keegan, B.C.} ``Pedestrianization actually helped West Pearl.'' \textit{Daily Camera}. 17 April 2025. \url{https://www.dailycamera.com/2025/04/17/guest-opinion-brian-c-keegan-pedestrianization-actually-helped-west-pearl/}
+		\item \textbf{Keegan, B.C.}, Fine, A., \& Hummer, J. ``Progressive politics are mainstream in Boulder.'' \textit{Daily Camera}. 6 December 2024. \url{https://www.dailycamera.com/2024/12/06/guest-opinion-brian-keegan-adrian-fine-and-jane-hummer-progressive-politics-are-mainstream-in-boulder/}
+		\item \textbf{Keegan, B.C.} ``Yes on 2C: The dollars and sense case for council pay.'' \textit{Boulder Weekly}. 28 October 2024. \url{https://boulderweekly.com/opinion/yes-council-pay-2c-boulder/}
+		\item \textbf{Keegan, B.C.} ``Reject the old pathogen of population control.'' \textit{Daily Camera}. 7 August 2024. \url{https://www.dailycamera.com/2024/08/07/guest-opinion-brian-c-keegan-reject-the-old-pathogen-of-population-control/}
+		\item \textbf{Keegan, B.C.} ``Millionaires for vacant concrete pads.'' \textit{Boulder Weekly}. 20 May 2024. \url{https://boulderweekly.com/opinion/millionaires-for-vacant-concrete-pads/}
+		\item \textbf{Keegan, B.C.} ``Despite questionable poll, most Coloradans aren't anti-growth.'' \textit{Denver Post} \& \textit{Daily Camera}. 17 April 2024. \url{https://www.dailycamera.com/2024/04/17/steve-pomerance-anti-growth-data-numbersusa-poll/}
+		\item \textbf{Keegan, B.C.} ``We must end patterns of moral disengagement in our policy debates.'' \textit{Daily Camera}. 21 March 2024. \url{https://www.dailycamera.com/2024/03/21/guest-opinion-brian-c-keegan-we-must-end-patterns-of-moral-disengagement-in-our-policy-debates/}
+		\item Castle, S., \textbf{Keegan, B.C.}, \& Wallach, M. ``Fake News: An AI interview with Mark Wallach and Robot Mark Wallach.'' \textit{Boulder Weekly}. 11 January 2024.  \url{https://boulderweekly.com/opinion/ai-wallach-gpt-boulder-weekly/}
+		\item \textbf{Keegan, B.C.} ``Three themes from Boulder's 2023 election.'' \textit{Daily Camera}. 25 November 2023. \url{https://www.dailycamera.com/2023/11/25/guest-opinion-brian-keegan-three-themes-from-boulders-2023-election/}
+		\item \textbf{Keegan, B.C.} ``Safe Zones is not a serious solution.'' \textit{Boulder Weekly}. 2 November 2023. \url{https://archives.boulderweekly.com/opinion/safe-zones-is-not-a-serious-solution/}
+		\item \textbf{Keegan, B.C.} ``Subordinating Council authority to previous ballot measures is a slippery slope.'' \textit{Daily Camera}. 6 September 2023. \url{https://www.dailycamera.com/2023/09/06/guest-opinion-brian-keegan-subordinating-council-authority-to-previous-ballot-measures-is-a-slippery-slope/}
+		\item \textbf{Keegan, B.C.} ``Irresponsible rhetoric around occupancy ordinance process has no place in Boulder.'' \textit{Daily Camera}. 23 August 2023. \url{https://www.dailycamera.com/2023/08/23/guest-opinion-brian-keegan-irresponsible-rhetoric-around-occupancy-ordinance-process-has-no-place-in-boulder/}
+		\item \textbf{Keegan, B.C.} ``Property tax relief should be linked to local land-use reform.'' \textit{The Colorado Sun}. 5 May 2023. \url{https://coloradosun.com/2023/05/05/colorado-housing-land-use-zoning-property-taxes-legislation-213-opinion/}
+		\item \textbf{Keegan, B.C.} ``What is Mastodon? A computational social scientist explains how the `federated' network works and why it won't be a new Twitter.'' \textit{The Conversation}. 11 November 2022. \url{https://theconversation.com/what-is-mastodon-a-computational-social-scientist-explains-how-the-federated-network-works-and-why-it-wont-be-a-new-twitter-194329}
+		\item \textbf{Keegan, B.C.} ``Opposition to even-year elections is grounded in vibes, not evidence.'' \textit{Daily Camera}. 14 October 2022. \url{https://www.dailycamera.com/2022/10/14/guest-opinion-brian-keegan-opposition-to-even-year-elections-is-grounded-in-vibes-not-evidence/}
+		\item \textbf{Keegan, B.C.} ``Odd election years are temporal gerrymandering.'' \textit{Daily Camera}. 9 August 2022. \url{https://www.dailycamera.com/2022/08/09/guest-opinion-brian-keegan-odd-election-years-are-temporal-gerrymandering/}
+		\item \textbf{Keegan, B.C.} ``Opinion: Colorado's cannabis businesses may regret opting for delivery.'' \textit{The Colorado Sun}. 18 December 2020. \url{https://coloradosun.com/2020/12/18/cannabis-delivery-opinion/}
+		\item \textbf{Keegan, B.C.} ``How Sept. 11 made Wikipedia what it is today.'' \textit{Slate}. 17 November 2020. \url{https://slate.com/technology/2020/11/wikipedia-september-11-breaking-news.html}
+		\item \textbf{Keegan, B.C.} ``How does Wikipedia deal with a mass shooting? A frenzied start gives way to a few core editors.'' \textit{Nieman Journalism Lab}, Harvard University. 18 December 2012. \url{https://www.niemanlab.org/2012/12/how-does-wikipedia-deal-with-a-mass-shooting-a-frenzied-start-gives-way-to-a-few-core-editors/}
+	\end{entries}
+
+	\section{Consulting}
+	% \textbf{Colorado Community Research} \hfill Boulder, Colorado \\
+	% \textit{Co-Founder} \hfill 2024 -- present
+
+	\textbf{Colvin Run Networks} \hfill Arlington, Virginia \\
+	\textit{Consultant} \hfill 2019 -- 2024
+	% Technical advise on building cloud-based data analytics capabilities for federal contracts.
+
+	\textbf{Center for Media, Data and Society} \hfill Budapest, Hungary \\
+	\textit{Consultant} \hfill 2015 -- 2016
+	% Network analysis and visualization of media ownership structure in Hungary.
+
+	\textbf{Ninja Metrics} \hfill Los Angeles, California \\
+	\textit{Researcher} \hfill 2011 -- 2014
+	% Statistical modeling of clandestine behavior and peer effects in online games.
+
+	\textbf{Science and Technology Policy Institute} \hfill Washington, D.C. \\
+	\textit{Consultant} \hfill 2011
+	% Statistical analysis of grant coauthorship network for major research funding agency.
+
 \end{document}
