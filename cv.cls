@@ -117,7 +117,14 @@
   \nobreak
   \vskip-\baselineskip
   \vskip-\parskip
+  \nobreak % stops a list's \addvspace from removing the skips above
+  \global\cv@aftersectiontrue
   \@afterheading}
+
+% A list right after a section title starts with no space above it, so
+% its first item lines up with the title, as a paragraph does.
+\newif\ifcv@aftersection
+\AddToHook{para/begin}{\global\cv@aftersectionfalse}
 
 \newcommand\note[1]{\textbf{NOTE:} #1\par}
 \newcommand\subhead[1]{\par\textbf{#1}\par\nobreak\@afterheading}
@@ -126,6 +133,8 @@
 % Lists. First-level labels hang to the left of the text.
 \RequirePackage{enumitem}
 \setlist{noitemsep}
+\setlist[1]{before={\ifcv@aftersection
+  \setlength\topsep{0pt}\setlength\partopsep{0pt}\global\cv@aftersectionfalse\fi}}
 \setlist[itemize,1]{leftmargin=0pt}
 \setlist[itemize,2]{topsep=0pt}
 
