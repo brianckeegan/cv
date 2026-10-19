@@ -15,13 +15,16 @@ This link always gives the newest build. The CV page of
 | `cv.cls` | The layout: page size, fonts, the accent color, margin section titles, numbered lists, header, and footer. |
 | `.latexmkrc` | Build settings for `latexmk`, including the footer date. |
 | `.github/workflows/build.yml` | Builds the PDF on GitHub and publishes it as a release. |
+| `.github/texlive-packages.txt` | The TeX Live packages that the workflow installs. |
 
 ## How the PDF is published
 
 1. Push a change to `cv.tex` or `cv.cls` on the `main` branch.
 2. The **Build CV** workflow (GitHub Actions) installs TeX Live, runs
    `latexmk`, and fails if the log has an overfull line or an
-   undefined reference.
+   undefined reference. It installs only the packages in
+   `.github/texlive-packages.txt` and caches them, so a run takes about
+   20 seconds (about 1 minute when the cache is empty).
 3. If the build passes, the workflow attaches `cv.pdf` to the release
    with the tag `cv-latest` and marks that release as the latest. The
    link above then gives the new PDF.
@@ -46,6 +49,24 @@ latexmk -c     # removes the build files, but keeps cv.pdf
 ```
 
 The build files and `cv.pdf` are in `.gitignore`; do not commit them.
+
+## TeX Live in the workflow
+
+The workflow uses [setup-texlive-action](https://github.com/TeX-Live/setup-texlive-action)
+to install a small TeX Live: `scheme-basic` and the packages listed in
+`.github/texlive-packages.txt`. `tlmgr` does not install dependencies,
+so the list must name every package that the CV loads.
+
+- **New package in `cv.cls` or `cv.tex`:** add its TeX Live name to
+  `.github/texlive-packages.txt`. If you do not, the workflow fails
+  with "File `name.sty' not found". To find the TeX Live name of a file:
+  `tlmgr search --global --file /name.sty`.
+- **New TeX Live release (each spring):** change `version` in
+  `.github/workflows/build.yml` (for example, `2026` to `2027`). The
+  first run after the change installs everything again and is slower.
+- **Check the TeX package list:** install TeX Live with the
+  `scheme-infraonly` scheme, run `tlmgr install` with the names in the
+  file, and run `latexmk` with only that TeX Live on your `PATH`.
 
 ## Edit the CV
 
