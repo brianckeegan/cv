@@ -8,10 +8,10 @@ name: Build CV
 on:
   push:
     branches: [main]
-    paths: [cv.tex, cv.cls, .latexmkrc, .github/workflows/build.yml]
+    paths: [cv.tex, cv.cls, .latexmkrc, .github/workflows/build.yml, .github/texlive-packages.txt]
   pull_request:
     branches: [main]
-    paths: [cv.tex, cv.cls, .latexmkrc, .github/workflows/build.yml]
+    paths: [cv.tex, cv.cls, .latexmkrc, .github/workflows/build.yml, .github/texlive-packages.txt]
   workflow_dispatch:
 
 permissions:
@@ -34,10 +34,14 @@ jobs:
           fetch-depth: 0   # full history: the footer date comes from git log
 
       - name: Install TeX Live
-        # fonts-extra has Libertinus and fontawesome5; latex-extra has enumitem and xurl.
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq texlive-latex-recommended texlive-latex-extra texlive-fonts-extra latexmk
+        # Only the packages in .github/texlive-packages.txt (about 190 MB, not
+        # Ubuntu's 1.7 GB texlive-fonts-extra). The action caches the install;
+        # the cache key changes when the version or the package list changes.
+        # Change "version" once a year, after the new TeX Live is released.
+        uses: TeX-Live/setup-texlive-action@v4
+        with:
+          version: 2026
+          package-file: .github/texlive-packages.txt
 
       - name: Build PDF
         run: |

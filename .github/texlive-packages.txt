@@ -1,0 +1,21 @@
+# TeX Live packages that the CV needs. The Build CV workflow installs only
+# these (TeX-Live/setup-texlive-action), not a full TeX Live, and caches them.
+# tlmgr does not install dependencies, so every package must be listed.
+# To check the list, see "Check the TeX package list" in README.md.
+
+scheme-basic      # pdfTeX, LaTeX, hyperref, geometry, url, amsfonts, ...
+latexmk
+
+# Layout (cv.cls)
+enumitem
+etoolbox
+microtype
+xcolor            # accent color for links and section titles
+xurl
+
+# Fonts
+libertinus        # \usepackage{libertinus}
+libertinus-type1  # Libertinus Serif and Mono for pdfTeX
+fontaxes          # needed by libertinus-type1
+xkeyval           # needed by libertinus-type1
+fontawesome5      # icons in the header and award marks
