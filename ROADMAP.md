@@ -3,6 +3,16 @@
 Changes planned for future revisions of the CV. When an item is done,
 remove it here and describe the change in its commit message.
 
+Contents:
+
+1. [Acceptance rates not reported](#acceptance-rates-not-reported-nr)
+2. [Facts only the owner can give](#facts-only-the-owner-can-give)
+3. [Content to research](#content-to-research)
+4. [Links and identifiers](#links-and-identifiers)
+5. [Layout and accessibility](#layout-and-accessibility)
+6. [Build and upkeep](#build-and-upkeep)
+7. [Website](#website)
+
 ## Acceptance rates not reported ("N.R.")
 
 The proceedings entries end with the venue's acceptance rate, for
@@ -51,3 +61,88 @@ Next steps:
 Check the prefaces of these proceedings (IEEE Xplore and the ACM
 Digital Library list the front matter of each volume) with the same
 rule as above.
+
+## Facts only the owner can give
+
+- **Teaching enrollments:** INFO 3401 (Spring 2026) and INFO 4617/5617
+  (Fall 2026) have no `N=` count. Get the counts from the university.
+- **Teaching in 2025:** the list goes from 2024 to 2026. Add the 2025
+  courses, or confirm that there were none (for example, during the
+  Harvard visiting appointment).
+- **"Present" dates:** 21 entries end in "present" (appointments,
+  students, service). Confirm each one is still current, and add end
+  dates for students who finished.
+- **Honors and awards:** the newest honor is from 2019. Add any honors
+  from 2020 on (for example, best-paper awards or nominations).
+- **Grants:** the newest grant (G9) ended in 2025. Add any new grants.
+- **Invited talks:** the newest talk (T32) is from March 2026. Add any
+  talks since then.
+- **Press coverage:** three stories that quote or describe the work
+  were found in October 2026 but not added; decide whether to add them:
+  - *Denver Post*, 15 January 2026, "An apparent AI-generated Facebook
+    post claimed a Broncos reporter died. He doesn't understand why."
+  - *Boulder Weekly*, 26 May 2022, "The wrong labels" (the
+    *PLoS ONE* cannabis labeling study).
+  - *Colorado Sun*, 31 January 2020, "Where's the line between
+    political speech and credible threats? A Colorado bill is asking the
+    question."
+
+## Content to research
+
+- **Work in progress:** seven items say "(TBD)", and two are arXiv
+  preprints from 2020 and 2022 (X1, X2). Check whether any of them is published or under review, and
+  move published items to their final section. In October 2026,
+  OpenAlex and DBLP blocked scripts and only Crossref was checked; an
+  OpenAlex API key, or a person with a Google Scholar export, would
+  cover preprints and venues without DOIs.
+- **New publications:** check Google Scholar and the website's
+  `papers.bib` against the CV at least once each semester.
+- **Op-eds:** check the Boulder Reporting Lab author page and the other
+  outlets each month; the website adds each op-ed to `_news/` and
+  `_projects/civic_data_analysis.md`, so the CV must get the same line.
+
+## Links and identifiers
+
+- **ORCID and Google Scholar:** the header has email, website, phone,
+  Mastodon, and GitHub, but no ORCID iD or Google Scholar profile. Add
+  them (fontawesome5 has `\faOrcid` and `\faGoogle`). Confirm the ORCID
+  iD first: 0000-0002-4515-1262 belongs to someone else.
+- **Old links:** 13 URLs use `http://`: 12 in Press coverage
+  (2011–2015) and one in Non-reviewed publications. Check each one; change it to `https://` where that
+  works, or link to an archived copy (web.archive.org) where the page is
+  gone.
+- **Link check:** add a monthly workflow (for example, lychee) that
+  lists broken links in `cv.tex`, so dead links are found before a
+  reader finds them.
+
+## Layout and accessibility
+
+- **Tagged PDF:** the workflow now uses TeX Live 2026, which supports
+  tagged, screen-reader-friendly PDFs (`\DocumentMetadata{tagging=on}`).
+  Test it with the margin section titles and the numbered lists in
+  `cv.cls`, and check the result with a PDF/UA checker (for example,
+  veraPDF) before turning it on.
+- **Header and footer:** two design ideas from October 2026 that were
+  not adopted: the name at the left with an accent rule under it, and
+  "Brian C. Keegan — CV · page *n* of *N*" in the footer of every page.
+- **Footer date:** the date is the commit date in UTC, so a commit in
+  the evening (Mountain time) shows the next day. Use the America/Denver
+  time zone if this matters.
+
+## Build and upkeep
+
+- **TeX Live version:** each spring, after the new TeX Live is released,
+  change `version` in `.github/workflows/build.yml` (2026 → 2027) and
+  compare the new PDF with the old one.
+- **Package list:** when `cv.cls` or `cv.tex` loads a new package, add
+  it to `.github/texlive-packages.txt` (see README.md).
+
+## Website
+
+These items are in [brianckeegan/brianckeegan.github.io](https://github.com/brianckeegan/brianckeegan.github.io)
+(roadmap item E-10 there):
+
+- **One source for both CVs:** the web CV (`_data/cv.yml`) is edited by
+  hand and is only a summary. Consider one data file that both
+  `cv.tex` and the website read, which would also give a complete,
+  accessible HTML CV.
