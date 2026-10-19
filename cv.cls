@@ -62,7 +62,7 @@
 % Fonts
 \RequirePackage[T1]{fontenc}
 \RequirePackage{libertinus}  % Libertinus Serif, Sans, and Mono
-\RequirePackage{fontawesome5}
+\RequirePackage{fontawesome7}  % the same Font Awesome version as the website
 \RequirePackage{microtype}
 
 % ---------------------------------------------------------------

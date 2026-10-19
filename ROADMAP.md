@@ -103,10 +103,6 @@ rule as above.
 
 ## Links and identifiers
 
-- **ORCID and Google Scholar:** the header has email, website, phone,
-  Mastodon, and GitHub, but no ORCID iD or Google Scholar profile. Add
-  them (fontawesome5 has `\faOrcid` and `\faGoogle`). Confirm the ORCID
-  iD first: 0000-0002-4515-1262 belongs to someone else.
 - **Old links:** 13 URLs use `http://`: 12 in Press coverage
   (2011–2015) and one in Non-reviewed publications. Check each one; change it to `https://` where that
   works, or link to an archived copy (web.archive.org) where the page is
