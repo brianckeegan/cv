@@ -16,6 +16,7 @@ This link always gives the newest build. The CV page of
 | `.latexmkrc` | Build settings for `latexmk`, including the footer date. |
 | `.github/workflows/build.yml` | Builds the PDF on GitHub and publishes it as a release. |
 | `.github/texlive-packages.txt` | The TeX Live packages that the workflow installs. |
+| `ROADMAP.md` | Changes planned for future revisions (for example, acceptance rates still to find). |
 
 ## How the PDF is published
 
