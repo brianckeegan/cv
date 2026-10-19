@@ -74,7 +74,8 @@ rule as above.
   dates for students who finished.
 - **Honors and awards:** the newest honor is from 2019. Add any honors
   from 2020 on (for example, best-paper awards or nominations).
-- **Grants:** the newest grant (G9) ended in 2025. Add any new grants.
+- **Grants:** the newest grant is G10 (De Castro Award, 2026). Add its
+  start and end months when they are known, and any new grants.
 - **Invited talks:** the newest talk (T32) is from March 2026. Add any
   talks since then.
 - **Press coverage:** three stories that quote or describe the work
