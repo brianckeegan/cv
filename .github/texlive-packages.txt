@@ -18,4 +18,4 @@ libertinus        # \usepackage{libertinus}
 libertinus-type1  # Libertinus Serif and Mono for pdfTeX
 fontaxes          # needed by libertinus-type1
 xkeyval           # needed by libertinus-type1
-fontawesome5      # icons in the header and award marks
+fontawesome7      # icons in the header and award marks

@@ -36,10 +36,16 @@ workflow**.
 
 ## Build on your computer
 
-You need TeX Live (or MacTeX) with `latexmk`. On Debian or Ubuntu:
+You need TeX Live 2025 or newer (or MacTeX 2025 or newer) with the
+packages in `.github/texlive-packages.txt`. The header icons use
+`fontawesome7`, which older TeX Live releases do not have; Ubuntu's
+`apt` packages are TeX Live 2023, so they cannot build the CV.
+
+With a full TeX Live or MacTeX, everything is already installed. With a
+small TeX Live, install the list:
 
 ```bash
-sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-extra latexmk
+tlmgr install $(sed 's/#.*//' .github/texlive-packages.txt)
 ```
 
 Then, in this folder:
