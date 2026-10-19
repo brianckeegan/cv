@@ -1,0 +1,53 @@
+# Roadmap
+
+Changes planned for future revisions of the CV. When an item is done,
+remove it here and describe the change in its commit message.
+
+## Acceptance rates not reported ("N.R.")
+
+The proceedings entries end with the venue's acceptance rate, for
+example `(31\% acceptance)`. Where no rate was found, they say
+`(N.R. acceptance)`. Use only a rate that the venue itself reports for
+that year (preface or front matter, editorial, or the program chairs'
+report), not a general figure for the conference.
+
+### C29–C33 (researched October 2026; no rate found)
+
+| Item | Paper | Venue | What the official sources say |
+|---|---|---|---|
+| C33 | Lawson & Keegan, "Cross-Language Evolution of Divergent Collective Memory Around the Arab Spring" | ICWSM 2026, *Proc. ICWSM* vol. 20 | No preface or front matter on the [vol. 20 issue page](https://ojs.aaai.org/index.php/ICWSM/issue/view/735). The issue page says "approximately 20%" and icwsm.org/2026 says "approximately 20 to 30%"; the same text appears every year, so it is not a 2026 rate. |
+| C32 | Smith et al., "Governance of the Black Experience on Reddit" | CSCW, *PACM HCI* vol. 8, CSCW2 (Nov 2024) | [Editorial](https://doi.org/10.1145/3686891): "171 papers, of which 117 were accepted from the July 2023 cycle, and 55 were accepted from the January 2024 cycle." No submission counts in the abstract. |
+| C31 | Prinster et al., "Community Archetypes" | CSCW, *PACM HCI* vol. 8, CSCW1 (Apr 2024) | [Editorial](https://doi.org/10.1145/3637287): "209 papers, of which 175 were accepted from the Jan 2023 cycle, and 34 were accepted from the Jul 2023 cycle." No submission counts in the abstract. |
+| C30 | Doyle et al., "Stories That Heal" | ICWSM 2024, *Proc. ICWSM* vol. 18 | No preface on the [vol. 18 issue page](https://ojs.aaai.org/index.php/ICWSM/issue/view/605); only the general "approximately 20%". The 2024 program PDF (icwsm.org/2024/icwsm-program.pdf) is gone. |
+| C29 | Smith et al., "The Impact of Governance Bots on Sense of Virtual Community" | CSCW, *PACM HCI* vol. 6, CSCW2 (Nov 2022) | [Editorial](https://doi.org/10.1145/3555227): 293 papers, "94 … from the April 2021 cycle, 61 … from the July 2021 cycle, and 138 … from the January 2022 cycle." No submission counts in the abstract. |
+
+Next steps:
+
+- **CSCW (C29, C31, C32):** read the full text of the three editorials
+  on the ACM Digital Library (scripts get 403; the open copy of the
+  April 2024 editorial at <https://eprints.gla.ac.uk/325810/> has no
+  full text). If an editorial gives the number of submissions for each
+  cycle, the rate is accepted ÷ submitted for the cycles in that issue.
+  Otherwise, ask the CSCW papers chairs for those years.
+- **ICWSM (C30, C33):** ask the ICWSM program chairs for 2024 and 2026;
+  the rate is often given only in the opening remarks or the reviewer
+  mailing.
+- Do not use these figures, found during the research:
+  - "40.6% of 310 submissions": attributed to the 2022 editorial, but it
+    is for the January 2020 cycle.
+  - "26% (2,552 of 9,767)": shown for CSCW 2024 on the ACM Digital
+    Library, but the same numbers appear for CSCW 2015, so it is a total
+    for all years.
+
+### C4, C6, C7, C8 (not yet researched)
+
+| Item | Venue |
+|---|---|
+| C8 | ICWSM 2011 |
+| C7 | IEEE SocialCom 2011 |
+| C6 | WikiSym 2011 |
+| C4 | IEEE SocialCom 2010 |
+
+Check the prefaces of these proceedings (IEEE Xplore and the ACM
+Digital Library list the front matter of each volume) with the same
+rule as above.
